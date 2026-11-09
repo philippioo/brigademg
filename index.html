@@ -350,6 +350,17 @@ body.view-quiz .hero .wrap { padding-block: 24px 20px; }
 body:not(.view-saison) #saison { display: none; }
 body.view-saison main section:not(#saison), body.view-saison .hero-text, body.view-saison #spieltag { display: none; }
 body.view-saison .hero .wrap { padding-block: 24px 20px; }
+/* Eigene Ansichten: alle Gästebuch-Einträge, Datenschutz */
+body:not(.view-gb) #gb-back-link, body.view-gb #gb-all-link, body.view-gb #gb-write { display: none; }
+body.view-gb main section:not(#gaestebuch), body.view-gb .hero-text, body.view-gb #spieltag { display: none; }
+body.view-gb .hero .wrap, body.view-ds .hero .wrap { padding-block: 24px 20px; }
+body:not(.view-ds) #datenschutz { display: none; }
+body.view-ds main section:not(#datenschutz), body.view-ds .hero-text, body.view-ds #spieltag { display: none; }
+.gb-entry.pin { border-left: 5px solid var(--green); }
+.gb-entry .pin-l { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
+.gb-more { margin-top: 14px; }
+.ds h3 { font-family: var(--body); text-transform: none; font-size: 18px; font-weight: 700; letter-spacing: 0; color: var(--ink); margin: 14px 0 0; }
+.ds ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
 a.btn { text-decoration: none; display: inline-flex; align-items: center; }
 .ss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-bottom: 30px; }
 .ss-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; min-width: 0; }
@@ -581,6 +592,7 @@ footer a { color: var(--band-ink); }
     </section>
 
     <section id="gaestebuch" aria-labelledby="gb-h">
+      <a class="back" href="#start" id="gb-back-link">← Zurück zur Startseite</a>
       <div class="sec-head"><h2 id="gb-h">Gästebuch</h2><span class="note">Einträge erscheinen nach kurzer Prüfung.</span></div>
       <div class="gb-write" id="gb-write">
         <form id="gbf" hidden autocomplete="off">
@@ -593,6 +605,7 @@ footer a { color: var(--band-ink); }
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center"><button class="btn primary" type="submit" id="gbf-send">Eintrag abschicken</button></div>
           <div class="hint" id="gbf-hint" role="status">Mit dem Absenden bist du einverstanden, dass dein Eintrag mit Name und Ort hier veröffentlicht wird.</div>
+          <div class="hint" style="margin-top:2px">Dein Eintrag wird über den Dienst Formspree an uns übermittelt. Mehr dazu in der <a href="#datenschutz">Datenschutzerklärung</a>.</div>
         </form>
         <div id="gbf-ok" hidden><p><strong id="gbf-ok-t">Danke!</strong> Dein Eintrag ist angekommen. Wir schauen ihn uns an und stellen ihn online.</p><button class="btn small" type="button" id="gbf-again">Noch einen Eintrag schreiben</button></div>
         <div id="gb-mailbox">
@@ -622,6 +635,7 @@ footer a { color: var(--band-ink); }
         </form>
       </div>
       <div class="gb-list" id="gb-list"><div class="empty">Wird geladen …</div></div>
+      <div class="gb-more" id="gb-all-link" hidden><a class="btn" href="#gaestebuch-alle" id="gb-all-btn">Alle Einträge ansehen →</a></div>
     </section>
 
     <section id="quiz-teaser" aria-labelledby="qt-h">
@@ -659,13 +673,43 @@ footer a { color: var(--band-ink); }
       <p><strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>Frank Königs, Anschrift wie oben</p>
       <p class="note">Die Brigade Mönchengladbach ist ein privater Fanclub und steht in keiner offiziellen Verbindung zu Borussia VfL 1900 Mönchengladbach GmbH. Für die Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
     </section>
+    <section id="datenschutz" class="imprint ds" aria-labelledby="ds-h">
+      <a class="back" href="#start">← Zurück zur Startseite</a>
+      <h2 id="ds-h">Datenschutzerklärung</h2>
+      <p class="note">Stand: November 2026</p>
+      <h3>1. Verantwortlich</h3>
+      <p>Brigade Mönchengladbach, vertreten durch Frank Königs, Stapper Weg 154, 41199 Mönchengladbach, E-Mail: frankst83@web.de. Die Brigade ist ein privater Fanclub; wir verarbeiten personenbezogene Daten nur, soweit es für diese Webseite nötig ist.</p>
+      <h3>2. Hosting und Server-Protokolle</h3>
+      <p>Diese Webseite wird bei GitHub Pages betrieben (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Daten, insbesondere deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Datei sowie Browser- und Geräteangaben, um die Seite auszuliefern und vor Angriffen zu schützen. Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren und stabilen Betrieb der Webseite (Art. 6 Abs. 1 lit. f DSGVO). GitHub verarbeitet Daten auch in den USA; GitHub nimmt am EU-US Data Privacy Framework teil, auf dessen Grundlage die Übermittlung erfolgt (Art. 45 DSGVO). Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+      <p>Die Domain brigademg.de ist bei der STRATO GmbH (Otto-Ostrowski-Straße 7, 10249 Berlin) registriert; STRATO leitet Anfragen per DNS an GitHub weiter.</p>
+      <h3>3. Keine Cookies, kein Tracking</h3>
+      <p>Wir setzen keine Cookies, keine Analyse- oder Werbedienste und keine Social-Media-Plugins ein. Schriftarten und Bilder liegen direkt auf unserem Webspace; es werden dafür keine Verbindungen zu Google oder anderen Drittanbietern aufgebaut.</p>
+      <p>Damit das Fohlen-Quiz und die Frage des Tages wissen, welche Fragen du schon hattest, speichert die Seite diese Angaben nur lokal im Speicher deines Browsers (localStorage). Sie verlassen dein Gerät nicht und du kannst sie jederzeit über die Browser-Einstellungen löschen. Das ist für diese von dir genutzten Funktionen unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG).</p>
+      <h3>4. Gästebuch-Formular (Formspree)</h3>
+      <p>Wenn du uns über das Formular einen Gästebuch-Eintrag schickst, werden dein Name, dein Ort (freiwillig) und dein Text sowie technisch deine IP-Adresse an den Dienst Formspree (Formspree, Inc., USA) übermittelt, der uns den Eintrag per E-Mail zustellt. Dabei können Daten in den USA verarbeitet werden, wo ein geringeres Datenschutzniveau als in der EU bestehen kann. Rechtsgrundlage ist deine Einwilligung durch das Absenden (Art. 6 Abs. 1 lit. a DSGVO; für die Übermittlung in die USA Art. 49 Abs. 1 lit. a DSGVO). Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Datenschutzerklärung von Formspree</a>.</p>
+      <p>Wir prüfen jeden Eintrag und veröffentlichen ihn anschließend mit Name, Ort und Datum im Gästebuch. Du kannst die Einwilligung jederzeit per E-Mail an frankst83@web.de widerrufen; dann löschen wir deinen Eintrag. Nicht veröffentlichte Einsendungen löschen wir, sobald sie nicht mehr benötigt werden.</p>
+      <h3>5. Kontakt per E-Mail</h3>
+      <p>Wenn du uns eine E-Mail schreibst, verwenden wir deine Angaben nur, um dein Anliegen zu bearbeiten bzw. deinen Gästebuch-Eintrag einzustellen (Art. 6 Abs. 1 lit. a und f DSGVO), und löschen sie, wenn sie dafür nicht mehr gebraucht werden.</p>
+      <h3>6. Links zu anderen Seiten</h3>
+      <p>Unsere Seite enthält Links, z. B. zum Google Kalender, zu unserem alten Fotoarchiv bei Jimdo oder zu Quellen. Erst wenn du einen solchen Link anklickst, werden Daten an den jeweiligen Anbieter übertragen; dort gelten dessen Datenschutzbestimmungen.</p>
+      <h3>7. Deine Rechte</h3>
+      <ul>
+        <li>Auskunft über deine gespeicherten Daten (Art. 15 DSGVO)</li>
+        <li>Berichtigung (Art. 16), Löschung (Art. 17) und Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21 DSGVO)</li>
+        <li>Widerruf einer Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+        <li>Beschwerde bei einer Datenschutz-Aufsichtsbehörde, z. B. der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (Art. 77 DSGVO)</li>
+      </ul>
+      <p>Für alle Anliegen genügt eine E-Mail an frankst83@web.de.</p>
+    </section>
   </div>
 </main>
 
 <footer>
   <div class="wrap">
     <span>Brigade Mönchengladbach · seit 1992</span>
-    <a href="#impressum">Impressum</a>
+    <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
   </div>
 </footer>
 
@@ -1046,7 +1090,8 @@ footer a { color: var(--band-ink); }
     }
   });
   /* Gästebuch: Besucher schicken Einträge per Mail, nur du trägst sie ein */
-  function gbSort(a, b) { return (b.date || "").localeCompare(a.date || "") || b.createdAt - a.createdAt; }
+  function gbSort(a, b) { return (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || (b.date || "").localeCompare(a.date || "") || b.createdAt - a.createdAt; }
+  var GB_START = 3; /* auf der Startseite: angehefteter Eintrag + die neuesten drei */
   var GB = makeSection({
     col: "guestbook", list: "gb-list", editor: "gb-editor", form: "gb-form", cancel: "gb-cancel", hint: "gb-hint",
     fields: [{ id: "gb-name", key: "name", max: 60 }, { id: "gb-place", key: "place", max: 60 }, { id: "gb-date", key: "date", max: 10 }, { id: "gb-text", key: "text", max: 800 }],
@@ -1055,12 +1100,23 @@ footer a { color: var(--band-ink); }
     keepPublic: function () { return !!PUB; }, onLive: function () { LIVE.guestbook = true; },
     clean: function (d) {
       var t = str(d.text, 800).trim(); if (!t) return null;
-      return { id: d.id, name: str(d.name, 60).trim() || "Gast", place: str(d.place, 60).trim(), date: /^\d{4}-\d{2}-\d{2}$/.test(d.date || "") ? d.date : "", text: t, createdAt: typeof d.createdAt === "number" ? d.createdAt : 0 };
+      return { id: d.id, name: str(d.name, 60).trim() || "Gast", place: str(d.place, 60).trim(), date: /^\d{4}-\d{2}-\d{2}$/.test(d.date || "") ? d.date : "", text: t, createdAt: typeof d.createdAt === "number" ? d.createdAt : 0, pinned: d.pinned === true };
     },
     sort: gbSort,
+    afterFilter: function (items, total) {
+      var all = document.body.classList.contains("view-gb");
+      if (!all) {
+        var pins = items.filter(function (x) { return x.pinned; }), rest = items.filter(function (x) { return !x.pinned; });
+        var keep = pins.concat(rest.slice(0, GB_START));
+        items.length = 0; Array.prototype.push.apply(items, keep);
+      }
+      var more = total > items.length;
+      $("gb-all-link").hidden = all || !more;
+      $("gb-all-btn").textContent = "Alle " + total + " Einträge ansehen →";
+    },
     empty: '<div class="empty" style="grid-column:1/-1">Noch keine Einträge. Sei der Erste!</div>',
     item: function (it, a) {
-      return '<article class="gb-entry"><p class="q">' + esc(it.text) + '</p><div class="who"><strong>' + esc(it.name) + "</strong>" + (it.place ? " · " + esc(it.place) : "") + (it.date ? " · " + fmt(it.date) : "") + "</div>" + a + "</article>";
+      return '<article class="gb-entry' + (it.pinned ? " pin" : "") + '">' + (it.pinned ? '<div class="pin-l">📌 Angeheftet</div>' : "") + '<p class="q">' + esc(it.text) + '</p><div class="who"><strong>' + esc(it.name) + "</strong>" + (it.place ? " · " + esc(it.place) : "") + (it.date ? " · " + fmt(it.date) : "") + "</div>" + a + "</article>";
     }
   });
   /* Gästebuch-Formular (nur auf dem eigenen Webspace; bei Claude bleibt der Weg per Mail) */
@@ -1512,15 +1568,19 @@ footer a { color: var(--band-ink); }
     var h = location.hash, fotos = h === "#fotos" || h.indexOf("#fotos/") === 0;
     var na = fotos && h.length > 7 ? decodeURIComponent(h.slice(7)).replace(/[^a-z0-9-]/g, "").slice(0, 80) : "";
     if (na !== ALBF) { ALBF = na; if (na) { $("foto-q").value = ""; FQ = []; $("foto-q-clr").hidden = true; } if (FOTO.st.loaded) FOTO.draw(); }
-    var quiz = h === "#quiz", saison = h === "#saison";
-    var was = document.body.classList.contains("view-fotos") || document.body.classList.contains("view-quiz") || document.body.classList.contains("view-saison");
+    var quiz = h === "#quiz", saison = h === "#saison", gball = h === "#gaestebuch-alle", ds = h === "#datenschutz";
+    var was = ["view-fotos", "view-quiz", "view-saison", "view-gb", "view-ds"].some(function (c) { return document.body.classList.contains(c); });
+    var wasGb = document.body.classList.contains("view-gb");
+    document.body.classList.toggle("view-gb", gball);
+    document.body.classList.toggle("view-ds", ds);
+    if (gball !== wasGb && GB.st.loaded) GB.draw();
     var wasQuiz = document.body.classList.contains("view-quiz");
     document.body.classList.toggle("view-fotos", fotos);
     document.body.classList.toggle("view-quiz", quiz);
     document.body.classList.toggle("view-saison", saison);
     if (saison) renderHist();
     if (quiz && (!wasQuiz || !QS.list.length)) quizStart();
-    if (fotos || quiz || saison) { window.scrollTo(0, 0); return; }
+    if (fotos || quiz || saison || gball || ds) { window.scrollTo(0, 0); return; }
     if (was) fitTitle();
     var t = h && h.length > 1 ? document.getElementById(decodeURIComponent(h.slice(1))) : null;
     if (t && h !== "#start") t.scrollIntoView(); else if (was) window.scrollTo(0, 0);
