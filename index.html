@@ -357,6 +357,18 @@ body:not(.view-gb) #gb-back-link, body.view-gb #gb-all-link, body.view-gb #gb-wr
 body.view-gb main section:not(#gaestebuch), body.view-gb .hero-text, body.view-gb #spieltag { display: none; }
 body.view-gb .hero .wrap, body.view-ds .hero .wrap { padding-block: 24px 20px; }
 body:not(.view-ds) #datenschutz { display: none; }
+body:not(.view-gd) #gedenken { display: none; }
+body.view-gd main section:not(#gedenken), body.view-gd .hero-text, body.view-gd #spieltag { display: none; }
+body.view-gd .hero .wrap { padding-block: 24px 20px; }
+.gd-intro { max-width: 62ch; color: var(--muted); font-size: 18px; margin: 0 0 26px; }
+.gd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; max-width: 900px; }
+.gd-card { margin: 0; text-align: center; }
+.gd-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; display: block; filter: grayscale(1); border: 1px solid var(--line); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
+.gd-card figcaption { padding-top: 14px; border-top: 3px solid var(--ink); margin-top: 14px; }
+.gd-card .nm { font-family: var(--display); font-weight: 900; font-size: 30px; text-transform: uppercase; line-height: 1.05; }
+.gd-card .yrs { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 17px; margin-top: 4px; letter-spacing: .06em; }
+.gd-end { margin-top: 34px; font-family: var(--display); font-weight: 900; font-size: clamp(28px, 6vw, 40px); text-transform: uppercase; }
+.gd-link { margin-top: 18px; }
 body.view-ds main section:not(#datenschutz), body.view-ds .hero-text, body.view-ds #spieltag { display: none; }
 .gb-entry.pin { border-left: 5px solid var(--green); }
 .gb-entry .pin-l { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
@@ -534,6 +546,7 @@ footer a { color: var(--band-ink); }
           <div class="fact"><div class="n">3</div><div class="l">passive Mitglieder</div></div>
         </div>
       </div>
+          <p class="gd-link"><a href="#gedenken">In Gedenken an unsere verstorbenen Mitglieder →</a></p>
     </section>
 
 
@@ -675,6 +688,17 @@ footer a { color: var(--band-ink); }
       <p><strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>Frank Königs, Anschrift wie oben</p>
       <p class="note">Die Brigade Mönchengladbach ist ein privater Fanclub und steht in keiner offiziellen Verbindung zu Borussia VfL 1900 Mönchengladbach GmbH. Für die Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
     </section>
+    <section id="gedenken" aria-labelledby="gd-h">
+      <a class="back" href="#start">← Zurück zur Startseite</a>
+      <div class="sec-head"><h2 id="gd-h">In Gedenken</h2></div>
+      <p class="gd-intro">Sie waren Teil der Brigade – auf unzähligen Fahrten, im Stadion und an unseren Tischen. Wir vermissen sie und tragen sie für immer in unseren Herzen.</p>
+      <div class="gd-grid">
+        <figure class="gd-card"><img src="gedenken/andre-mueller.jpg" alt="Andre Müller" loading="lazy"><figcaption><div class="nm">Andre Müller</div><div class="yrs">1981 – 2022</div></figcaption></figure>
+        <figure class="gd-card"><img src="gedenken/markus-achenbach.jpg" alt="Markus Achenbach" loading="lazy"><figcaption><div class="nm">Markus Achenbach</div><div class="yrs">1968 – 2021</div></figcaption></figure>
+        <figure class="gd-card"><img src="gedenken/marco-blum.jpg" alt="Marco Blum" loading="lazy"><figcaption><div class="nm">Marco Blum</div><div class="yrs">1981 – 2019</div></figcaption></figure>
+      </div>
+      <p class="gd-end">Unvergessen. 🖤💚🤍</p>
+    </section>
     <section id="datenschutz" class="imprint ds" aria-labelledby="ds-h">
       <a class="back" href="#start">← Zurück zur Startseite</a>
       <h2 id="ds-h">Datenschutzerklärung</h2>
@@ -711,7 +735,7 @@ footer a { color: var(--band-ink); }
 <footer>
   <div class="wrap">
     <span>Brigade Mönchengladbach · seit 1992</span>
-    <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
+    <span><a href="#gedenken">In Gedenken</a> · <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
   </div>
 </footer>
 
@@ -1570,11 +1594,12 @@ footer a { color: var(--band-ink); }
     var h = location.hash, fotos = h === "#fotos" || h.indexOf("#fotos/") === 0;
     var na = fotos && h.length > 7 ? decodeURIComponent(h.slice(7)).replace(/[^a-z0-9-]/g, "").slice(0, 80) : "";
     if (na !== ALBF) { ALBF = na; if (na) { $("foto-q").value = ""; FQ = []; $("foto-q-clr").hidden = true; } if (FOTO.st.loaded) FOTO.draw(); }
-    var quiz = h === "#quiz", saison = h === "#saison", gball = h === "#gaestebuch-alle", ds = h === "#datenschutz";
-    var was = ["view-fotos", "view-quiz", "view-saison", "view-gb", "view-ds"].some(function (c) { return document.body.classList.contains(c); });
+    var quiz = h === "#quiz", saison = h === "#saison", gball = h === "#gaestebuch-alle", ds = h === "#datenschutz", gd = h === "#gedenken";
+    var was = ["view-fotos", "view-quiz", "view-saison", "view-gb", "view-ds", "view-gd"].some(function (c) { return document.body.classList.contains(c); });
     var wasGb = document.body.classList.contains("view-gb");
     document.body.classList.toggle("view-gb", gball);
     document.body.classList.toggle("view-ds", ds);
+    document.body.classList.toggle("view-gd", gd);
     if (gball !== wasGb && GB.st.loaded) GB.draw();
     var wasQuiz = document.body.classList.contains("view-quiz");
     document.body.classList.toggle("view-fotos", fotos);
@@ -1582,7 +1607,7 @@ footer a { color: var(--band-ink); }
     document.body.classList.toggle("view-saison", saison);
     if (saison) renderHist();
     if (quiz && (!wasQuiz || !QS.list.length)) quizStart();
-    if (fotos || quiz || saison || gball || ds) { window.scrollTo(0, 0); return; }
+    if (fotos || quiz || saison || gball || ds || gd) { window.scrollTo(0, 0); return; }
     if (was) fitTitle();
     var t = h && h.length > 1 ? document.getElementById(decodeURIComponent(h.slice(1))) : null;
     if (t && h !== "#start") t.scrollIntoView(); else if (was) window.scrollTo(0, 0);
