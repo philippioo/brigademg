@@ -389,6 +389,60 @@
    "year": "2026",
    "album": "Mönchengladbach vs. Elversberg 2026",
    "createdAt": 1794130000006
+  },
+  {
+   "id": "leipzig-2026-01",
+   "asset": "239e0346b3f35b73f6855350be3e74cc",
+   "src": "fotos/239e0346b3f35b73f6855350be3e74cc.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000001
+  },
+  {
+   "id": "leipzig-2026-02",
+   "asset": "2e987d5cb6ee375cecb461a423ab4c59",
+   "src": "fotos/2e987d5cb6ee375cecb461a423ab4c59.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000002
+  },
+  {
+   "id": "leipzig-2026-03",
+   "asset": "7af119b3b93092d633f72ae32bcee7b9",
+   "src": "fotos/7af119b3b93092d633f72ae32bcee7b9.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000003
+  },
+  {
+   "id": "leipzig-2026-04",
+   "asset": "910e7640d6aa9cfea963914642f69870",
+   "src": "fotos/910e7640d6aa9cfea963914642f69870.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000004
+  },
+  {
+   "id": "leipzig-2026-05",
+   "asset": "5a6e417707906d48489342abbd3c7e69",
+   "src": "fotos/5a6e417707906d48489342abbd3c7e69.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000005
+  },
+  {
+   "id": "leipzig-2026-06",
+   "asset": "89a45a04dcd9cc55b63f24e25f847961",
+   "src": "fotos/89a45a04dcd9cc55b63f24e25f847961.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000006
   }
  ],
  "match": {
