@@ -722,10 +722,21 @@ footer a { color: var(--band-ink); }
       "&details=" + encodeURIComponent(p.body.slice(0, 600) + "\n\n" + SITE_URL) + (p.place ? "&location=" + encodeURIComponent(p.place) : "");
     return "https://calendar.google.com/calendar/render?" + q;
   }
-  function wa(p) {
-    var t = p.title + (p.date ? " – " + fmt(p.date) : "") + (p.place ? " · " + p.place : "") + "\nBrigade Mönchengladbach: " + SITE_URL;
-    return "https://wa.me/?text=" + encodeURIComponent(t);
+  function shareText(p) { return p.title + (p.date ? " – " + fmt(p.date) : "") + (p.place ? " · " + p.place : "") + " – Brigade Mönchengladbach"; }
+  /* Teilen: Teilen-Menü des Geräts (WhatsApp, Mail, Messenger …), sonst Link kopieren */
+  function shareIt(text, url) {
+    var full = text + "\n" + url;
+    function copied() { toast("Link kopiert – jetzt einfach einfügen und verschicken."); }
+    function copy() {
+      try { navigator.clipboard.writeText(full).then(copied, function () { prompt("Zum Kopieren:", full); }); } catch (x) { try { prompt("Zum Kopieren:", full); } catch (y) {} }
+    }
+    if (navigator.share) { navigator.share({ title: "Brigade Mönchengladbach", text: text, url: url }).catch(function (e) { if (!e || e.name !== "AbortError") copy(); }); }
+    else copy();
   }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-share]"); if (!b) return;
+    e.preventDefault(); shareIt(b.getAttribute("data-share"), b.getAttribute("data-share-url") || SITE_URL);
+  });
   function renderNews() {
     var list = sorted();
     if (!S.loaded) return;
@@ -748,7 +759,7 @@ footer a { color: var(--band-ink); }
         acts = '<div class="ticket-actions">' +
           (p.date && DL ? '<button type="button" data-ics="' + esc(p.id) + '">In den Kalender</button>' : "") +
           (p.date ? '<a href="' + esc(gcal(p)) + '" target="_blank" rel="noopener">Google Kalender</a>' : "") +
-          '<a class="wa" href="' + esc(wa(p)) + '" target="_blank" rel="noopener">Per WhatsApp teilen</a></div>';
+          '<button type="button" class="wa" data-share="' + esc(shareText(p)) + '" data-share-url="' + esc(SITE_URL + "/#events") + '">Teilen</button></div>';
       }
       return '<article class="ticket' + (past ? " past" : "") + '"><div class="stub">' + stub + '</div><div class="ticket-body">' +
         (LOGO ? '<img class="stamp" src="' + esc(LOGO) + '" alt="">' : "") +
@@ -950,10 +961,6 @@ footer a { color: var(--band-ink); }
   function closeLb() {
     setPlay(false); $("lb").hidden = true; $("lb-img").removeAttribute("src"); LB = -1;
     try { if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function () {}); } catch (x) {}
-  }
-  function waAlbum(name, count) {
-    var t = "📸 Fotos der Brigade Mönchengladbach: „" + name + "“ (" + count + (count === 1 ? " Foto" : " Fotos") + ")\n👉 " + SITE_URL + "#fotos/" + slug(name);
-    return "https://wa.me/?text=" + encodeURIComponent(t);
   }
   var FOTO = makeSection({
     col: "photos", list: "foto-list", editor: "foto-editor", fields: [],
@@ -1398,10 +1405,10 @@ footer a { color: var(--band-ink); }
   }
   function quizEnd() {
     var s = QS.score, n = QS.list.length, r = quizRank(s);
-    var share = "Ich habe beim Fohlen-Quiz der Brigade Mönchengladbach " + s + " von " + n + " Fragen richtig – „" + r[0] + "“! Schaffst du mehr? 💚🤍🖤\n👉 " + SITE_URL + "#quiz";
+    var share = "Ich habe beim Fohlen-Quiz der Brigade Mönchengladbach " + s + " von " + n + " Fragen richtig – „" + r[0] + "“! Schaffst du mehr? 💚🤍🖤";
     $("qz").innerHTML = '<div class="qz-end"><div class="big">' + s + " / " + n + '</div><div class="rank">' + esc(r[0]) + "</div><p>" + esc(r[1]) + "</p>" +
       '<div class="qz-btns"><button class="btn primary" type="button" id="qz-again">Nochmal spielen</button>' +
-      '<a class="btn wa-btn" href="https://wa.me/?text=' + encodeURIComponent(share) + '" target="_blank" rel="noopener">Ergebnis per WhatsApp teilen</a></div></div>';
+      '<button class="btn wa-btn" type="button" data-share="' + esc(share) + '" data-share-url="' + esc(SITE_URL + "/#quiz") + '">Ergebnis teilen</button></div></div>';
     if (s >= 8) confetti();
   }
   $("qz").addEventListener("click", function (e) {
