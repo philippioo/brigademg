@@ -453,7 +453,7 @@ footer a { color: var(--band-ink); }
         <img id="mark-img" alt="" hidden>
         Brigade MG
       </div>
-      <nav aria-label="Seitennavigation"><a href="#events">Events</a><a href="#ueber-uns">Über uns</a><a href="#fotos">Fotos</a><a href="#saison">Saison</a><a href="#gaestebuch">Gästebuch</a><a href="#kontakt">Kontakt</a></nav>
+      <nav aria-label="Seitennavigation"><a href="#events">Events</a><a href="#ueber-uns">Über uns</a><a href="#fotos">Fotos</a><a href="#saison">Saison</a><a href="#gaestebuch">Gästebuch</a><a href="#unvergessen">Unvergessen</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <div class="hero-text">
       <p class="eyebrow">Borussia-Fanclub seit 1992 · Elf vom Niederrhein</p>
@@ -546,7 +546,6 @@ footer a { color: var(--band-ink); }
           <div class="fact"><div class="n">3</div><div class="l">passive Mitglieder</div></div>
         </div>
       </div>
-          <p class="gd-link"><a href="#gedenken">In Gedenken an unsere verstorbenen Mitglieder →</a></p>
     </section>
 
 
@@ -690,14 +689,14 @@ footer a { color: var(--band-ink); }
     </section>
     <section id="gedenken" aria-labelledby="gd-h">
       <a class="back" href="#start">← Zurück zur Startseite</a>
-      <div class="sec-head"><h2 id="gd-h">In Gedenken</h2></div>
+      <div class="sec-head"><h2 id="gd-h">Unvergessen</h2></div>
       <p class="gd-intro">Sie waren Teil der Brigade – auf unzähligen Fahrten, im Stadion und an unseren Tischen. Wir vermissen sie und tragen sie für immer in unseren Herzen.</p>
       <div class="gd-grid">
         <figure class="gd-card"><img src="gedenken/andre-mueller.jpg" alt="Andre Müller" loading="lazy"><figcaption><div class="nm">Andre Müller</div><div class="yrs">1981 – 2022</div></figcaption></figure>
         <figure class="gd-card"><img src="gedenken/markus-achenbach.jpg" alt="Markus Achenbach" loading="lazy"><figcaption><div class="nm">Markus Achenbach</div><div class="yrs">1968 – 2021</div></figcaption></figure>
         <figure class="gd-card"><img src="gedenken/marco-blum.jpg" alt="Marco Blum" loading="lazy"><figcaption><div class="nm">Marco Blum</div><div class="yrs">1981 – 2019</div></figcaption></figure>
       </div>
-      <p class="gd-end">Unvergessen. 🖤💚🤍</p>
+      <p class="gd-end">Für immer Teil der Brigade. 🖤💚🤍</p>
     </section>
     <section id="datenschutz" class="imprint ds" aria-labelledby="ds-h">
       <a class="back" href="#start">← Zurück zur Startseite</a>
@@ -735,7 +734,7 @@ footer a { color: var(--band-ink); }
 <footer>
   <div class="wrap">
     <span>Brigade Mönchengladbach · seit 1992</span>
-    <span><a href="#gedenken">In Gedenken</a> · <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
+    <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
   </div>
 </footer>
 
@@ -1594,7 +1593,7 @@ footer a { color: var(--band-ink); }
     var h = location.hash, fotos = h === "#fotos" || h.indexOf("#fotos/") === 0;
     var na = fotos && h.length > 7 ? decodeURIComponent(h.slice(7)).replace(/[^a-z0-9-]/g, "").slice(0, 80) : "";
     if (na !== ALBF) { ALBF = na; if (na) { $("foto-q").value = ""; FQ = []; $("foto-q-clr").hidden = true; } if (FOTO.st.loaded) FOTO.draw(); }
-    var quiz = h === "#quiz", saison = h === "#saison", gball = h === "#gaestebuch-alle", ds = h === "#datenschutz", gd = h === "#gedenken";
+    var quiz = h === "#quiz", saison = h === "#saison", gball = h === "#gaestebuch-alle", ds = h === "#datenschutz", gd = h === "#unvergessen";
     var was = ["view-fotos", "view-quiz", "view-saison", "view-gb", "view-ds", "view-gd"].some(function (c) { return document.body.classList.contains(c); });
     var wasGb = document.body.classList.contains("view-gb");
     document.body.classList.toggle("view-gb", gball);
