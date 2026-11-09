@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Brigade Mönchengladbach – Borussia-Fanclub seit 1992</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Brigade Mönchengladbach – Borussia-Fanclub seit 1992. Events, Fotos von Auswärtsfahrten, Fohlen-Quiz, Spielplan und Gästebuch.">
+<link rel="canonical" href="https://brigademg.de/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brigade Mönchengladbach – Borussia-Fanclub seit 1992">
+<meta property="og:description" content="Events, Fotos von Auswärtsfahrten, Fohlen-Quiz, Spielplan und Gästebuch der Brigade Mönchengladbach.">
+<meta property="og:url" content="https://brigademg.de/">
+<meta property="og:image" content="https://brigademg.de/logo.png">
+<meta property="og:locale" content="de_DE">
+<meta name="theme-color" content="#00843A">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>:root{box-sizing:border-box}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+[hidden] { display: none !important; }
+/* Schriften liegen direkt bei der Seite (keine Verbindung zu Google – datenschutzfreundlich). Lizenz: SIL Open Font License, siehe fonts/*-OFL.txt */
+@font-face { font-family: "Big Shoulders Display"; src: url("fonts/BigShoulders-Bold.woff") format("woff"); font-weight: 700 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("fonts/WorkSans-Regular.woff") format("woff"); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("fonts/WorkSans-Bold.woff") format("woff"); font-weight: 600 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("fonts/WorkSans-Italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
+/* Layout: Kopfband mit Raute-Muster und nächstem Termin, darunter Events (Kernstück), Über uns, Kontakt, Fuß. Eine Spalte, max. 960px. */
+:root {
+  --bg: #FFFFFF;
+  --surface: #F3F5F3;
+  --ink: #0A0B0A;
+  --muted: #4F5752;
+  --line: #D9DEDA;
+  --green: #00843A;
+  --green-ink: #FFFFFF;
+  --band: #0A0B0A;
+  --band-ink: #F4F6F4;
+  --band-muted: #A7B0AA;
+  --hero-bg: #FFFFFF;
+  --hero-ink: #0A0B0A;
+  --hero-muted: #4F5752;
+  --stripe-w: #FFFFFF;
+  --kit: #00A04A;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B0D0C; --surface: #151917; --ink: #F2F4F2; --muted: #9FA9A2; --line: #29302C;
+    --green: #2FC46B; --green-ink: #06120B; --band: #000000; --band-ink: #F4F6F4; --band-muted: #A7B0AA;
+    --hero-bg: #0B0D0C; --hero-ink: #F4F6F4; --hero-muted: #A7B0AA; --stripe-w: #F4F6F4; --kit: #2FC46B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B0D0C; --surface: #151917; --ink: #F2F4F2; --muted: #9FA9A2; --line: #29302C;
+  --green: #2FC46B; --green-ink: #06120B; --band: #000000; --band-ink: #F4F6F4; --band-muted: #A7B0AA;
+  --hero-bg: #0B0D0C; --hero-ink: #F4F6F4; --hero-muted: #A7B0AA; --stripe-w: #F4F6F4; --kit: #2FC46B; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); text-transform: uppercase; letter-spacing: .01em; margin: 0; text-wrap: balance; }
+a { color: var(--green); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* Kopfband: weiß-schwarz-grün wie das Heimtrikot */
+.kit { height: 12px; background: linear-gradient(to bottom, #0A0B0A 0 33.4%, var(--stripe-w) 33.4% 66.7%, var(--kit) 66.7% 100%); }
+:root:not([data-theme="light"]) .kit { }
+.hero { background: var(--hero-bg); color: var(--hero-ink); position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero::before {
+  content: ""; position: absolute; right: -60px; top: 58%; width: 460px; height: 460px; transform: translateY(-50%) rotate(45deg);
+  border: 46px solid var(--kit); outline: 22px solid var(--hero-ink); outline-offset: 22px; opacity: .1; pointer-events: none;
+}
+.hero .wrap { position: relative; padding-block: 24px 44px; display: grid; gap: 30px; }
+.nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.mark { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
+.mark svg { width: 30px; height: 30px; flex: none; }
+.nav nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-weight: 600; font-size: 15px; }
+.nav nav a { color: var(--hero-ink); text-decoration: none; }
+.nav nav a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin: 0 0 6px; }
+.hero h1 { font-weight: 900; line-height: .88; }
+.hero h1 span { color: var(--green); display: block; }
+.tag { color: var(--hero-muted); max-width: 46ch; margin: 14px 0 0; font-size: 19px; font-style: italic; }
+.next { border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 6px; padding: 16px 18px; max-width: 520px; background: var(--surface); }
+.next .lbl { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
+.next .t { font-family: var(--display); font-weight: 700; font-size: 28px; text-transform: uppercase; line-height: 1.1; margin-top: 4px; }
+.next .d { color: var(--muted); font-size: 15px; margin-top: 2px; }
+
+main .wrap > * { min-width: 0; }
+.sec-head h2 { overflow-wrap: break-word; }
+main .wrap { display: grid; gap: 64px; padding-block: 56px 72px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 18px; padding-bottom: 10px; background: linear-gradient(to right, var(--ink) 0 72%, var(--kit) 72% 100%) bottom / 100% 4px no-repeat; }
+.sec-head h2 { font-weight: 900; font-size: clamp(36px, 7vw, 52px); line-height: 1; }
+.sec-head .note { color: var(--muted); font-size: 14px; }
+
+/* News */
+.news { display: grid; gap: 14px; }
+.post { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 18px; }
+.post .date { text-align: center; border-right: 1px solid var(--line); padding-right: 14px; font-variant-numeric: tabular-nums; }
+.post .date .dd { font-family: var(--display); font-weight: 900; font-size: 40px; line-height: 1; }
+.post .date .mm { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); border-radius: 999px; padding: 1px 10px; }
+.post h3 { font-size: 28px; font-weight: 700; line-height: 1.1; margin: 8px 0 6px; overflow-wrap: anywhere; }
+.post p { margin: 0; color: var(--muted); white-space: pre-line; overflow-wrap: anywhere; }
+.post .meta { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.post .meta strong { color: var(--ink); }
+.post .adm { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.empty { color: var(--muted); padding: 24px; border: 1px dashed var(--line); border-radius: 8px; text-align: center; }
+@media (max-width: 520px) { .post { grid-template-columns: 1fr; } .post .date { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 10px; text-align: left; display: flex; gap: 8px; align-items: baseline; } }
+
+.editor { background: var(--surface); border: 2px dashed var(--green); border-radius: 8px; padding: 18px 20px; margin-bottom: 18px; }
+.editor h3 { font-size: 24px; margin-bottom: 10px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+label.f { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--muted); min-width: 0; }
+label.f input, label.f textarea, label.f select { font-weight: 400; color: var(--ink); }
+@media (max-width: 420px) { .nav nav { gap: 4px 13px; font-size: 14px; } }
+input[type=text], input[type=date], select, textarea { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 9px 10px; width: 100%; font-size: 16px; color: var(--ink); }
+textarea { min-height: 90px; resize: vertical; }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 9px 16px; font-weight: 600; cursor: pointer; }
+.btn.primary { background: var(--green); border-color: var(--green); color: var(--green-ink); }
+.btn.small { padding: 4px 10px; font-size: 14px; }
+.btn.danger { color: #C2412D; border-color: #C2412D; }
+.hint { font-size: 14px; color: var(--muted); min-height: 20px; margin-top: 8px; }
+
+/* Über uns */
+.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items: start; }
+.about p { margin: 0 0 12px; max-width: 62ch; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; text-align: center; }
+.fact .n { font-family: var(--display); font-weight: 900; font-size: 40px; line-height: 1; color: var(--green); font-variant-numeric: tabular-nums; }
+.fact .l { font-size: 13px; color: var(--muted); }
+.ph { background: color-mix(in srgb, var(--green) 14%, transparent); border-radius: 3px; padding: 0 4px; }
+
+/* Mitglied werden */
+.join { background: var(--band); color: var(--band-ink); border-radius: 10px; padding: 28px 24px; display: grid; gap: 14px; border-top: 8px solid var(--kit); }
+.join h2 { font-weight: 900; font-size: clamp(36px, 7vw, 52px); line-height: 1; }
+.join p { margin: 0; max-width: 58ch; }
+.join .mail { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.join code { font-family: var(--body); font-weight: 600; font-size: 18px; background: rgba(255,255,255,.1); padding: 6px 12px; border-radius: 6px; user-select: all; }
+.join .btn { background: var(--surface); color: var(--ink); border-color: transparent; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; counter-reset: s; }
+.steps li { counter-increment: s; background: rgba(255,255,255,.07); border-radius: 8px; padding: 12px 14px; }
+.steps li::before { content: counter(s); color: var(--kit); font-family: var(--display); font-weight: 900; font-size: 28px; display: block; line-height: 1; margin-bottom: 4px; }
+
+
+/* Geschichte */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 22px; border-left: 3px solid var(--green); display: grid; gap: 18px; }
+.timeline li { position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -32px; top: 6px; width: 15px; height: 15px; background: var(--green); transform: rotate(45deg); border: 3px solid var(--bg); }
+.timeline .yr { font-family: var(--display); font-weight: 900; font-size: 30px; line-height: 1; color: var(--green); font-variant-numeric: tabular-nums; }
+.timeline h3 { font-size: 24px; font-weight: 700; margin: 2px 0 2px; overflow-wrap: anywhere; }
+.timeline p { margin: 0; color: var(--muted); max-width: 62ch; overflow-wrap: anywhere; white-space: pre-line; }
+/* Mitglieder */
+.members { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.avatar { width: 52px; height: 52px; display: grid; place-items: center; background: var(--band); color: var(--kit); font-family: var(--display); font-weight: 900; font-size: 24px; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); margin-bottom: 6px; }
+.card .nm { font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; line-height: 1.1; overflow-wrap: anywhere; }
+.card .nick { color: var(--green); font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+.card .role { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.card .line { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; }
+/* Fotos */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+@media (max-width: 480px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .photo span { font-size: 13px; padding: 5px 8px; } }
+.photo { border: 0; padding: 0; background: var(--surface); border-radius: 8px; overflow: hidden; cursor: pointer; text-align: left; display: grid; border: 1px solid var(--line); min-width: 0; }
+.photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; max-width: 100%; }
+.photo span { padding: 6px 10px; font-size: 14px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photo-wrap { display: grid; gap: 6px; min-width: 0; }
+.filebtn { position: relative; display: inline-flex; align-items: center; justify-content: center; border: 1px dashed var(--green); color: var(--green); background: var(--bg); border-radius: 6px; padding: 9px 14px; font-weight: 600; cursor: pointer; }
+.filebtn input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.filebtn:focus-within { outline: 3px solid var(--green); outline-offset: 2px; }
+.lb { position: fixed; inset: 0; z-index: 50; background: rgba(6,9,7,.94); display: flex; flex-direction: column; gap: 10px; padding-top: calc(14px + env(safe-area-inset-top, 0px)); padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); color: #F2F5F1; }
+.lb-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.lb-img { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.lb-img img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; }
+.lb .btn { background: #1B231D; color: #F2F5F1; border-color: #36433A; }
+/* Motto bearbeiten */
+.motto-edit { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; max-width: 560px; }
+.motto-edit input { flex: 1 1 240px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); border-radius: 6px; padding: 8px 10px; font-size: 16px; }
+.hero .btn { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.mark img { width: 40px; height: 40px; object-fit: contain; flex: none; }
+.hero-text { display: grid; min-width: 0; }
+.hero-text .next { margin-top: 26px; }
+/* Name und Bulldogge in einer Zeile: das Logo sitzt direkt hinter dem längsten Wort */
+.title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px .35em; font-size: clamp(40px, 8vw, 100px); font-family: var(--display); }
+.title-row h1 { font-size: 1em; flex: none; }
+.title-row img { height: 1.86em; width: auto; max-width: 40vw; flex: none; filter: drop-shadow(0 8px 14px rgba(0,0,0,.18)); }
+@media (max-width: 640px) {
+  .title-row { flex-direction: column-reverse; align-items: flex-start; gap: 14px; font-size: clamp(34px, 11vw, 64px); }
+  .title-row img { height: 120px; max-width: none; }
+}
+.meet { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green); border-radius: 8px; padding: 14px 16px; margin-top: 4px; }
+.meet strong { display: block; font-family: var(--display); font-size: 22px; text-transform: uppercase; }
+.friends { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.friend { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; text-decoration: none; color: var(--ink); font-weight: 600; }
+.friend:hover { border-color: var(--green); }
+.friend small { display: block; color: var(--muted); font-weight: 400; font-size: 13px; }
+/* Fotos als eigene Seite: Startseite zeigt nur einen kleinen Hinweis */
+body:not(.view-fotos) #fotos { display: none; }
+body.view-fotos main section:not(#fotos), body.view-fotos .hero-text, body.view-fotos #spieltag { display: none; }
+body.view-fotos .hero .wrap { padding-block: 24px 20px; }
+body:not(.view-quiz) #quiz { display: none; }
+body.view-quiz main section:not(#quiz), body.view-quiz .hero-text, body.view-quiz #spieltag { display: none; }
+body.view-quiz .hero .wrap { padding-block: 24px 20px; }
+/* Quiz */
+.qz { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; max-width: 720px; }
+.qz-top { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.qz-prog { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 16px; }
+.qz-prog i { display: block; height: 100%; background: var(--green); transition: width .3s; }
+.qz h3 { font-family: var(--body); text-transform: none; font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: 0; margin-bottom: 14px; }
+.qz-opts { display: grid; gap: 8px; }
+.qz-opt { text-align: left; border: 2px solid var(--line); background: var(--bg); border-radius: 8px; padding: 12px 14px; font-size: 16px; cursor: pointer; }
+.qz-opt:hover:not(:disabled) { border-color: var(--green); }
+.qz-opt.ok { border-color: #1F9D55; background: rgba(31,157,85,.14); font-weight: 600; }
+.qz-opt.no { border-color: #C2412D; background: rgba(194,65,45,.12); }
+.qz-opt:disabled { cursor: default; }
+.qz-x { margin-top: 12px; padding: 12px 14px; border-radius: 8px; background: var(--bg); border-left: 4px solid var(--green); font-size: 15px; }
+.qz-x.no { border-left-color: #C2412D; }
+.qz-end { text-align: center; }
+.qz-end .big { font-family: var(--display); font-weight: 900; font-size: 64px; color: var(--green); line-height: 1; }
+.qz-end .rank { font-family: var(--display); font-weight: 700; font-size: 26px; text-transform: uppercase; margin: 6px 0 4px; }
+.qz-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.qz-end .qz-btns { justify-content: center; }
+/* Bulldoggen-Überraschung */
+#fx { position: fixed; inset: 0; pointer-events: none; z-index: 80; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 81; background: var(--band); color: var(--band-ink); border: 2px solid var(--kit); border-radius: 10px; padding: 12px 18px; font-weight: 600; max-width: min(92vw, 460px); text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+#hero-img, #mark-img { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.mb-wx { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--band-ink); }
+.matchbar.live .mb-wx { color: #06120B; }
+.back { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; margin-bottom: 14px; text-decoration: none; }
+.back:hover { text-decoration: underline; }
+.teaser { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 8px; padding: 14px 16px; text-decoration: none; color: var(--ink); }
+.teaser:hover { border-color: var(--green); }
+.teaser .thumbs { display: flex; gap: 6px; }
+.teaser .thumbs img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; display: block; }
+.teaser .txt { flex: 1 1 180px; min-width: 0; }
+.teaser .txt strong { display: block; font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; line-height: 1.1; }
+.teaser .txt span { color: var(--muted); font-size: 15px; }
+@media (max-width: 420px) { .teaser .thumbs img { width: 52px; height: 52px; } }
+/* Fotosuche */
+.fsearch { position: relative; margin-bottom: 8px; }
+.fsearch input[type=search] { width: 100%; font-size: 17px; padding: 12px 44px 12px 42px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); }
+.fsearch input[type=search]:focus { border-color: var(--green); outline: none; }
+.fsearch svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+.fsearch .clr { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); border: 0; background: none; font-size: 22px; line-height: 1; color: var(--muted); cursor: pointer; padding: 4px 8px; }
+.fsearch input[type=search]::-webkit-search-cancel-button { display: none; }
+.fs-hint { font-size: 14px; color: var(--muted); min-height: 20px; margin-bottom: 10px; }
+/* Gästebuch */
+.gb-write { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 8px; padding: 18px 20px; margin-bottom: 18px; }
+.gb-write p { margin: 0 0 12px; max-width: 62ch; }
+.gb-write textarea { min-height: 96px; }
+.gbw-mail { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 12px; }
+.gbw-mail code { font-family: var(--body); font-weight: 600; font-size: 18px; background: var(--bg); border: 1px solid var(--line); padding: 6px 12px; border-radius: 6px; user-select: all; overflow-wrap: anywhere; }
+#gb-copy-hint { font-size: 14px; font-weight: 600; color: var(--green); }
+.gb-write .gbw-how { font-size: 15px; color: var(--muted); margin: 0; }
+.gb-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.gb-entry { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.gb-entry .q { margin: 0; white-space: pre-line; overflow-wrap: anywhere; position: relative; padding-left: 26px; }
+.gb-entry .q::before { content: "\201E"; position: absolute; left: 0; top: -14px; font-family: var(--display); font-weight: 900; font-size: 44px; color: var(--green); line-height: 1; }
+.gb-entry .who { font-size: 14px; color: var(--muted); margin-top: auto; }
+.gb-entry .who strong { color: var(--ink); }
+.archive { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
+.friends { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.friend { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--kit); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.friend .fn { font-family: var(--display); font-weight: 700; font-size: 21px; text-transform: uppercase; line-height: 1.15; overflow-wrap: break-word; }
+.friend .fs { color: var(--muted); font-size: 14px; margin-top: 4px; overflow-wrap: anywhere; }
+.imprint { border-top: 1px solid var(--line); padding-top: 24px; font-size: 15px; color: var(--muted); display: grid; gap: 10px; max-width: 62ch; }
+.imprint h2 { font-size: 28px; font-weight: 700; color: var(--ink); }
+.imprint p { margin: 0; }
+.imprint strong { color: var(--ink); }
+.imprint .note { font-size: 13px; }
+
+/* Countdown */
+.cd { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 14px; max-width: 360px; }
+.cd div { background: var(--band); color: var(--band-ink); border-radius: 6px; padding: 8px 4px 6px; text-align: center; border-bottom: 3px solid var(--kit); }
+.cd b { display: block; font-family: var(--display); font-weight: 900; font-size: 34px; line-height: 1; font-variant-numeric: tabular-nums; }
+.cd span { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--band-muted); }
+.cd-now { margin-top: 12px; font-family: var(--display); font-weight: 900; font-size: 28px; text-transform: uppercase; color: var(--green); }
+/* Events als Eintrittskarte */
+.ticket { display: grid; grid-template-columns: 128px minmax(0, 1fr); filter: drop-shadow(0 6px 14px rgba(0,0,0,.08)); }
+.stub { background: var(--band); color: var(--band-ink); border-radius: 10px 0 0 10px; padding: 18px 10px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; position: relative; border-left: 6px solid var(--kit); }
+.stub::before, .stub::after { content: ""; position: absolute; right: -11px; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); z-index: 2; }
+.stub::before { top: -11px; } .stub::after { bottom: -11px; }
+.stub .big { font-family: var(--display); font-weight: 900; font-size: 58px; line-height: .9; font-variant-numeric: tabular-nums; }
+.stub .big.jub { color: var(--kit); font-size: 72px; }
+.stub .sm { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--band-muted); }
+.stub .dt { margin-top: 8px; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ticket-body { background: var(--surface); border: 1px solid var(--line); border-left: 2px dashed var(--line); border-radius: 0 10px 10px 0; padding: 18px 20px; position: relative; overflow: hidden; min-width: 0; }
+.ticket-body .stamp { position: absolute; right: 14px; top: 10px; width: 92px; opacity: .13; transform: rotate(-14deg); pointer-events: none; }
+.ticket-body h3 { font-size: 30px; font-weight: 900; line-height: 1.05; margin: 8px 0 8px; padding-right: 70px; overflow-wrap: anywhere; }
+.ticket-body p { margin: 0; color: var(--muted); white-space: pre-line; overflow-wrap: anywhere; }
+.ticket-body .meta { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.ticket-body .meta strong { color: var(--ink); }
+.ticket-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.ticket-actions a, .ticket-actions button { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 999px; padding: 7px 14px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.ticket-actions .wa { background: var(--green); border-color: var(--green); color: var(--green-ink); }
+.ticket-actions a:hover, .ticket-actions button:hover { border-color: var(--green); }
+.ticket.past { opacity: .7; }
+@media (max-width: 560px) {
+  .ticket { grid-template-columns: 1fr; }
+  .stub { border-radius: 10px 10px 0 0; border-left: 0; border-top: 6px solid var(--kit); flex-direction: row; gap: 10px; padding: 14px 16px; justify-content: flex-start; text-align: left; }
+  .stub::before, .stub::after { right: auto; top: auto; bottom: -11px; }
+  .stub::before { left: -11px; } .stub::after { right: -11px; }
+  .stub .dt { margin: 0 0 0 auto; }
+  .ticket-body { border-left: 1px solid var(--line); border-top: 2px dashed var(--line); border-radius: 0 0 10px 10px; }
+  .ticket-body h3 { font-size: 26px; padding-right: 50px; }
+}
+
+/* Spieltag */
+.matchbar { background: var(--band); color: var(--band-ink); border-bottom: 4px solid var(--kit); }
+.mb-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; padding-block: 0; }
+.mb-item.mb-table { border-left: 1px solid #2B332E; padding-left: 18px; }
+.mb-table .mb-teams .sc { margin: 0 8px 0 0; }
+.matchbar.live { background: var(--kit); }
+.matchbar.live .mb-next .mb-lbl { color: #0A0B0A; font-size: 13px; }
+.matchbar.live .mb-next .mb-teams { font-size: 30px; }
+.matchbar.live .mb-next .mb-teams .sc { color: #0A0B0A; }
+.matchbar.live .mb-next .mb-sub { color: #0A0B0A; font-weight: 600; }
+.matchbar.live .mb-item:not(.mb-next) { opacity: .9; }
+.matchbar.live .mb-lbl, .matchbar.live .mb-teams .sc { color: #0A0B0A; }
+.matchbar.live .mb-sub { color: #10301C; }
+.matchbar.live .mb-last, .matchbar.live .mb-table { border-color: rgba(0,0,0,.25); }
+@media (max-width: 600px) { .mb-item.mb-table { border-left: 0; border-top: 1px solid #2B332E; padding-left: 0; } }
+.mb-item { padding: 14px 18px 14px 0; display: grid; gap: 2px; min-width: 0; }
+.mb-last { border-left: 1px solid #2B332E; padding-left: 18px; }
+.mb-lbl { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--kit); }
+.mb-teams { font-family: var(--display); font-weight: 900; font-size: 24px; text-transform: uppercase; line-height: 1.1; overflow-wrap: anywhere; }
+.mb-teams .sc { color: var(--kit); margin: 0 6px; font-variant-numeric: tabular-nums; }
+.mb-sub { font-size: 13px; color: var(--band-muted); }
+@media (max-width: 600px) { .mb-last { border-left: 0; border-top: 1px solid #2B332E; padding-left: 0; } }
+/* Fotos nach Jahr */
+.year-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; border-bottom: 2px solid var(--line); margin-top: 8px; padding-bottom: 6px; }
+.year-head .an { font-family: var(--display); font-weight: 900; font-size: 30px; color: var(--green); line-height: 1.1; min-width: 0; overflow-wrap: anywhere; }
+.year-head .ab { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn.wa-btn { background: #1F9D55; border-color: #1F9D55; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.fs-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; margin-bottom: 14px; }
+.fs-row .fs-hint { margin: 0; }
+.fs-hint a { font-weight: 600; }
+.lb-meta { display: flex; flex-direction: column; min-width: 0; }
+.lb-meta #lb-alb { font-family: var(--display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: .02em; color: #6FD99A; }
+.lb-img img { transition: opacity .35s; }
+.lb-bar { height: 3px; background: rgba(255,255,255,.12); border-radius: 2px; overflow: hidden; }
+.lb-bar i { display: block; height: 100%; width: 0; background: #2FC46B; }
+@keyframes lbbar { from { width: 0; } to { width: 100%; } }
+.lb-ctrl { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+#lb-n { font-variant-numeric: tabular-nums; color: #A7B0AA; font-size: 14px; min-width: 64px; text-align: center; }
+/* Saison-Seite */
+body:not(.view-saison) #saison { display: none; }
+body.view-saison main section:not(#saison), body.view-saison .hero-text, body.view-saison #spieltag { display: none; }
+body.view-saison .hero .wrap { padding-block: 24px 20px; }
+a.btn { text-decoration: none; display: inline-flex; align-items: center; }
+.ss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-bottom: 30px; }
+.ss-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; min-width: 0; }
+.ss-card h3 { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
+.ss-card .hint { margin-top: 10px; min-height: 0; font-size: 13px; }
+.form-dots { display: flex; gap: 8px; margin-bottom: 10px; }
+.fd { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 15px; color: #fff; flex: none; }
+.fd.S { background: #1F9D55; } .fd.U { background: #7D8781; } .fd.N { background: #C2412D; }
+.form-list { list-style: none; margin: 0; padding: 0; font-size: 14px; color: var(--muted); display: grid; gap: 3px; }
+.form-list b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.scorers { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.scorers li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.scorers li span { min-width: 0; overflow-wrap: anywhere; }
+.scorers b { font-family: var(--display); font-size: 24px; line-height: 1; color: var(--green); font-variant-numeric: tabular-nums; }
+.pk-next { font-family: var(--display); font-weight: 700; font-size: 22px; text-transform: uppercase; line-height: 1.15; }
+.pk-sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.pk-path { list-style: none; margin: 10px 0 0; padding: 0; font-size: 14px; color: var(--muted); display: grid; gap: 3px; }
+.ss-h { font-size: clamp(28px, 5vw, 36px); font-weight: 900; margin: 0 0 12px; }
+.fx-list { display: grid; gap: 6px; }
+.fx { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; font-size: 16px; }
+.fx .dt { display: block; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; line-height: 1.35; margin-bottom: 1px; }
+.fx .nx { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--green-ink); background: var(--green); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+.fx .tm { min-width: 0; overflow-wrap: anywhere; line-height: 1.3; }
+.fx .tm .gl { font-weight: 700; }
+.fx .cp { display: block; font-size: 12px; color: var(--muted); margin-top: 1px; }
+.fx.pk .cp { color: var(--green); font-weight: 600; }
+.fx .rs { font-family: var(--display); font-weight: 900; font-size: 21px; padding: 2px 8px; border-radius: 6px; font-variant-numeric: tabular-nums; min-width: 54px; text-align: center; }
+.fx .rs.S { background: rgba(31,157,85,.16); color: #1F9D55; } .fx .rs.U { background: rgba(125,135,129,.2); } .fx .rs.N { background: rgba(194,65,45,.14); color: #C2412D; }
+.fx.cur { border-color: var(--green); border-left: 5px solid var(--green); }
+.fx-more { margin: 10px 0 30px; }
+.tbl-wrap { overflow-x: auto; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.tbl th, .tbl td { padding: 7px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl tr:last-child td { border-bottom: 0; }
+.tbl th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.tbl .t { text-align: left; white-space: normal; overflow-wrap: anywhere; }
+.tbl td.r { box-shadow: inset 4px 0 0 transparent; }
+.tbl tr.z1 td.r { box-shadow: inset 4px 0 0 #1F9D55; } .tbl tr.z2 td.r { box-shadow: inset 4px 0 0 #2B7BD6; } .tbl tr.z3 td.r { box-shadow: inset 4px 0 0 #6AA6E8; }
+.tbl tr.z4 td.r { box-shadow: inset 4px 0 0 #E39B2D; } .tbl tr.z5 td.r { box-shadow: inset 4px 0 0 #C2412D; }
+.tbl tr.me td { background: color-mix(in srgb, var(--green) 18%, transparent); font-weight: 700; }
+.tbl td.pt { font-weight: 700; }
+.tbl-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); margin-bottom: 30px; }
+.tbl-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+@media (max-width: 560px) { .tbl .hm { display: none; } .tbl th, .tbl td { padding: 7px 6px; } }
+.hist { background: var(--band); color: var(--band-ink); border-radius: 10px; padding: 18px 20px; border-left: 6px solid var(--kit); }
+.hist .when { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--kit); font-weight: 600; }
+.hist .day { font-family: var(--display); font-weight: 900; font-size: 32px; line-height: 1.1; text-transform: uppercase; margin: 4px 0 6px; }
+.hist p { margin: 0; max-width: 62ch; }
+.hist .more { margin-top: 12px; font-size: 14px; color: var(--band-muted); }
+/* Spiel-Countdown: bewusst dezent */
+.mb-cd { font-size: 12.5px; color: var(--band-muted); font-variant-numeric: tabular-nums; margin-top: 3px; }
+.matchbar.live .mb-cd { color: #10301C; }
+.mb-more { font-size: 13px; font-weight: 600; color: var(--kit); text-decoration: none; margin-top: 4px; }
+.mb-more:hover { text-decoration: underline; }
+.matchbar.live .mb-more { color: #0A0B0A; }
+/* Frage des Tages */
+.fdt { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 8px; padding: 16px 18px; max-width: 760px; }
+.fdt .lbl { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
+.fdt h3 { font-family: var(--body); text-transform: none; font-size: 19px; font-weight: 600; line-height: 1.35; letter-spacing: 0; margin: 4px 0 12px; }
+.fdt .qz-btns { margin-top: 14px; }
+/* Neu-Markierung */
+.new-badge { display: inline-block; background: var(--green); color: var(--green-ink); font-family: var(--body); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 2px 9px; vertical-align: 6px; margin-left: 8px; line-height: 1.5; }
+.teaser .txt strong .new-badge { vertical-align: 3px; }
+footer { background: var(--band); color: var(--band-muted); font-size: 14px; border-top: 8px solid var(--kit); }
+footer .wrap { padding-block: 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+footer a { color: var(--band-ink); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="kit" aria-hidden="true"></div>
+<header class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <div class="mark" aria-label="Brigade Mönchengladbach">
+        <svg id="mark-svg" viewBox="0 0 30 30" aria-hidden="true"><rect x="5" y="5" width="20" height="20" transform="rotate(45 15 15)" fill="var(--hero-ink)"/><rect x="8.5" y="8.5" width="13" height="13" transform="rotate(45 15 15)" fill="var(--hero-bg)"/><rect x="11.5" y="11.5" width="7" height="7" transform="rotate(45 15 15)" fill="var(--kit)"/></svg>
+        <img id="mark-img" alt="" hidden>
+        Brigade MG
+      </div>
+      <nav aria-label="Seitennavigation"><a href="#events">Events</a><a href="#ueber-uns">Über uns</a><a href="#fotos">Fotos</a><a href="#saison">Saison</a><a href="#gaestebuch">Gästebuch</a><a href="#kontakt">Kontakt</a></nav>
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow">Borussia-Fanclub seit 1992 · Elf vom Niederrhein</p>
+      <div class="title-row"><h1>Brigade<span>Mönchengladbach</span></h1><img id="hero-img" alt="Logo der Brigade Mönchengladbach: die Bulldogge" hidden></div>
+      <p class="tag" id="motto">Korrekte Kameraden sind bei uns immer willkommen.</p>
+      <div id="motto-admin" hidden>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center">
+          <button class="btn small" type="button" id="motto-open">Motto ändern</button>
+          <label class="btn small" for="logo-file" style="position:relative">Logo hochladen<input type="file" id="logo-file" accept="image/*" style="position:absolute;width:1px;height:1px;opacity:0"></label>
+          <span id="logo-hint" role="status" style="font-size:14px;color:var(--muted)"></span>
+        </div>
+        <form class="motto-edit" id="motto-form" hidden autocomplete="off">
+          <label for="motto-in" class="sr" style="position:absolute;left:-9999px">Motto</label>
+          <input type="text" id="motto-in" maxlength="140" placeholder="Euer Motto oder Schlachtruf">
+          <button class="btn small" type="submit">Speichern</button>
+          <button class="btn small" type="button" id="motto-cancel">Abbrechen</button>
+        </form>
+      </div>
+      <div class="next" id="next" aria-live="polite">
+        <div class="lbl">Aktuelles Event</div>
+        <div class="t" id="next-t">Wird geladen …</div>
+        <div class="d" id="next-d"></div>
+        <div class="cd" id="cd" hidden aria-label="Countdown bis zum Event">
+          <div><b id="cd-d">0</b><span>Tage</span></div><div><b id="cd-h">0</b><span>Std</span></div><div><b id="cd-m">0</b><span>Min</span></div><div><b id="cd-s">0</b><span>Sek</span></div>
+        </div>
+        <div class="cd-now" id="cd-now" hidden>Heute ist es so weit!</div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="matchbar" id="spieltag" aria-label="Borussia Spieltag" hidden>
+  <div class="wrap mb-wrap">
+    <div class="mb-item mb-next">
+      <div class="mb-lbl" id="mb-next-lbl">Nächstes Spiel</div>
+      <div class="mb-teams" id="mb-next-teams"></div>
+      <div class="mb-sub" id="mb-next-sub"></div>
+      <div class="mb-cd" id="mb-cd" hidden></div>
+      <div class="mb-wx" id="mb-wx" hidden></div>
+    </div>
+    <div class="mb-item mb-last">
+      <div class="mb-lbl">Letztes Spiel</div>
+      <div class="mb-teams" id="mb-last-teams"></div>
+      <div class="mb-sub" id="mb-last-sub"></div>
+    </div>
+    <div class="mb-item mb-table" id="mb-table" hidden>
+      <div class="mb-lbl">Tabelle</div>
+      <div class="mb-teams"><span class="sc" id="mb-rank"></span><span id="mb-pts"></span></div>
+      <div class="mb-sub" id="mb-table-sub"></div>
+      <a class="mb-more" href="#saison">Spielplan, Tabelle &amp; mehr →</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <section id="events" aria-labelledby="news-h">
+      <div class="sec-head"><h2 id="news-h">Events</h2><span class="note" id="news-note"></span></div>
+      <div class="editor" id="editor" hidden>
+        <h3 id="ed-title">Neues Event</h3>
+        <form id="ed-form" autocomplete="off">
+          <div class="grid2">
+            <label class="f" for="ed-head">Überschrift <input type="text" id="ed-head" maxlength="90" placeholder="z. B. Sommerfest 2027"></label>
+            <label class="f" for="ed-cat">Art
+              <select id="ed-cat"><option>Fest</option><option>Jubiläum</option><option>Auswärtsfahrt</option><option>Stammtisch</option><option>Info</option></select>
+            </label>
+            <label class="f" for="ed-date"><span>Termin <span style="font-weight:400">(optional)</span></span> <input type="date" id="ed-date"></label>
+            <label class="f" for="ed-place"><span>Ort <span style="font-weight:400">(optional)</span></span> <input type="text" id="ed-place" maxlength="80"></label>
+          </div>
+          <label class="f" for="ed-body" style="margin-top:12px">Text <textarea id="ed-body" maxlength="1500"></textarea></label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn primary" type="submit" id="ed-save">Veröffentlichen</button>
+            <button class="btn" type="button" id="ed-cancel" hidden>Abbrechen</button>
+          </div>
+          <div class="hint" id="ed-hint" role="status"></div>
+        </form>
+      </div>
+      <div class="news" id="news-list"><div class="empty">Events werden geladen …</div></div>
+    </section>
+
+    <section id="ueber-uns" aria-labelledby="about-h">
+      <div class="sec-head"><h2 id="about-h">Über uns</h2></div>
+      <div class="about">
+        <div>
+          <p>Die Brigade Mönchengladbach wurde 1992 von fünf Männern in der Gaststätte Reumers in Mönchengladbach-Eicken gegründet. Unser Zeichen ist die Bulldogge – auf Sweatshirts, Poloshirts und T-Shirts ist sie immer mit dabei.</p>
+          <p>Seitdem haben wir viel erlebt: Auswärtsfahrten quer durch Europa – von Kiew, Limassol und Marseille über Istanbul und Florenz bis Rom –, Sommerfeste, Planwagenfahrten und Weihnachtskegeln. Heute sind wir 10 aktive und 3 passive Mitglieder. Besonders freuen wir uns über Nachwuchs, den wir unterstützen, wo wir können.</p>
+        </div>
+        <div class="facts" aria-label="Fanclub in Zahlen">
+          <div class="fact"><div class="n">1992</div><div class="l">gegründet</div></div>
+          <div class="fact"><div class="n">10</div><div class="l">aktive Mitglieder</div></div>
+          <div class="fact"><div class="n">3</div><div class="l">passive Mitglieder</div></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="fotos-teaser" aria-labelledby="ft-h">
+      <div class="sec-head"><h2 id="ft-h">Fotos</h2></div>
+      <a class="teaser" href="#fotos" id="ft-link">
+        <span class="thumbs" id="ft-imgs"></span>
+        <span class="txt"><strong id="ft-t">35 Jahre in Bildern</strong><span id="ft-s">Auswärtsfahrten, Feste und Jubiläen</span></span>
+        <span class="btn primary" id="ft-btn">Alle Fotos ansehen →</span>
+      </a>
+    </section>
+
+    <section id="fotos" aria-labelledby="foto-h">
+      <a class="back" href="#start">← Zurück zur Startseite</a>
+      <div class="sec-head"><h2 id="foto-h">35 Jahre in Bildern</h2><span class="note">Alle Fotos sind Eigentum der Brigade Mönchengladbach.</span></div>
+      <div class="fsearch" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <label for="foto-q" style="position:absolute;left:-9999px">Fotos durchsuchen</label>
+        <input type="search" id="foto-q" placeholder="Suchen: Hamburg, Pokal, 2026 …" autocomplete="off" enterkeyhint="search">
+        <button class="clr" type="button" id="foto-q-clr" aria-label="Suche löschen" hidden>×</button>
+      </div>
+      <div class="fs-row">
+        <div class="fs-hint" id="foto-q-hint" role="status"></div>
+        <button class="btn primary" type="button" id="show-all" hidden>▶ Diashow: alle Fotos</button>
+      </div>
+      <div class="archive"><span><strong>Fotoarchiv 1992–2020</strong><br><span style="color:var(--muted);font-size:15px">Hunderte Alben von Auswärtsfahrten, Festen und Jubiläen auf unserer alten Seite.</span></span><a class="btn small" href="https://brigademg.jimdoweb.com/fotos/" target="_blank" rel="noopener">Zum Archiv</a></div>
+      <div class="editor" id="foto-editor" hidden>
+        <h3>Foto hochladen</h3>
+        <div class="grid2" style="align-items:end">
+          <label class="f" for="foto-year">Jahr <input type="text" id="foto-year" inputmode="numeric" maxlength="4" placeholder="z. B. 2017"></label>
+          <label class="f" for="foto-album"><span>Album / Überschrift <span style="font-weight:400">(optional)</span></span> <input type="text" id="foto-album" maxlength="60" placeholder="z. B. Weihnachtskegeln 2026"></label>
+          <label class="filebtn" for="foto-file">Foto auswählen <input type="file" id="foto-file" accept="image/*"></label>
+        </div>
+        <div class="hint" id="foto-hint" role="status"></div>
+      </div>
+      <div class="gallery" id="foto-list"><div class="empty">Wird geladen …</div></div>
+    </section>
+
+    <section id="saison" aria-labelledby="ss-hd">
+      <a class="back" href="#start">← Zurück zur Startseite</a>
+      <div class="sec-head"><h2 id="ss-hd">Saison <span id="ss-season">2026/27</span></h2><span class="note" id="ss-stand"></span></div>
+      <div class="empty" id="ss-empty" style="margin-bottom:30px">Saisondaten werden geladen …</div>
+      <div id="ss-body" hidden>
+        <div class="ss-grid">
+          <div class="ss-card"><h3>Formkurve</h3><div class="form-dots" id="ss-form"></div><ul class="form-list" id="ss-form-list"></ul><div class="hint">Letzte 5 Bundesligaspiele, das neueste rechts.</div></div>
+          <div class="ss-card"><h3>Torjäger</h3><ol class="scorers" id="ss-scorers"></ol><div class="hint">Tore in der Bundesliga</div></div>
+          <div class="ss-card" id="ss-pk-card"><h3>DFB-Pokal</h3><div id="ss-pk"></div></div>
+        </div>
+        <h3 class="ss-h">Spielplan</h3>
+        <div class="fx-list" id="ss-fx"></div>
+        <div class="fx-more"><button class="btn small" type="button" id="ss-fx-all">Alle Spiele anzeigen</button></div>
+        <h3 class="ss-h">Tabelle</h3>
+        <div class="tbl-wrap"><table class="tbl" id="ss-tbl"><thead><tr><th class="r">#</th><th class="t">Verein</th><th>Sp</th><th class="hm">S</th><th class="hm">U</th><th class="hm">N</th><th class="hm">Tore</th><th>Diff</th><th>Pkt</th></tr></thead><tbody></tbody></table></div>
+        <div class="tbl-legend"><span><i style="background:#1F9D55"></i>Champions League</span><span><i style="background:#2B7BD6"></i>Europa League</span><span><i style="background:#6AA6E8"></i>Conference League</span><span><i style="background:#E39B2D"></i>Relegation</span><span><i style="background:#C2412D"></i>Abstieg</span></div>
+      </div>
+      <h3 class="ss-h">Borussia-Geschichte</h3>
+      <div class="hist" id="ss-hist"></div>
+    </section>
+
+    <section id="gaestebuch" aria-labelledby="gb-h">
+      <div class="sec-head"><h2 id="gb-h">Gästebuch</h2><span class="note">Einträge erscheinen nach kurzer Prüfung.</span></div>
+      <div class="gb-write" id="gb-write">
+        <p>Grüße an die Brigade, Erinnerungen an gemeinsame Fahrten oder einfach ein paar nette Worte? Du willst ins Gästebuch? Dann schick einfach eine Mail an Frank – wir tragen deinen Eintrag ein.</p>
+        <div class="gbw-mail">
+          <code id="gb-mail">frankst83@web.de</code>
+          <button class="btn small" type="button" id="gb-copy">Adresse kopieren</button>
+          <span id="gb-copy-hint" role="status"></span>
+        </div>
+        <p class="gbw-how">Schreib in die Mail <strong>deinen Namen</strong>, <strong>woher du kommst</strong> (wenn du magst) und <strong>deinen Eintrag</strong>. Mit dem Senden bist du einverstanden, dass dein Eintrag mit Name und Ort hier veröffentlicht wird.</p>
+      </div>
+      <div class="editor" id="gb-editor" hidden>
+        <h3>Gästebuch-Eintrag eintragen</h3>
+        <form id="gb-form" autocomplete="off">
+          <div class="grid2">
+            <label class="f" for="gb-name">Name <input type="text" id="gb-name" maxlength="60"></label>
+            <label class="f" for="gb-place"><span>Ort <span style="font-weight:400">(optional)</span></span> <input type="text" id="gb-place" maxlength="60"></label>
+            <label class="f" for="gb-date"><span>Datum <span style="font-weight:400">(leer = heute)</span></span> <input type="date" id="gb-date"></label>
+          </div>
+          <label class="f" for="gb-text" style="margin-top:12px">Text <textarea id="gb-text" maxlength="800"></textarea></label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn primary" type="submit">Speichern</button>
+            <button class="btn" type="button" id="gb-cancel" hidden>Abbrechen</button>
+          </div>
+          <div class="hint" id="gb-hint" role="status">Einträge kommen per Mail an frankst83@web.de. Text hier einfügen und speichern – Besucher sehen ihn spätestens am nächsten Morgen.</div>
+        </form>
+      </div>
+      <div class="gb-list" id="gb-list"><div class="empty">Wird geladen …</div></div>
+    </section>
+
+    <section id="quiz-teaser" aria-labelledby="qt-h">
+      <div class="sec-head"><h2 id="qt-h">Fohlen-Quiz</h2><span class="note">Jeden Tag eine neue Frage</span></div>
+      <div class="fdt" id="fdt">
+        <div class="lbl">Frage des Tages</div>
+        <h3 id="fdt-q">Wird geladen …</h3>
+        <div class="qz-opts" id="fdt-opts"></div>
+        <div id="fdt-after"></div>
+        <div class="qz-btns"><a class="btn primary" href="#quiz">Ganzes Quiz: 10 schwere Fragen →</a></div>
+      </div>
+    </section>
+
+    <section id="quiz" aria-labelledby="quiz-h">
+      <a class="back" href="#start">← Zurück zur Startseite</a>
+      <div class="sec-head"><h2 id="quiz-h">Fohlen-Quiz</h2><span class="note">10 Fragen aus einem Pool von <span id="qz-count">über 250</span> · bereits gestellte Fragen kommen erst wieder, wenn alle durch sind</span></div>
+      <div class="qz" id="qz" aria-live="polite"></div>
+    </section>
+
+    <section id="kontakt" class="join" aria-labelledby="join-h">
+      <h2 id="join-h">Kontakt</h2>
+      <p>Fragen zur Brigade oder zu unseren Events? Schreib uns einfach eine Mail – wir melden uns.</p>
+      <div class="mail">
+        <code id="mail">frankst83@web.de</code>
+        <button class="btn small" type="button" id="copy">Adresse kopieren</button>
+        <span id="copy-hint" role="status" style="font-size:14px"></span>
+      </div>
+          </section>
+
+    <section id="impressum" class="imprint" aria-labelledby="imp-h">
+      <h2 id="imp-h">Impressum</h2>
+      <p class="note">Angaben gemäß § 5 DDG</p>
+      <p>Brigade Mönchengladbach<br>Frank Königs<br>Stapper Weg 154<br>41199 Mönchengladbach</p>
+      <p><strong>Kontakt</strong><br>E-Mail: frankst83@web.de</p>
+      <p><strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>Frank Königs, Anschrift wie oben</p>
+      <p class="note">Die Brigade Mönchengladbach ist ein privater Fanclub und steht in keiner offiziellen Verbindung zu Borussia VfL 1900 Mönchengladbach GmbH. Für die Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Brigade Mönchengladbach · seit 1992</span>
+    <a href="#impressum">Impressum</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ansehen">
+  <div class="lb-top"><span class="lb-meta"><span id="lb-alb"></span></span><button class="btn small" type="button" id="lb-close">Schließen ✕</button></div>
+  <div class="lb-img"><img id="lb-img" alt=""></div>
+  <div class="lb-bar" id="lb-bar" hidden><i id="lb-bar-i"></i></div>
+  <div class="lb-ctrl"><button class="btn small" type="button" id="lb-prev">← Zurück</button><span id="lb-n"></span><button class="btn small" type="button" id="lb-next">Weiter →</button><button class="btn small" type="button" id="lb-play">▶ Diashow</button></div>
+</div>
+
+<canvas id="fx" hidden></canvas>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var MON = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
+  var S = { posts: [], col: null, canEdit: false, editing: null, confirm: null, loaded: false };
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function today() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function fmt(s) { var p = s.split("-"); return p[2] + "." + p[1] + "." + p[0]; }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function str(v, n) { return typeof v === "string" ? v.slice(0, n) : ""; }
+  function clean(d) {
+    var date = typeof d.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d.date) ? d.date : "";
+    return { id: d.id, title: str(d.title, 90), body: str(d.body, 1500), cat: str(d.cat, 20) || "Info", date: date, place: str(d.place, 80), createdAt: typeof d.createdAt === "number" ? d.createdAt : 0 };
+  }
+  function sorted() {
+    var t = today();
+    var up = S.posts.filter(function (p) { return p.date && p.date >= t; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    var rest = S.posts.filter(function (p) { return !(p.date && p.date >= t); }).sort(function (a, b) { return (b.date || "").localeCompare(a.date || "") || (b.createdAt || 0) - (a.createdAt || 0); });
+    return up.concat(rest);
+  }
+  var SITE_URL = "http://brigademg.de", LOGO = "", DL = null, NEXT = null;
+  function nextEvent() {
+    var t = today();
+    return S.posts.filter(function (p) { return p.date && p.date >= t; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; })[0] || null;
+  }
+  function renderNext() {
+    var up = nextEvent(); NEXT = up;
+    if (up) { $("next-t").textContent = up.title || up.cat; $("next-d").textContent = fmt(up.date) + (up.place ? " · " + up.place : ""); }
+    else { $("next-t").textContent = S.loaded ? "Noch kein Event geplant" : "Wird geladen …"; $("next-d").textContent = S.loaded ? "Neue Events erscheinen hier, sobald sie eingetragen sind." : ""; }
+    tick();
+  }
+  function tick() {
+    if (!NEXT) { $("cd").hidden = true; $("cd-now").hidden = true; return; }
+    var p = NEXT.date.split("-"), target = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0), diff = target - new Date();
+    if (diff <= 0) { $("cd").hidden = true; $("cd-now").hidden = false; return; }
+    $("cd-now").hidden = true; $("cd").hidden = false;
+    var sec = Math.floor(diff / 1000);
+    $("cd-d").textContent = Math.floor(sec / 86400); $("cd-h").textContent = pad(Math.floor(sec % 86400 / 3600));
+    $("cd-m").textContent = pad(Math.floor(sec % 3600 / 60)); $("cd-s").textContent = pad(sec % 60);
+  }
+  setInterval(tick, 1000);
+  function ymd(s) { return s.replace(/-/g, ""); }
+  function plusDay(s) { var p = s.split("-"), d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + 1)); return d.getUTCFullYear() + pad(d.getUTCMonth() + 1) + pad(d.getUTCDate()); }
+  function icsEsc(v) { return String(v || "").replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n"); }
+  function ics(p) {
+    return ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Brigade Moenchengladbach//Events//DE", "BEGIN:VEVENT",
+      "UID:" + p.id + "@brigade-mg", "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z",
+      "DTSTART;VALUE=DATE:" + ymd(p.date), "DTEND;VALUE=DATE:" + plusDay(p.date),
+      "SUMMARY:" + icsEsc(p.title), "DESCRIPTION:" + icsEsc(p.body + "\n\n" + SITE_URL), p.place ? "LOCATION:" + icsEsc(p.place) : "",
+      "END:VEVENT", "END:VCALENDAR"].filter(Boolean).join("\r\n");
+  }
+  function gcal(p) {
+    var q = "action=TEMPLATE&text=" + encodeURIComponent(p.title) + "&dates=" + ymd(p.date) + "/" + plusDay(p.date) +
+      "&details=" + encodeURIComponent(p.body.slice(0, 600) + "\n\n" + SITE_URL) + (p.place ? "&location=" + encodeURIComponent(p.place) : "");
+    return "https://calendar.google.com/calendar/render?" + q;
+  }
+  function wa(p) {
+    var t = p.title + (p.date ? " – " + fmt(p.date) : "") + (p.place ? " · " + p.place : "") + "\nBrigade Mönchengladbach: " + SITE_URL;
+    return "https://wa.me/?text=" + encodeURIComponent(t);
+  }
+  function renderNews() {
+    var list = sorted();
+    if (!S.loaded) return;
+    if (!list.length) { $("news-list").innerHTML = '<div class="empty">Noch keine Events. Hier erscheinen Feste, Jubiläen und Auswärtsfahrten.</div>'; return; }
+    var t = today();
+    $("news-list").innerHTML = list.map(function (p) {
+      var d = p.date ? p.date.split("-") : null, past = p.date && p.date < t;
+      var jm = /(\d{1,3})\s*Jahre/i.exec(p.title || "");
+      var stub = jm
+        ? '<div class="big jub">' + esc(jm[1]) + '</div><div class="sm">Jahre</div>' + (d ? '<div class="dt">' + esc(fmt(p.date)) + "</div>" : "")
+        : (d ? '<div class="big">' + esc(d[2]) + '</div><div class="sm">' + esc(MON[+d[1] - 1] + " " + d[0]) + "</div>" : '<div class="big">!</div><div class="sm">Info</div>');
+      var adm = "";
+      if (S.canEdit) {
+        adm = S.confirm === p.id
+          ? '<div class="adm"><button class="btn small danger" type="button" data-del="' + esc(p.id) + '">Wirklich löschen</button><button class="btn small" type="button" data-cancel="1">Abbrechen</button></div>'
+          : '<div class="adm"><button class="btn small" type="button" data-edit="' + esc(p.id) + '">Bearbeiten</button><button class="btn small" type="button" data-ask="' + esc(p.id) + '">Löschen</button></div>';
+      }
+      var acts = "";
+      if (!past) {
+        acts = '<div class="ticket-actions">' +
+          (p.date && DL ? '<button type="button" data-ics="' + esc(p.id) + '">In den Kalender</button>' : "") +
+          (p.date ? '<a href="' + esc(gcal(p)) + '" target="_blank" rel="noopener">Google Kalender</a>' : "") +
+          '<a class="wa" href="' + esc(wa(p)) + '" target="_blank" rel="noopener">Per WhatsApp teilen</a></div>';
+      }
+      return '<article class="ticket' + (past ? " past" : "") + '"><div class="stub">' + stub + '</div><div class="ticket-body">' +
+        (LOGO ? '<img class="stamp" src="' + esc(LOGO) + '" alt="">' : "") +
+        '<span class="chip">' + esc(past ? "Vorbei · " + p.cat : p.cat) + "</span><h3>" + esc(p.title) + "</h3><p>" + esc(p.body) + "</p>" +
+        (p.date || p.place ? '<div class="meta">' + (p.date ? "<strong>Wann:</strong> " + fmt(p.date) : "") + (p.date && p.place ? " · " : "") + (p.place ? "<strong>Wo:</strong> " + esc(p.place) : "") + "</div>" : "") +
+        acts + adm + "</div></article>";
+    }).join("");
+  }
+  function render() { renderNext(); renderNews(); }
+  function resetForm() {
+    S.editing = null; $("ed-form").reset(); $("ed-title").textContent = "Neues Event"; $("ed-save").textContent = "Veröffentlichen"; $("ed-cancel").hidden = true;
+  }
+
+  $("ed-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (!S.col) return;
+    var title = $("ed-head").value.trim(), body = $("ed-body").value.trim();
+    if (!title) { $("ed-hint").textContent = "Bitte eine Überschrift eingeben."; $("ed-head").focus(); return; }
+    var data = { title: title, body: body, cat: $("ed-cat").value, date: $("ed-date").value || "", place: $("ed-place").value.trim() };
+    try {
+      if (S.editing) {
+        var old = S.posts.filter(function (p) { return p.id === S.editing; })[0];
+        data.createdAt = old ? old.createdAt : Date.now();
+        await S.col.doc(S.editing).set(data);
+        $("ed-hint").textContent = "Änderungen gespeichert.";
+      } else {
+        data.createdAt = Date.now();
+        await S.col.add(data);
+        $("ed-hint").textContent = "Veröffentlicht.";
+      }
+      resetForm();
+    } catch (err) { $("ed-hint").textContent = "Speichern hat nicht geklappt. Bitte noch einmal versuchen."; }
+  });
+  $("ed-cancel").addEventListener("click", function () { resetForm(); $("ed-hint").textContent = ""; });
+  $("news-list").addEventListener("click", async function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.ics) {
+      var ev = S.posts.filter(function (x) { return x.id === b.dataset.ics; })[0];
+      if (ev && DL) { try { await DL.save({ filename: (ev.title || "event").replace(/[^A-Za-z0-9ÄÖÜäöüß& -]/g, "").trim().replace(/\s+/g, "-") + ".ics", data: new Blob([ics(ev)], { type: "text/calendar" }) }); } catch (x) {} }
+      return;
+    }
+    if (!S.canEdit) return;
+    if (b.dataset.ask) { S.confirm = b.dataset.ask; renderNews(); }
+    else if (b.dataset.cancel) { S.confirm = null; renderNews(); }
+    else if (b.dataset.del) { var id = b.dataset.del; S.confirm = null; try { await S.col.doc(id).delete(); } catch (x) {} }
+    else if (b.dataset.edit) {
+      var p = S.posts.filter(function (x) { return x.id === b.dataset.edit; })[0]; if (!p) return;
+      S.editing = p.id; $("ed-head").value = p.title; $("ed-body").value = p.body; $("ed-cat").value = p.cat; $("ed-date").value = p.date; $("ed-place").value = p.place;
+      $("ed-title").textContent = "Event bearbeiten"; $("ed-save").textContent = "Speichern"; $("ed-cancel").hidden = false; $("ed-hint").textContent = "";
+      $("editor").scrollIntoView({ behavior: "smooth", block: "start" }); $("ed-head").focus({ preventScroll: true });
+    }
+  });
+  $("copy").addEventListener("click", function () {
+    var t = $("mail").textContent;
+    try {
+      navigator.clipboard.writeText(t).then(function () { $("copy-hint").textContent = "Kopiert."; }, sel);
+    } catch (x) { sel(); }
+    function sel() { var r = document.createRange(); r.selectNodeContents($("mail")); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); $("copy-hint").textContent = "Markiert – jetzt kopieren."; }
+  });
+
+
+  /* ---------- Weitere Bereiche ---------- */
+  function adm(id, confirm) {
+    return confirm
+      ? '<div class="adm" style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn small danger" type="button" data-del="' + esc(id) + '">Wirklich löschen</button><button class="btn small" type="button" data-cancel="1">Abbrechen</button></div>'
+      : '<div class="adm" style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn small" type="button" data-edit="' + esc(id) + '">Bearbeiten</button><button class="btn small" type="button" data-ask="' + esc(id) + '">Löschen</button></div>';
+  }
+  function makeSection(o) {
+    var st = { items: [], col: null, confirm: null, editing: null, loaded: false };
+    function draw() {
+      if (!st.loaded) return;
+      var items = st.items.slice().sort(o.sort), total = items.length;
+      if (o.filter) items = items.filter(o.filter);
+      if (o.afterFilter) o.afterFilter(items, total);
+      if (!items.length) { $(o.list).innerHTML = total && o.emptyFiltered ? o.emptyFiltered() : o.empty; if (o.afterDraw) o.afterDraw(items); return; }
+      var itemFn = function (it) { return o.item(it, S.canEdit ? adm(it.id, st.confirm === it.id) : ""); };
+      $(o.list).innerHTML = o.render ? o.render(items, itemFn) : items.map(itemFn).join("");
+      if (o.afterDraw) o.afterDraw(items);
+    }
+    function fill(it) { o.fields.forEach(function (f) { $(f.id).value = it ? (it[f.key] || "") : ""; }); }
+    if (o.form) {
+      $(o.form).addEventListener("submit", async function (e) {
+        e.preventDefault(); if (!st.col) return;
+        var data = {};
+        o.fields.forEach(function (f) { data[f.key] = $(f.id).value.trim().slice(0, f.max); });
+        if (!data[o.required]) { $(o.hint).textContent = o.reqMsg; $(o.fields[0].id).focus(); return; }
+        if (o.prepare) o.prepare(data);
+        try {
+          if (st.editing) {
+            var old = st.items.filter(function (x) { return x.id === st.editing; })[0];
+            data.createdAt = old ? old.createdAt : Date.now();
+            await st.col.doc(st.editing).set(data); $(o.hint).textContent = "Gespeichert.";
+          } else { data.createdAt = Date.now(); await st.col.add(data); $(o.hint).textContent = "Hinzugefügt."; }
+          st.editing = null; fill(null); $(o.cancel).hidden = true;
+        } catch (x) { $(o.hint).textContent = "Speichern hat nicht geklappt. Bitte noch einmal versuchen."; }
+      });
+      $(o.cancel).addEventListener("click", function () { st.editing = null; fill(null); $(o.cancel).hidden = true; $(o.hint).textContent = ""; });
+    }
+    $(o.list).addEventListener("click", async function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      if (o.onButton && o.onButton(b)) return;
+      if (o.onOpen && b.dataset.open != null) { o.onOpen(b.dataset.open); return; }
+      if (!S.canEdit) return;
+      if (b.dataset.ask) { st.confirm = b.dataset.ask; draw(); }
+      else if (b.dataset.cancel) { st.confirm = null; draw(); }
+      else if (b.dataset.del) {
+        var it = st.items.filter(function (x) { return x.id === b.dataset.del; })[0]; st.confirm = null;
+        try { await st.col.doc(b.dataset.del).delete(); } catch (x) {}
+        if (it && o.onDelete) o.onDelete(it);
+      } else if (b.dataset.edit && o.form) {
+        var en = st.items.filter(function (x) { return x.id === b.dataset.edit; })[0]; if (!en) return;
+        st.editing = en.id; fill(en); $(o.cancel).hidden = false; $(o.hint).textContent = "";
+        $(o.editor).scrollIntoView({ behavior: "smooth", block: "start" }); $(o.fields[0].id).focus({ preventScroll: true });
+      }
+    });
+    return {
+      st: st, draw: draw,
+      start: function (db) {
+        st.col = db.collection(o.col);
+        if (S.canEdit) $(o.editor).hidden = false;
+        st.col.onSnapshot(function (snap) {
+          if (!snap.docs.length && !S.canEdit && o.keepPublic && o.keepPublic()) return;
+          if (o.onLive) o.onLive();
+          st.items = snap.docs.map(function (d) { var x = Object.assign({}, d.data()); x.id = d.id; return o.clean(x); }).filter(Boolean);
+          st.loaded = true; draw();
+        }, function () { st.loaded = true; draw(); });
+      },
+      setItems: function (arr) { st.items = arr.filter(function (x) { return x && typeof x === "object"; }).map(function (x) { return o.clean(Object.assign({}, x)); }).filter(Boolean); st.loaded = true; draw(); },
+      offline: function () { st.loaded = true; draw(); }
+    };
+  }
+  function yr(v) { var n = parseInt(v, 10); return isNaN(n) ? 99999 : n; }
+  var ASSETS = null, LB = -1;
+  /* Neueste Jahre zuerst; innerhalb eines Albums in Reihenfolge des Hochladens (erzählt die Tour) */
+  var ALBC = { src: null, m: {} };
+  function albStart(it) {
+    var items = FOTO.st.items;
+    if (ALBC.src !== items) { ALBC.src = items; ALBC.m = {}; items.forEach(function (x) { var k = (x.year || "") + "|" + (x.album || ""); if (!(k in ALBC.m) || x.createdAt < ALBC.m[k]) ALBC.m[k] = x.createdAt; }); }
+    return ALBC.m[(it.year || "") + "|" + (it.album || "")] || 0;
+  }
+  /* Neuestes Jahr zuerst, darin das neueste Album zuerst; im Album in Reihenfolge des Hochladens */
+  function photoSort(a, b) { return (b.year || "0").localeCompare(a.year || "0") || albStart(b) - albStart(a) || (a.album || "").localeCompare(b.album || "") || a.createdAt - b.createdAt; }
+  function photoSrc(it) { return it.src || "/_blob/" + encodeURIComponent(it.asset); }
+  function photosSorted() { return FOTO.st.items.slice().sort(photoSort).filter(photoMatch); }
+  /* Suche: findet Album, Bildunterschrift und Jahr – ohne Rücksicht auf Groß/Klein und Umlaute */
+  function norm(v) { return String(v || "").toLowerCase().replace(/\u{1F4A9}/gu, "k").replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "ss").normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+  var FQ = [];
+  function photoMatch(it) {
+    if (ALBF && slug(albName(it)) !== ALBF) return false;
+    if (!FQ.length) return true;
+    var hay = norm([it.album, it.year].join(" "));
+    return FQ.every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+  /* Album-Kennung für Links und Diashow pro Album */
+  function albName(it) { return it.album || it.year || "Ohne Jahr"; }
+  /* Neuestes Album (zuletzt angelegt) – gilt 21 Tage lang als „Neu“ */
+  var NEWALB = "", NEW_DAYS = 21;
+  function newestAlbum() {
+    var best = null;
+    FOTO.st.items.forEach(function (it) { var s = albStart(it); if (!best || s > best.s) best = { s: s, a: albName(it) }; });
+    return best && best.s && Date.now() - best.s < NEW_DAYS * 86400000 ? best.a : "";
+  }
+  function slug(v) { return norm(v).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "album"; }
+  var ALBF = "";
+  /* Großansicht + Diashow (läuft endlos, auch über alle Alben) */
+  var LBL = [], PLAY = false, SLIDE_MS = 5000, SLT = null;
+  function openLb(i, list) {
+    if (list) LBL = list;
+    var n = LBL.length; if (!n) return;
+    i = ((i % n) + n) % n; var it = LBL[i]; LB = i;
+    var img = $("lb-img"); img.style.opacity = "0";
+    img.onload = function () { img.style.opacity = "1"; if (PLAY) schedule(); };
+    img.src = photoSrc(it); img.alt = "Foto: " + albName(it);
+    $("lb-alb").textContent = albName(it);
+    $("lb-n").textContent = (i + 1) + " / " + n;
+    $("lb-prev").disabled = !PLAY && i === 0; $("lb-next").disabled = !PLAY && i === n - 1;
+    if (n > 1) { var nx = new Image(); nx.src = photoSrc(LBL[(i + 1) % n]); }
+    if ($("lb").hidden) { $("lb").hidden = false; $("lb-close").focus(); }
+    clearTimeout(SLT); bar(false);
+    if (PLAY && img.complete && img.naturalWidth) { img.style.opacity = "1"; schedule(); }
+  }
+  function bar(on) {
+    var b = $("lb-bar-i"); b.style.animation = "none"; void b.offsetWidth;
+    if (on) b.style.animation = "lbbar " + SLIDE_MS + "ms linear forwards";
+  }
+  function schedule() { clearTimeout(SLT); bar(true); SLT = setTimeout(function () { if (PLAY) openLb(LB + 1); }, SLIDE_MS); }
+  function setPlay(on) {
+    PLAY = on; $("lb-bar").hidden = !on;
+    $("lb-play").textContent = on ? "❚❚ Pause" : "▶ Diashow";
+    clearTimeout(SLT); bar(false);
+    if (on) { $("lb-prev").disabled = false; $("lb-next").disabled = false; if ($("lb-img").complete) schedule(); }
+    else { $("lb-prev").disabled = LB === 0; $("lb-next").disabled = LB === LBL.length - 1; }
+  }
+  function startShow(list) {
+    if (!list.length) return;
+    openLb(0, list); setPlay(true);
+    try { var el = $("lb"); if (el.requestFullscreen && document.fullscreenEnabled && !document.fullscreenElement) el.requestFullscreen().catch(function () {}); } catch (x) {}
+  }
+  function closeLb() {
+    setPlay(false); $("lb").hidden = true; $("lb-img").removeAttribute("src"); LB = -1;
+    try { if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function () {}); } catch (x) {}
+  }
+  function waAlbum(name, count) {
+    var t = "📸 Fotos der Brigade Mönchengladbach: „" + name + "“ (" + count + (count === 1 ? " Foto" : " Fotos") + ")\n👉 " + SITE_URL + "#fotos/" + slug(name);
+    return "https://wa.me/?text=" + encodeURIComponent(t);
+  }
+  var FOTO = makeSection({
+    col: "photos", list: "foto-list", editor: "foto-editor", fields: [],
+    keepPublic: function () { return !!PUB; }, onLive: function () { LIVE.photos = true; },
+    filter: photoMatch,
+    afterFilter: function (items, total) {
+      var q = $("foto-q").value.trim(), h = $("foto-q-hint");
+      if (ALBF) {
+        var nm = items.length ? albName(items[0]) : "";
+        h.innerHTML = (nm ? "Album „" + esc(nm) + "“ · " : "Album nicht gefunden · ") + '<a href="#fotos">Alle Fotos zeigen</a>';
+      } else h.textContent = q ? (items.length ? items.length + " von " + total + " Fotos gefunden" : "") : "";
+      $("show-all").hidden = !items.length;
+      $("show-all").textContent = "▶ Diashow: " + (q || ALBF ? items.length + (items.length === 1 ? " Foto" : " Fotos") : "alle Fotos");
+    },
+    emptyFiltered: function () { return '<div class="empty" style="grid-column:1/-1">Keine Fotos zu „' + esc($("foto-q").value.trim()) + '“ gefunden. Versuch es z. B. mit einer Stadt oder einem Jahr.</div>'; },
+    afterDraw: function () {
+      var items = FOTO.st.items.slice().sort(photoSort);
+      var albums = {}; items.forEach(function (it) { albums[it.album || it.year || "-"] = 1; });
+      var na = Object.keys(albums).length, nw = newestAlbum();
+      var pick = nw ? items.filter(function (it) { return albName(it) === nw; }) : items;
+      $("ft-imgs").innerHTML = (pick.length ? pick : items).slice(0, 4).map(function (it) { return '<img src="' + esc(photoSrc(it)) + '" alt="" loading="lazy">'; }).join("");
+      $("ft-t").innerHTML = nw ? esc(nw) + '<span class="new-badge">Neu</span>' : "35 Jahre in Bildern";
+      $("ft-s").textContent = nw ? "Neues Album · insgesamt " + items.length + " Fotos" + (na > 1 ? " in " + na + " Alben" : "") : items.length + (items.length === 1 ? " Foto" : " Fotos") + (na > 1 ? " in " + na + " Alben" : "");
+      $("ft-link").setAttribute("href", nw ? "#fotos/" + slug(nw) : "#fotos");
+      $("ft-btn").textContent = nw ? "Album ansehen →" : "Alle Fotos ansehen →";
+    },
+    clean: function (d) { return typeof d.asset === "string" && /^[A-Za-z0-9_-]{8,64}$/.test(d.asset) ? { id: d.id, asset: d.asset, src: typeof d.src === "string" && /^fotos\/[A-Za-z0-9_-]{1,80}\.(jpg|png)$/.test(d.src) ? d.src : "", caption: "", album: str(d.album, 60).trim(), year: /^(19|20)\d\d$/.test(d.year || "") ? d.year : "", createdAt: typeof d.createdAt === "number" ? d.createdAt : 0 } : null; },
+    sort: photoSort,
+    render: function (items, itemFn) {
+      NEWALB = newestAlbum();
+      var cnt = {}; FOTO.st.items.forEach(function (it) { var a = albName(it); cnt[a] = (cnt[a] || 0) + 1; });
+      var h = "", cur = null;
+      items.forEach(function (it) {
+        var y = albName(it);
+        if (y !== cur) {
+          cur = y;
+          h += '<div class="year-head"><span class="an">' + esc(y) + (y === NEWALB ? '<span class="new-badge">Neu</span>' : "") + '</span><span class="ab"><button class="btn small" type="button" data-play-album="' + esc(slug(y)) + '">▶ Abspielen</button></span></div>';
+        }
+        h += itemFn(it);
+      });
+      return h;
+    },
+    onButton: function (b) {
+      if (b.dataset.playAlbum == null) return false;
+      var sl = b.dataset.playAlbum; startShow(FOTO.st.items.slice().sort(photoSort).filter(function (it) { return slug(albName(it)) === sl; }));
+      return true;
+    },
+    empty: '<div class="empty" style="grid-column:1/-1">Noch keine Fotos. Hier landen bald Bilder von Auswärtsfahrten, Festen und Jubiläen.</div>',
+    onOpen: function (i) { openLb(+i, photosSorted()); },
+    onDelete: function (it) { if (ASSETS) ASSETS.delete(it.asset).catch(function () {}); },
+    item: function (it, a) {
+      var idx = photosSorted().indexOf(it);
+      var del = S.canEdit ? (FOTO.st.confirm === it.id
+        ? '<div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn small danger" type="button" data-del="' + esc(it.id) + '">Wirklich löschen</button><button class="btn small" type="button" data-cancel="1">Abbrechen</button></div>'
+        : '<div><button class="btn small" type="button" data-ask="' + esc(it.id) + '">Löschen</button></div>') : "";
+      return '<div class="photo-wrap"><button class="photo" type="button" data-open="' + idx + '"><img src="' + esc(photoSrc(it)) + '" alt="' + esc("Foto: " + albName(it)) + '" loading="lazy"></button>' + del + "</div>";
+    }
+  });
+  /* Gästebuch: Besucher schicken Einträge per Mail, nur du trägst sie ein */
+  function gbSort(a, b) { return (b.date || "").localeCompare(a.date || "") || b.createdAt - a.createdAt; }
+  var GB = makeSection({
+    col: "guestbook", list: "gb-list", editor: "gb-editor", form: "gb-form", cancel: "gb-cancel", hint: "gb-hint",
+    fields: [{ id: "gb-name", key: "name", max: 60 }, { id: "gb-place", key: "place", max: 60 }, { id: "gb-date", key: "date", max: 10 }, { id: "gb-text", key: "text", max: 800 }],
+    required: "text", reqMsg: "Bitte den Text des Eintrags einfügen.",
+    prepare: function (d) { if (!/^\d{4}-\d{2}-\d{2}$/.test(d.date)) d.date = today(); if (!d.name) d.name = "Gast"; },
+    keepPublic: function () { return !!PUB; }, onLive: function () { LIVE.guestbook = true; },
+    clean: function (d) {
+      var t = str(d.text, 800).trim(); if (!t) return null;
+      return { id: d.id, name: str(d.name, 60).trim() || "Gast", place: str(d.place, 60).trim(), date: /^\d{4}-\d{2}-\d{2}$/.test(d.date || "") ? d.date : "", text: t, createdAt: typeof d.createdAt === "number" ? d.createdAt : 0 };
+    },
+    sort: gbSort,
+    empty: '<div class="empty" style="grid-column:1/-1">Noch keine Einträge. Sei der Erste!</div>',
+    item: function (it, a) {
+      return '<article class="gb-entry"><p class="q">' + esc(it.text) + '</p><div class="who"><strong>' + esc(it.name) + "</strong>" + (it.place ? " · " + esc(it.place) : "") + (it.date ? " · " + fmt(it.date) : "") + "</div>" + a + "</article>";
+    }
+  });
+  $("gb-copy").addEventListener("click", function () {
+    var t = $("gb-mail").textContent;
+    function sel() { var r = document.createRange(); r.selectNodeContents($("gb-mail")); var w = window.getSelection(); w.removeAllRanges(); w.addRange(r); $("gb-copy-hint").textContent = "Markiert – jetzt kopieren."; }
+    try { navigator.clipboard.writeText(t).then(function () { $("gb-copy-hint").textContent = "✓ Adresse kopiert!"; }, sel); } catch (x) { sel(); }
+  });
+  $("foto-q").addEventListener("input", function () {
+    FQ = norm(this.value).split(/\s+/).filter(Boolean); $("foto-q-clr").hidden = !this.value;
+    if (ALBF) { ALBF = ""; try { history.replaceState(null, "", "#fotos"); } catch (x) {} }
+    FOTO.draw();
+  });
+  $("foto-q-clr").addEventListener("click", function () { $("foto-q").value = ""; FQ = []; this.hidden = true; FOTO.draw(); $("foto-q").focus(); });
+  function toJpeg(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function () {
+        var k = Math.min(1, 1800 / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement("canvas");
+        c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+        c.toBlob(function (b) { b ? resolve(b) : reject(new Error("convert")); }, "image/jpeg", 0.85);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error("decode")); };
+      img.src = url;
+    });
+  }
+  var busy = false;
+  $("foto-file").addEventListener("change", async function () {
+    var f = this.files && this.files[0]; this.value = "";
+    if (!f || busy || !ASSETS || !FOTO.st.col) { if (!ASSETS) $("foto-hint").textContent = "Hochladen ist in dieser Ansicht nicht möglich."; return; }
+    busy = true; $("foto-hint").textContent = "Foto wird hochgeladen …";
+    try {
+      var up = await ASSETS.upload(await toJpeg(f), { type: "image/jpeg" });
+      var yv = $("foto-year").value.trim(); await FOTO.st.col.add({ asset: up.id, caption: "", year: /^(19|20)\d\d$/.test(yv) ? yv : "", album: $("foto-album").value.trim().slice(0, 60), createdAt: Date.now() });
+      $("foto-hint").textContent = "Foto hochgeladen.";
+    } catch (err) {
+      var c = err && err.code;
+      $("foto-hint").textContent = err && err.message === "decode" ? "Dieses Bildformat lässt sich nicht öffnen. Bitte ein JPG oder PNG wählen."
+        : c === "too_large" ? "Das Foto ist zu groß." : c === "quota_or_state" ? "Der Speicher für Fotos ist voll." : "Hochladen hat nicht geklappt. Bitte noch einmal versuchen.";
+    }
+    busy = false;
+  });
+  $("lb-close").addEventListener("click", closeLb);
+  $("lb-prev").addEventListener("click", function () { openLb(LB - 1); });
+  $("lb-next").addEventListener("click", function () { openLb(LB + 1); });
+  $("lb-play").addEventListener("click", function () { setPlay(!PLAY); });
+  /* Wischen auf dem Handy */
+  var TX = null;
+  $("lb").addEventListener("touchstart", function (e) { TX = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  $("lb").addEventListener("touchend", function (e) {
+    if (TX == null) return; var dx = e.changedTouches[0].clientX - TX; TX = null;
+    if (Math.abs(dx) < 50) return;
+    if (dx < 0 && (PLAY || LB < LBL.length - 1)) openLb(LB + 1); else if (dx > 0 && (PLAY || LB > 0)) openLb(LB - 1);
+  });
+  $("show-all").addEventListener("click", function () { startShow(photosSorted()); });
+  $("lb").addEventListener("click", function (e) { if (e.target === $("lb")) closeLb(); });
+  document.addEventListener("keydown", function (e) {
+    if ($("lb").hidden) return;
+    if (e.key === "Escape") closeLb();
+    else if (e.key === "ArrowLeft") { if (PLAY || LB > 0) openLb(LB - 1); }
+    else if (e.key === "ArrowRight") { if (PLAY || LB < LBL.length - 1) openLb(LB + 1); }
+    else if (e.key === " ") { e.preventDefault(); setPlay(!PLAY); }
+  });
+  document.addEventListener("fullscreenchange", function () { if (!document.fullscreenElement && PLAY && $("lb").hidden) setPlay(false); });
+
+  /* Motto */
+  var DEFAULT_MOTTO = $("motto").textContent, SITE = null, SITEDATA = {};
+  ["mark-img", "hero-img"].forEach(function (id) { $(id).addEventListener("error", function () { this.hidden = true; $("mark-svg").style.display = ""; }); });
+  $("logo-file").addEventListener("change", async function () {
+    var f = this.files && this.files[0]; this.value = "";
+    if (!f || !SITE) return;
+    if (!ASSETS) { $("logo-hint").textContent = "Hochladen ist in dieser Ansicht nicht möglich."; return; }
+    $("logo-hint").textContent = "Logo wird hochgeladen …";
+    try {
+      var blob = f.type === "image/png" || f.type === "image/svg+xml" ? f : await toJpeg(f);
+      var up = await ASSETS.upload(blob, { type: blob.type || "image/jpeg" });
+      var oldLogo = SITEDATA.logo;
+      await SITE.set(Object.assign({}, SITEDATA, { logo: up.id }));
+      if (oldLogo && oldLogo !== up.id) ASSETS.delete(oldLogo).catch(function () {});
+      $("logo-hint").textContent = "Logo gespeichert.";
+    } catch (err) { $("logo-hint").textContent = "Hochladen hat nicht geklappt. Bitte ein PNG oder JPG versuchen."; }
+  });
+  $("motto-open").addEventListener("click", function () { $("motto-in").value = $("motto").textContent; $("motto-form").hidden = false; $("motto-open").hidden = true; $("motto-in").focus(); });
+  $("motto-cancel").addEventListener("click", function () { $("motto-form").hidden = true; $("motto-open").hidden = false; });
+  $("motto-form").addEventListener("submit", async function (e) {
+    e.preventDefault(); if (!SITE) return;
+    var v = $("motto-in").value.trim().slice(0, 140);
+    try { await SITE.set(Object.assign({}, SITEDATA, { motto: v })); $("motto-form").hidden = true; $("motto-open").hidden = false; } catch (x) {}
+  });
+
+
+  /* Name + Bulldogge passend skalieren: Logo sitzt immer direkt hinter „Mönchengladbach“ */
+  function fitTitle() {
+    var row = document.querySelector(".title-row"), h1 = row && row.querySelector("h1"), img = $("hero-img");
+    if (!row) return;
+    var avail = row.parentElement.clientWidth;
+    var mobile = window.matchMedia("(max-width: 640px)").matches;
+    row.style.fontSize = "100px";
+    var w = h1.getBoundingClientRect().width;
+    var ratio = img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : 1.1;
+    var per = mobile || img.hidden ? w / 100 : w / 100 + 0.35 + 1.86 * ratio;
+    var size = Math.floor((avail - 2) / per);
+    size = Math.max(30, Math.min(mobile ? 72 : 108, size));
+    row.style.fontSize = size + "px";
+  }
+  window.addEventListener("resize", fitTitle);
+  $("hero-img").addEventListener("load", fitTitle);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitle);
+  fitTitle();
+
+  /* Spieltag */
+  function renderMatch(d) {
+    var n = d && d.next, l = d && d.last;
+    if (!n && !l) { $("spieltag").hidden = true; return; }
+    $("spieltag").hidden = false;
+    function teams(m, score) {
+      var gl = "Gladbach", op = esc(str(m.opponent, 40));
+      var mid = score ? '<span class="sc">' + esc(str(m.score, 9)) + "</span>" : '<span class="sc">–</span>';
+      return m.home ? gl + mid + op : op + mid + gl;
+    }
+    function when(m) { var t = /^\d{4}-\d{2}-\d{2}$/.test(m.date || "") ? fmt(m.date) : ""; return [t, str(m.time, 5) ? str(m.time, 5) + " Uhr" : "", str(m.competition, 40)].filter(Boolean).join(" · "); }
+    var td = today(), live = !!(n && n.date === td), stale = !!(n && n.date && n.date < td);
+    $("spieltag").classList.toggle("live", live);
+    $("mb-next-lbl").textContent = live ? "Heute ist Spieltag!" : stale ? "Gerade gespielt – Ergebnis folgt" : "Nächstes Spiel";
+    if (n) { $("mb-next-teams").innerHTML = teams(n, false); $("mb-next-sub").textContent = live ? (str(n.time, 5) ? "Anpfiff " + str(n.time, 5) + " Uhr · " : "") + str(n.competition, 40) : when(n); }
+    var wx = d && d.weather, wxOk = !!(n && wx && typeof wx === "object" && wx.date === n.date && n.date >= td && typeof wx.temp === "number");
+    if (wxOk) $("mb-wx").textContent = str(wx.icon, 4) + " " + Math.round(wx.temp) + "°" + (str(wx.text, 30) ? " · " + str(wx.text, 30) : "") + (str(wx.city, 30) ? " in " + str(wx.city, 30) : "") + " (Vorhersage)";
+    $("mb-wx").hidden = !wxOk;
+    MKICK = null;
+    if (n && /^\d{4}-\d{2}-\d{2}$/.test(n.date || "") && /^\d{1,2}:\d{2}$/.test(n.time || "")) {
+      var dp = n.date.split("-"), tp = n.time.split(":");
+      MKICK = new Date(+dp[0], +dp[1] - 1, +dp[2], +tp[0], +tp[1], 0);
+    }
+    mtick();
+    var tb = d && d.table;
+    if (tb && typeof tb.rank === "number") {
+      $("mb-rank").textContent = "Platz " + tb.rank;
+      $("mb-pts").textContent = (typeof tb.points === "number" ? tb.points + (tb.points === 1 ? " Punkt" : " Punkte") : "");
+      $("mb-table-sub").textContent = [typeof tb.played === "number" ? tb.played + " Spiele" : "", str(tb.league, 30) || "Bundesliga"].filter(Boolean).join(" · ");
+      $("mb-table").hidden = false;
+    } else $("mb-table").hidden = true;
+    $("mb-next-teams").parentElement.hidden = !n;
+    if (l) { $("mb-last-teams").innerHTML = teams(l, true); $("mb-last-sub").textContent = when(l); }
+    $("mb-last-teams").parentElement.hidden = !l;
+  }
+  /* Dezenter Countdown bis zum Anpfiff */
+  var MKICK = null;
+  function mtick() {
+    var el = $("mb-cd");
+    if (!MKICK) { el.hidden = true; return; }
+    var diff = MKICK - new Date();
+    if (diff <= 0) { el.hidden = true; return; }
+    var m = Math.floor(diff / 60000), dd = Math.floor(m / 1440), hh = Math.floor(m % 1440 / 60), mm = m % 60;
+    el.textContent = "Anpfiff in " + (dd ? dd + (dd === 1 ? " Tag " : " Tagen ") : "") + (dd || hh ? hh + " Std " : "") + mm + " Min";
+    el.hidden = false;
+  }
+  setInterval(mtick, 30000);
+
+  /* ---------- Saison: Spielplan, Formkurve, Tabelle, Torjäger ---------- */
+  var SSALL = false, SSD = null;
+  var WD = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+  function ssDate(s) { var p = s.split("-"); var d = new Date(+p[0], +p[1] - 1, +p[2]); return WD[d.getDay()] + " " + p[2] + "." + p[1] + "." + p[0].slice(2); }
+  function ssRes(f) {
+    var m = /^(\d{1,2}):(\d{1,2})$/.exec(f.score || ""); if (!m) return "";
+    var a = +m[1], b = +m[2], gl = f.home ? a : b, op = f.home ? b : a;
+    return gl > op ? "S" : gl < op ? "N" : "U";
+  }
+  function ssClean(d) {
+    if (!d || typeof d !== "object") return null;
+    var fx = (Array.isArray(d.fixtures) ? d.fixtures : []).filter(function (f) { return f && /^\d{4}-\d{2}-\d{2}$/.test(f.date || "") && str(f.opponent, 40); }).map(function (f) {
+      return { comp: f.comp === "POKAL" ? "POKAL" : "BL", md: str(String(f.md == null ? "" : f.md), 20), date: f.date, time: /^\d{1,2}:\d{2}$/.test(f.time || "") ? f.time : "", home: !!f.home, opponent: str(f.opponent, 40), score: /^\d{1,2}:\d{1,2}$/.test(f.score || "") ? f.score : "", tbd: !!f.tbd };
+    }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    var tb = (Array.isArray(d.table) ? d.table : []).filter(function (r) { return r && typeof r.rank === "number" && str(r.team, 40); }).slice(0, 20);
+    var sc = (Array.isArray(d.scorers) ? d.scorers : []).filter(function (r) { return r && str(r.name, 40) && typeof r.goals === "number"; }).slice(0, 6);
+    return { season: str(d.season, 9) || "2026/27", stand: /^\d{4}-\d{2}-\d{2}$/.test(d.stand || "") ? d.stand : "", after: str(d.after, 40), fixtures: fx, table: tb, scorers: sc };
+  }
+  function ssTeams(f) {
+    var gl = '<span class="gl">Gladbach</span>', op = esc(f.opponent);
+    return f.home ? gl + " – " + op : op + " – " + gl;
+  }
+  function ssComp(f) { return f.comp === "POKAL" ? "DFB-Pokal" + (f.md ? ", " + f.md : "") : "Bundesliga" + (f.md ? ", " + f.md + ". Spieltag" : ""); }
+  function ssFx(f, isNext) {
+    var r = ssRes(f);
+    var right = f.score ? '<span class="rs ' + r + '">' + esc(f.score) + "</span>" : isNext ? '<span class="nx">Nächstes Spiel</span>' : "";
+    var dt = ssDate(f.date) + (f.score ? "" : f.time ? " · " + esc(f.time) + " Uhr" : f.tbd ? " · Anstoßzeit folgt" : "");
+    return '<div class="fx' + (f.comp === "POKAL" ? " pk" : "") + (isNext ? " cur" : "") + '"><span class="tm"><span class="dt">' + dt + "</span>" + ssTeams(f) + '<span class="cp">' + esc(ssComp(f)) + "</span></span>" + right + "</div>";
+  }
+  function renderSeason(raw) {
+    var d = ssClean(raw); SSD = d;
+    if (!d || !d.fixtures.length) { $("ss-body").hidden = true; $("ss-empty").hidden = false; $("ss-empty").textContent = d ? "Noch keine Saisondaten." : "Saisondaten werden geladen …"; return; }
+    $("ss-empty").hidden = true; $("ss-body").hidden = false;
+    $("ss-season").textContent = d.season;
+    $("ss-stand").textContent = (d.after ? "Stand: " + d.after : "") + (d.stand ? (d.after ? " · " : "Stand: ") + fmt(d.stand) : "");
+    var td = today(), fx = d.fixtures;
+    var played = fx.filter(function (f) { return f.score; }), next = fx.filter(function (f) { return !f.score && f.date >= td; });
+    /* Formkurve */
+    var bl = played.filter(function (f) { return f.comp === "BL"; }).slice(-5);
+    $("ss-form").innerHTML = bl.map(function (f) { var r = ssRes(f); return '<span class="fd ' + r + '" title="' + esc((f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " " + f.score) + '">' + r + "</span>"; }).join("");
+    $("ss-form-list").innerHTML = bl.slice().reverse().map(function (f) { return "<li>" + ssDate(f.date).slice(3) + " · " + esc(f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " <b>" + esc(f.score) + "</b></li>"; }).join("");
+    /* Torjäger */
+    $("ss-scorers").innerHTML = d.scorers.length ? d.scorers.map(function (r) { return "<li><span>" + esc(r.name) + "</span><b>" + r.goals + "</b></li>"; }).join("") : '<li><span>Noch keine Daten</span></li>';
+    /* Pokal */
+    var pk = fx.filter(function (f) { return f.comp === "POKAL"; }), pkNext = pk.filter(function (f) { return !f.score && f.date >= td; })[0], pkLast = pk.filter(function (f) { return f.score; }).slice(-1)[0];
+    $("ss-pk-card").hidden = !pk.length;
+    if (pk.length) {
+      var hd = pkNext ? '<div class="pk-next">' + esc(pkNext.md || "Nächste Runde") + "</div><div class=\"pk-sub\">" + ssTeams(pkNext) + "<br>" + ssDate(pkNext.date) + (pkNext.time ? " · " + esc(pkNext.time) + " Uhr" : "") + "</div>"
+        : (pkLast && ssRes(pkLast) === "N" ? '<div class="pk-next">Ausgeschieden</div>' : '<div class="pk-next">Weiter im Pokal</div>');
+      $("ss-pk").innerHTML = hd + '<ul class="pk-path">' + pk.filter(function (f) { return f.score; }).map(function (f) { return "<li>" + esc(f.md) + ": " + esc(f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " <b>" + esc(f.score) + "</b></li>"; }).join("") + "</ul>";
+    }
+    /* Spielplan: letzte 3 Ergebnisse + nächste 6, auf Wunsch alles */
+    var nx = next[0];
+    var show = SSALL ? fx : played.slice(-3).concat(next.slice(0, 6));
+    $("ss-fx").innerHTML = show.map(function (f) { return ssFx(f, f === nx); }).join("");
+    $("ss-fx-all").textContent = SSALL ? "Weniger anzeigen" : "Alle " + fx.length + " Spiele anzeigen";
+    $("ss-fx-all").parentElement.hidden = fx.length <= show.length && !SSALL;
+    /* Tabelle */
+    var n = d.table.length;
+    $("ss-tbl").tBodies[0].innerHTML = d.table.map(function (r) {
+      var z = r.rank <= 4 ? "z1" : r.rank === 5 ? "z2" : r.rank === 6 ? "z3" : n === 18 && r.rank === 16 ? "z4" : n === 18 && r.rank >= 17 ? "z5" : "";
+      var me = /gladbach/i.test(r.team) ? " me" : "";
+      function v(x) { return typeof x === "number" ? x : ""; }
+      var diff = typeof r.diff === "number" ? (r.diff > 0 ? "+" + r.diff : String(r.diff)) : "";
+      return '<tr class="' + z + me + '"><td class="r">' + r.rank + '</td><td class="t">' + esc(r.team) + "</td><td>" + v(r.played) + '</td><td class="hm">' + v(r.w) + '</td><td class="hm">' + v(r.d) + '</td><td class="hm">' + v(r.l) + '</td><td class="hm">' + esc(str(r.goals, 7)) + "</td><td>" + diff + '</td><td class="pt">' + v(r.points) + "</td></tr>";
+    }).join("");
+    $("ss-tbl").parentElement.hidden = !n;
+  }
+  $("ss-fx-all").addEventListener("click", function () { SSALL = !SSALL; if (SSD) renderSeason(SSD); });
+
+  /* ---------- Borussia-Geschichte: der nächstgelegene Jahrestag ---------- */
+  var HIST = [
+    ["1899-11-17", "In der Gaststätte „Zum Jägerhof“ gründen 13 Männer einen Fußballklub namens Borussia – die Keimzelle unseres Vereins."],
+    ["1900-08-01", "Offizielles Gründungsdatum des FC Borussia 1900 – der Geburtstag der Borussia."],
+    ["1960-10-05", "Erster großer Titel: Im Düsseldorfer Rheinstadion schlägt Borussia den Karlsruher SC 3:2 und holt den DFB-Pokal."],
+    ["1970-04-30", "Nach einem Heimsieg gegen den Hamburger SV ist die erste Deutsche Meisterschaft perfekt."],
+    ["1970-09-16", "Herbert Laumen erzielt beim 6:0 gegen EPA Larnaka das erste Europapokal-Tor der Vereinsgeschichte."],
+    ["1971-04-03", "Der Pfostenbruch vom Bökelberg: Herbert Laumen landet im Netz, der Pfosten bricht – das Spiel gegen Werder Bremen wird abgebrochen."],
+    ["1971-06-05", "Mit einem Sieg in Frankfurt verteidigt Borussia als erster Verein der Bundesliga-Geschichte die Meisterschaft."],
+    ["1971-10-20", "7:1 gegen Inter Mailand – doch nach dem „Büchsenwurf vom Bökelberg“ annulliert die UEFA das legendäre Spiel."],
+    ["1973-06-23", "Pokalfinale gegen Köln: Günter Netzer wechselt sich selbst ein und schießt Borussia in der Verlängerung zum 2:1-Sieg."],
+    ["1975-05-21", "5:1 im Finalrückspiel bei Twente Enschede – der erste UEFA-Pokal-Sieg und der erste europäische Titel."],
+    ["1977-05-21", "2:2 am letzten Spieltag beim FC Bayern – die dritte Meisterschaft in Folge ist perfekt."],
+    ["1977-05-25", "Finale im Europapokal der Landesmeister in Rom: 1:3 gegen den FC Liverpool, Allan Simonsen trifft für Borussia."],
+    ["1978-04-29", "12:0 gegen Borussia Dortmund – Bundesliga-Rekord bis heute. Meister wird trotzdem Köln, wegen der Tordifferenz."],
+    ["1979-05-23", "1:0 gegen Roter Stern Belgrad im Finalrückspiel in Düsseldorf – der zweite UEFA-Pokal-Sieg."],
+    ["1980-05-07", "3:2 im Finalhinspiel des UEFA-Pokals gegen Eintracht Frankfurt – am Ende fehlt nur ein Auswärtstor."],
+    ["1985-11-27", "5:1 gegen Real Madrid im UEFA-Pokal – ein Abend für die Ewigkeit im Düsseldorfer Rheinstadion."],
+    ["1995-06-24", "3:0 gegen den VfL Wolfsburg im Berliner Olympiastadion – Borussia ist wieder DFB-Pokalsieger."],
+    ["2004-05-22", "Abschied vom Bökelberg: Das letzte Bundesligaspiel im alten Stadion gewinnt Borussia 3:1 gegen 1860 München."],
+    ["2011-05-19", "Relegation, Hinspiel: 1:0 gegen den VfL Bochum – der Klassenerhalt rückt näher."],
+    ["2011-05-25", "1:1 in Bochum – die Relegation ist geschafft, Borussia bleibt in der Bundesliga."],
+    ["2011-08-07", "Igor de Camargo trifft zum 1:0-Sieg beim FC Bayern – am ersten Spieltag in München."],
+    ["2021-10-27", "5:0 gegen den FC Bayern im DFB-Pokal – eine der größten Sternstunden der jüngeren Geschichte."]
+  ];
+  var MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+  function renderHist() {
+    var now = new Date(), y0 = now.getFullYear(), t0 = new Date(y0, now.getMonth(), now.getDate());
+    var best = null;
+    HIST.forEach(function (h) {
+      var p = h[0].split("-"), m = +p[1] - 1, dd = +p[2];
+      [y0 - 1, y0, y0 + 1].forEach(function (yy) {
+        var dt = new Date(yy, m, dd), diff = Math.round((dt - t0) / 86400000), score = Math.abs(diff) + (diff < 0 ? 0.5 : 0);
+        if (!best || score < best.score) best = { h: h, diff: diff, score: score, yy: yy };
+      });
+    });
+    if (!best) return;
+    var p = best.h[0].split("-"), ev = +p[0], yrs = best.yy - ev;
+    var lbl = best.diff === 0 ? "Heute vor " + yrs + " Jahren"
+      : best.diff > 0 ? (best.diff === 1 ? "Morgen" : "In " + best.diff + " Tagen") + " jährt es sich zum " + yrs + ". Mal"
+      : (best.diff === -1 ? "Gestern" : "Vor " + (-best.diff) + " Tagen") + " jährte es sich zum " + yrs + ". Mal";
+    $("ss-hist").innerHTML = '<div class="when">' + esc(lbl) + '</div><div class="day">' + (+p[2]) + ". " + MONTHS[+p[1] - 1] + " " + ev + "</div><p>" + esc(best.h[1]) + "</p>";
+  }
+  renderHist();
+
+  /* Einstellungen (Motto, Logo) anwenden – aus der Datenbank oder aus der öffentlichen Kopie */
+  function applySettings(d, pub) {
+    if (!pub) SITEDATA = d || {};
+    $("motto").textContent = d && typeof d.motto === "string" && d.motto.trim() ? d.motto.slice(0, 140) : DEFAULT_MOTTO;
+    var logo = pub && d && typeof d.logoFile === "string" && /^[A-Za-z0-9_-]{1,60}\.(png|jpg)$/.test(d.logoFile) ? d.logoFile
+      : d && typeof d.logo === "string" && /^[A-Za-z0-9_-]{8,64}$/.test(d.logo) ? "/_blob/" + encodeURIComponent(d.logo) : "";
+    ["mark-img", "hero-img"].forEach(function (id) { if (logo) { $(id).src = logo; $(id).hidden = false; } else { $(id).hidden = true; } });
+    $("mark-svg").style.display = logo ? "none" : "";
+    fitTitle();
+    if (LOGO !== logo) { LOGO = logo; renderNews(); }
+  }
+  /* Öffentliche Kopie (daten.json): damit Besucher ohne Claude-Konto alles sehen.
+     Live-Daten aus der Datenbank haben immer Vorrang. */
+  var PUB = null, LIVE = { news: false, photos: false, match: false, settings: false, guestbook: false, season: false };
+  function applyPublic() {
+    if (!PUB) return;
+    if (!LIVE.news && Array.isArray(PUB.news)) { S.posts = PUB.news.filter(function (x) { return x && typeof x === "object"; }).map(clean); S.loaded = true; render(); }
+    if (!LIVE.photos && Array.isArray(PUB.photos)) { FOTO.setItems(PUB.photos); }
+    if (!LIVE.guestbook && Array.isArray(PUB.guestbook)) { GB.setItems(PUB.guestbook); }
+    if (!LIVE.match && PUB.match && typeof PUB.match === "object") renderMatch(PUB.match);
+    if (!LIVE.settings && PUB.settings && typeof PUB.settings === "object") applySettings(PUB.settings, true);
+    if (!LIVE.season && PUB.season && typeof PUB.season === "object") renderSeason(PUB.season);
+  }
+  try {
+    fetch("daten.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && typeof j === "object") { PUB = j; applyPublic(); } }).catch(function () {});
+  } catch (x) {}
+  /* ---------- Fohlen-Quiz ---------- */
+  var QUIZ = [{"q": "Pfostenbruch am Bökelberg, 3. April 1971 gegen Werder Bremen: Welcher Gladbacher landete im Netz, sodass der Pfosten umknickte?", "a": ["Herbert Laumen", "Günter Netzer", "Jupp Heynckes", "Berti Vogts"], "x": "Herbert Laumen stürzte in der 88. Minute ins Netz, der Pfosten brach. Das Spiel wurde beim 1:1 abgebrochen und am grünen Tisch 2:0 für Bremen gewertet."}, {"q": "Das legendäre 7:1 gegen Inter Mailand im Oktober 1971 wurde annulliert. Warum?", "a": ["Inter-Stürmer Boninsegna wurde von einer Getränkedose getroffen", "Das Flutlicht fiel in der zweiten Halbzeit aus", "Ein Gladbacher Spieler war nicht spielberechtigt", "Fans stürmten nach dem 7:1 den Platz"], "x": "Roberto Boninsegna wurde von einer leeren Dose getroffen – die UEFA strich das Ergebnis. Der berühmte „Büchsenwurf vom Bökelberg“."}, {"q": "Am letzten Spieltag 1977/78 gewann Gladbach 12:0 – bis heute Bundesliga-Rekord. Gegen wen?", "a": ["Borussia Dortmund", "Werder Bremen", "Hertha BSC", "Bayer Uerdingen"], "x": "12:0 gegen Dortmund am 29. April 1978. Meister wurde trotzdem der 1. FC Köln – wegen der besseren Tordifferenz."}, {"q": "Pokalfinale 1973: Günter Netzer wechselte sich selbst ein und schoss in der Verlängerung das Siegtor. Gegen wen?", "a": ["1. FC Köln", "Hamburger SV", "FC Bayern München", "Schalke 04"], "x": "2:1 nach Verlängerung gegen Köln – Netzers berühmte Selbsteinwechslung. Schöner kann ein Pokalsieg nicht sein."}, {"q": "Gladbachs erster DFB-Pokalsieg 1960 – wer war der Finalgegner?", "a": ["Karlsruher SC", "1. FC Nürnberg", "Eintracht Frankfurt", "Fortuna Düsseldorf"], "x": "3:2 gegen den Karlsruher SC – genau der Gegner, gegen den ihr 2026 im Pokal wieder im Stadion wart."}, {"q": "Wer war Trainer, als Gladbach 1976 und 1977 Deutscher Meister wurde?", "a": ["Udo Lattek", "Hennes Weisweiler", "Jupp Heynckes", "Otto Rehhagel"], "x": "Udo Lattek übernahm 1975 von Hennes Weisweiler und holte die Titel 1976 und 1977."}, {"q": "Welcher Gladbacher wurde 1977 als Europas Fußballer des Jahres mit dem Ballon d'Or ausgezeichnet?", "a": ["Allan Simonsen", "Jupp Heynckes", "Rainer Bonhof", "Berti Vogts"], "x": "Der Däne Allan Simonsen – bis heute der einzige Gladbacher mit dem Ballon d'Or."}, {"q": "In welcher Stadt verlor Gladbach 1977 das Finale im Europapokal der Landesmeister gegen den FC Liverpool?", "a": ["Rom", "Paris", "London", "Brüssel"], "x": "Im Olympiastadion von Rom – eine Stadt, in die auch die Brigade schon auswärts gefahren ist."}, {"q": "Das UEFA-Pokal-Finale 1980 ging nur wegen der Auswärtstorregel verloren. Gegen wen?", "a": ["Eintracht Frankfurt", "Hamburger SV", "VfB Stuttgart", "FC Bayern München"], "x": "Hinspiel 3:2 für Gladbach, Rückspiel 0:1 in Frankfurt – die Eintracht gewann durch die Auswärtstore."}, {"q": "UEFA-Pokal-Sieg 1979: Wer war der Finalgegner?", "a": ["Roter Stern Belgrad", "Twente Enschede", "Feyenoord Rotterdam", "Dynamo Kiew"], "x": "Gegen Roter Stern Belgrad (1:1 und 1:0). Twente Enschede war der Gegner beim ersten UEFA-Pokal-Sieg 1975."}, {"q": "Wie viele Bundesligaspiele bestritt Berti Vogts für Borussia?", "a": ["419", "386", "402", "453"], "x": "419 Bundesligaspiele – alle für Gladbach. Ein Verein, eine Karriere."}, {"q": "Relegation 2011: Gegen wen rettete sich Gladbach vor dem Abstieg?", "a": ["VfL Bochum", "FC Augsburg", "Fortuna Düsseldorf", "Hertha BSC"], "x": "1:0 zu Hause, 1:1 in Bochum – Borussia blieb erstklassig."}, {"q": "Was ist das offizielle Gründungsdatum von Borussia Mönchengladbach?", "a": ["1. August 1900", "17. November 1899", "1. Mai 1900", "12. Juni 1901"], "x": "Offiziell der 1. August 1900. Am 17. November 1899 trafen sich die Gründer bereits in der Gaststätte „Zum Jägerhof“ – fiese Falle, oder?"}, {"q": "Wie oft wurde Gladbach Deutscher Meister?", "a": ["5-mal", "3-mal", "4-mal", "6-mal"], "x": "Fünfmal: 1970, 1971, 1975, 1976 und 1977."}, {"q": "Pokalsieg 1995 – gegen wen gewann Gladbach das Finale 3:0?", "a": ["VfL Wolfsburg", "Bayer Leverkusen", "Werder Bremen", "VfL Bochum"], "x": "3:0 gegen den damaligen Zweitligisten VfL Wolfsburg in Berlin – der bislang letzte große Titel."}];
+  var QS = { list: [], i: 0, score: 0, answered: false };
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  /* Großer Fragenpool aus quiz.json; schon gestellte Fragen kommen erst wieder, wenn alle durch sind */
+  var QPOOL = null;
+  try {
+    fetch("quiz.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (Array.isArray(j)) {
+        QPOOL = j.filter(function (q) { return q && typeof q.q === "string" && Array.isArray(q.a) && q.a.length === 4 && q.a.every(function (x) { return typeof x === "string"; }); });
+        $("qz-count").textContent = QPOOL.length;
+        if (document.body.classList.contains("view-quiz") && QS.i === 0 && !QS.answered) quizStart();
+        if (!FDT || !FDT.done || FDT.date !== today()) fdtShow();
+      } else if (!FDT) fdtShow();
+    }).catch(function () { if (!FDT) fdtShow(); });
+  } catch (x) {}
+  setTimeout(function () { if (!FDT) fdtShow(); }, 3000);
+  function qkey(q) { var h = 0, t = q.q; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); }
+  function seenGet() { try { var v = JSON.parse(localStorage.getItem("brigadeQuizSeen") || "[]"); return Array.isArray(v) ? v : []; } catch (x) { return []; } }
+  function seenSet(v) { try { localStorage.setItem("brigadeQuizSeen", JSON.stringify(v.slice(-1000))); } catch (x) {} }
+  /* Frage des Tages: für alle Besucher am selben Tag dieselbe Frage */
+  var FDT = null;
+  function fdtShow() {
+    var pool = QPOOL && QPOOL.length ? QPOOL : QUIZ, td = today(), h = 0;
+    for (var i = 0; i < td.length; i++) h = (h * 131 + td.charCodeAt(i)) | 0;
+    var q = pool[(h >>> 0) % pool.length];
+    var rnd = (h >>> 3), opts = q.a.slice();
+    for (var j = opts.length - 1; j > 0; j--) { rnd = (rnd * 1103515245 + 12345) >>> 0; var k = rnd % (j + 1), t = opts[j]; opts[j] = opts[k]; opts[k] = t; }
+    FDT = { q: q, opts: opts, right: q.a[0], date: td };
+    $("fdt-q").textContent = q.q;
+    $("fdt-opts").innerHTML = opts.map(function (o, k) { return '<button class="qz-opt" type="button" data-k="' + k + '">' + esc(o) + "</button>"; }).join("");
+    $("fdt-after").innerHTML = "";
+    try { var sv = JSON.parse(localStorage.getItem("brigadeFdt") || "null"); if (sv && sv.d === td && sv.q === qkey(q) && typeof sv.k === "number") fdtAnswer(sv.k, true); } catch (x) {}
+  }
+  function fdtAnswer(k, restore) {
+    if (!FDT || FDT.done) return; FDT.done = true;
+    var pick = FDT.opts[k], ok = pick === FDT.right;
+    Array.prototype.forEach.call($("fdt-opts").querySelectorAll(".qz-opt"), function (el) {
+      el.disabled = true; var o = FDT.opts[+el.dataset.k];
+      if (o === FDT.right) el.classList.add("ok"); else if (+el.dataset.k === k) el.classList.add("no");
+    });
+    $("fdt-after").innerHTML = '<div class="qz-x' + (ok ? "" : " no") + '"><strong>' + (ok ? "Richtig! " : "Leider falsch. ") + "</strong>" + esc(FDT.q.x || "") + "</div>";
+    if (!restore) { try { localStorage.setItem("brigadeFdt", JSON.stringify({ d: FDT.date, q: qkey(FDT.q), k: k })); } catch (x) {} }
+  }
+  $("fdt-opts").addEventListener("click", function (e) { var b = e.target.closest("button"); if (b && b.dataset.k != null) fdtAnswer(+b.dataset.k, false); });
+  function quizStart() {
+    var pool = QPOOL && QPOOL.length >= 10 ? QPOOL : QUIZ, seen = seenGet();
+    var fresh = pool.filter(function (q) { return seen.indexOf(qkey(q)) === -1; });
+    if (fresh.length < 10) { seen = []; fresh = pool; }
+    var pick = shuffle(fresh).slice(0, 10);
+    seenSet(seen.concat(pick.map(qkey)));
+    QS.list = pick.map(function (q) { return { q: q.q, x: q.x || "", right: q.a[0], opts: shuffle(q.a) }; });
+    QS.i = 0; QS.score = 0; quizShow();
+  }
+  function quizShow() {
+    var q = QS.list[QS.i]; QS.answered = false;
+    $("qz").innerHTML = '<div class="qz-top"><span>Frage ' + (QS.i + 1) + " von " + QS.list.length + '</span><span>' + QS.score + " richtig</span></div>" +
+      '<div class="qz-prog"><i style="width:' + (QS.i / QS.list.length * 100) + '%"></i></div>' +
+      "<h3>" + esc(q.q) + '</h3><div class="qz-opts">' + q.opts.map(function (o, k) { return '<button class="qz-opt" type="button" data-k="' + k + '">' + esc(o) + "</button>"; }).join("") + "</div>" +
+      '<div id="qz-after"></div>';
+  }
+  function quizRank(s) {
+    return s === 10 ? ["Borussia-Legende", "Alles richtig – du warst wahrscheinlich 1971 selbst am Bökelberg."]
+      : s >= 8 ? ["Echte Fohlen-Seele", "Da kann dir am Stammtisch keiner was vormachen."]
+      : s >= 6 ? ["Stammplatz in der Nordkurve", "Solide! Ein paar Klassiker fehlen noch."]
+      : s >= 4 ? ["Auf der Ersatzbank", "Nicht schlecht – aber da geht noch was. Nochmal?"]
+      : ["Bitte nochmal üben", "Kopf hoch – die Fragen sind wirklich fies. Fast so fies wie ein Auswärtsspiel in 💩Öln."];
+  }
+  function quizEnd() {
+    var s = QS.score, n = QS.list.length, r = quizRank(s);
+    var share = "Ich habe beim Fohlen-Quiz der Brigade Mönchengladbach " + s + " von " + n + " Fragen richtig – „" + r[0] + "“! Schaffst du mehr? 💚🤍🖤\n👉 " + SITE_URL + "#quiz";
+    $("qz").innerHTML = '<div class="qz-end"><div class="big">' + s + " / " + n + '</div><div class="rank">' + esc(r[0]) + "</div><p>" + esc(r[1]) + "</p>" +
+      '<div class="qz-btns"><button class="btn primary" type="button" id="qz-again">Nochmal spielen</button>' +
+      '<a class="btn wa-btn" href="https://wa.me/?text=' + encodeURIComponent(share) + '" target="_blank" rel="noopener">Ergebnis per WhatsApp teilen</a></div></div>';
+    if (s >= 8) confetti();
+  }
+  $("qz").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    if (b.id === "qz-again") { quizStart(); return; }
+    if (b.id === "qz-next") { QS.i++; if (QS.i < QS.list.length) quizShow(); else quizEnd(); return; }
+    if (b.dataset.k == null || QS.answered) return;
+    QS.answered = true;
+    var q = QS.list[QS.i], pick = q.opts[+b.dataset.k], ok = pick === q.right;
+    if (ok) QS.score++;
+    Array.prototype.forEach.call($("qz").querySelectorAll(".qz-opt"), function (el) {
+      el.disabled = true; if (q.opts[+el.dataset.k] === q.right) el.classList.add("ok");
+    });
+    if (!ok) b.classList.add("no");
+    var last = QS.i === QS.list.length - 1;
+    $("qz-after").innerHTML = '<div class="qz-x' + (ok ? "" : " no") + '"><strong>' + (ok ? "Richtig! " : "Leider falsch. ") + "</strong>" + esc(q.x) + "</div>" +
+      '<div class="qz-btns"><button class="btn primary" type="button" id="qz-next">' + (last ? "Ergebnis anzeigen" : "Nächste Frage →") + "</button></div>";
+    $("qz").querySelector(".qz-top span:last-child").textContent = QS.score + " richtig";
+    $("qz-next").focus({ preventScroll: true });
+  });
+
+  /* ---------- Bulldoggen-Überraschung: 5x auf die Bulldogge tippen ---------- */
+  var SPR = ["Elf vom Niederrhein! 💚🤍🖤", "Brigade seit 1992 – korrekt bis auf die Knochen!", "Wuff! Die Bulldogge ist wach.", "Die Nummer 1 am Niederrhein sind und bleiben wir!", "Mal ehrlich: Wer braucht schon einen Dom? 💩Öln kann einpacken.", "Einmal Borussia, immer Borussia!"];
+  var TAPS = [], TT = null;
+  function toast(t) { var el = $("toast"); el.textContent = t; el.hidden = false; clearTimeout(TT); TT = setTimeout(function () { el.hidden = true; }, 4000); }
+  function confetti() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var c = $("fx"), ctx = c.getContext && c.getContext("2d"); if (!ctx) return;
+    var W = c.width = window.innerWidth, H = c.height = window.innerHeight; c.hidden = false;
+    var cols = ["#00843A", "#2FC46B", "#FFFFFF", "#0A0B0A"], P = [];
+    for (var i = 0; i < 170; i++) P.push({ x: Math.random() * W, y: -20 - Math.random() * H * 0.6, w: 6 + Math.random() * 7, h: 8 + Math.random() * 10, vx: -1.5 + Math.random() * 3, vy: 2.5 + Math.random() * 3.5, r: Math.random() * 6, vr: -0.2 + Math.random() * 0.4, c: cols[i % 4] });
+    var t0 = performance.now();
+    (function frame(t) {
+      ctx.clearRect(0, 0, W, H);
+      P.forEach(function (p) { p.x += p.vx; p.y += p.vy; p.r += p.vr; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c; ctx.strokeStyle = "rgba(0,0,0,.25)"; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); if (p.c === "#FFFFFF") ctx.strokeRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore(); });
+      if (t - t0 < 4200) requestAnimationFrame(frame); else { ctx.clearRect(0, 0, W, H); c.hidden = true; }
+    })(t0);
+  }
+  ["hero-img", "mark-img"].forEach(function (id) {
+    $(id).addEventListener("click", function () {
+      var now = Date.now(); TAPS = TAPS.filter(function (t) { return now - t < 2500; }); TAPS.push(now);
+      if (TAPS.length >= 5) { TAPS = []; confetti(); toast(SPR[Math.floor(Math.random() * SPR.length)]); }
+    });
+  });
+
+  /* Fotos-Seite: #fotos zeigt nur die Fotos, alles andere die Startseite */
+  function route() {
+    var h = location.hash, fotos = h === "#fotos" || h.indexOf("#fotos/") === 0;
+    var na = fotos && h.length > 7 ? decodeURIComponent(h.slice(7)).replace(/[^a-z0-9-]/g, "").slice(0, 80) : "";
+    if (na !== ALBF) { ALBF = na; if (na) { $("foto-q").value = ""; FQ = []; $("foto-q-clr").hidden = true; } if (FOTO.st.loaded) FOTO.draw(); }
+    var quiz = h === "#quiz", saison = h === "#saison";
+    var was = document.body.classList.contains("view-fotos") || document.body.classList.contains("view-quiz") || document.body.classList.contains("view-saison");
+    var wasQuiz = document.body.classList.contains("view-quiz");
+    document.body.classList.toggle("view-fotos", fotos);
+    document.body.classList.toggle("view-quiz", quiz);
+    document.body.classList.toggle("view-saison", saison);
+    if (saison) renderHist();
+    if (quiz && (!wasQuiz || !QS.list.length)) quizStart();
+    if (fotos || quiz || saison) { window.scrollTo(0, 0); return; }
+    if (was) fitTitle();
+    var t = h && h.length > 1 ? document.getElementById(decodeURIComponent(h.slice(1))) : null;
+    if (t && h !== "#start") t.scrollIntoView(); else if (was) window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+  route();
+  render();
+  (async function () {
+    try {
+      var c = window.claude;
+      var db = c && c.use ? await c.use("db") : null;
+      var user = c && c.use ? await c.use("user") : null;
+      if (user) { try { S.canEdit = (await user.canEdit()) === true; } catch (x) { S.canEdit = false; } }
+      try { DL = await c.use("downloads"); } catch (x) { DL = null; }
+      if (!db) throw 0;
+      S.col = db.collection("news");
+      $("editor").hidden = !S.canEdit;
+      $("news-note").textContent = S.canEdit ? "Du kannst Events eintragen und bearbeiten." : "";
+      FOTO.start(db); GB.start(db);
+      try { ASSETS = S.canEdit ? await c.use("assets") : null; } catch (x) { ASSETS = null; }
+      if (S.canEdit) $("motto-admin").hidden = false;
+      db.doc("site/season").onSnapshot(function (sn) {
+        if (sn.exists) { LIVE.season = true; renderSeason(sn.data()); } else if (!PUB) renderSeason(null);
+      }, function () {});
+      db.doc("site/match").onSnapshot(function (sn) {
+        if (sn.exists) { LIVE.match = true; renderMatch(sn.data()); } else if (!PUB) renderMatch(null);
+      }, function () {});
+      SITE = db.doc("site/settings");
+      SITE.onSnapshot(function (sn) {
+        if (sn.exists) { LIVE.settings = true; applySettings(sn.data(), false); }
+        else if (!PUB) applySettings(null, false);
+      }, function () {});
+      S.col.onSnapshot(function (snap) {
+        if (!snap.docs.length && !S.canEdit && PUB) return;
+        LIVE.news = true;
+        S.posts = snap.docs.map(function (d) { var x = Object.assign({}, d.data()); x.id = d.id; return clean(x); });
+        S.loaded = true; render();
+      }, function () { S.loaded = true; render(); });
+    } catch (e) {
+      S.loaded = true; render(); FOTO.offline(); GB.offline();
+    }
+  })();
+})();
+</script>
+
+</body>
+</html>

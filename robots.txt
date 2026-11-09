@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brigademg.de/sitemap.xml
