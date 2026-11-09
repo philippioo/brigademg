@@ -686,7 +686,7 @@ footer a { color: var(--band-ink); }
     var rest = S.posts.filter(function (p) { return !(p.date && p.date >= t); }).sort(function (a, b) { return (b.date || "").localeCompare(a.date || "") || (b.createdAt || 0) - (a.createdAt || 0); });
     return up.concat(rest);
   }
-  var SITE_URL = "http://brigademg.de", LOGO = "", DL = null, NEXT = null;
+  var SITE_URL = "https://brigademg.de", LOGO = "", DL = null, NEXT = null;
   function nextEvent() {
     var t = today();
     return S.posts.filter(function (p) { return p.date && p.date >= t; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; })[0] || null;
