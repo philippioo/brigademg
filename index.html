@@ -474,6 +474,25 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
 .form-dots .fd:last-child::after { left: auto; right: 0; transform: translate(0, 4px); }
 .form-dots .fd:hover::after, .form-dots .fd:focus::after { opacity: 1; transform: translate(-50%, 0); }
 .form-dots .fd:first-child:hover::after, .form-dots .fd:first-child:focus::after, .form-dots .fd:last-child:hover::after, .form-dots .fd:last-child:focus::after { transform: translate(0, 0); }
+/* Nach oben */
+.totop { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(22px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 44px; height: 44px; border: 0; padding: 0; background: var(--green); color: var(--green-ink); border-radius: 8px; transform: rotate(45deg) scale(.6); opacity: 0; pointer-events: none; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.25); transition: opacity .25s ease, transform .25s ease, background .2s ease; display: grid; place-items: center; }
+.totop.show { opacity: 1; transform: rotate(45deg) scale(1); pointer-events: auto; }
+.totop:hover { background: var(--ink); color: var(--bg); }
+.totop svg { width: 20px; height: 20px; transform: rotate(-45deg); transition: transform .2s ease; }
+.totop:hover svg { transform: rotate(-45deg) translateY(-2px); }
+/* Spieltag */
+.mb-cd.today { display: inline-flex; align-items: center; gap: 7px; background: #0A0B0A; color: #FFFFFF; font-weight: 700; font-size: 13px; letter-spacing: .02em; padding: 4px 12px 4px 10px; border-radius: 999px; margin-top: 8px; width: fit-content; max-width: 100%; align-self: flex-start; }
+.mb-cd.today::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2FC46B; flex: none; animation: pulsdot 1.4s ease-in-out infinite; }
+@keyframes pulsdot { 0%, 100% { box-shadow: 0 0 0 0 rgba(47,196,107,.7); } 50% { box-shadow: 0 0 0 5px rgba(47,196,107,0); } }
+.matchbar.live .mb-cd.today { color: #FFFFFF; }
+/* Kerze */
+.candle { position: relative; width: 60px; height: 112px; margin: 26px 0 0; }
+.candle .glow { position: absolute; left: 50%; top: 4px; width: 90px; height: 90px; margin-left: -45px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,90,.38) 0%, rgba(255,170,60,.12) 45%, rgba(255,170,60,0) 70%); animation: glow 3s ease-in-out infinite alternate; }
+.candle .flame { position: absolute; left: 50%; top: 26px; width: 14px; height: 26px; margin-left: -7px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 75%, #FFFDF2 0%, #FFE07A 35%, #FFA432 70%, rgba(255,120,30,.6) 100%); box-shadow: 0 0 12px 3px rgba(255,170,60,.55); transform-origin: 50% 95%; animation: flicker 2.6s ease-in-out infinite; }
+.candle .wick { position: absolute; left: 50%; top: 49px; width: 2px; height: 7px; margin-left: -1px; background: #2A2421; border-radius: 1px; }
+.candle .wax { position: absolute; left: 50%; bottom: 0; width: 24px; height: 56px; margin-left: -12px; border-radius: 4px 4px 3px 3px; background: linear-gradient(90deg, #D9D0BC 0%, #F6F1E6 40%, #EDE5D3 70%, #CFC5AE 100%); box-shadow: 0 4px 10px rgba(0,0,0,.15); }
+@keyframes flicker { 0%, 100% { transform: scale(1, 1) rotate(0); opacity: 1; } 20% { transform: scale(.94, 1.06) rotate(-2deg); } 40% { transform: scale(1.03, .95) rotate(1.5deg); opacity: .92; } 60% { transform: scale(.97, 1.04) rotate(-1deg); } 80% { transform: scale(1.02, .97) rotate(2deg); opacity: .96; } }
+@keyframes glow { from { opacity: .75; transform: scale(.95); } to { opacity: 1; transform: scale(1.05); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
@@ -749,6 +768,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
         <figure class="gd-card"><img src="gedenken/marco-blum.jpg" alt="Marco Blum" loading="lazy"><figcaption><div class="nm">Marco Blum</div><div class="yrs">1981 – 2019</div></figcaption></figure>
       </div>
       <p class="gd-end">Für immer Teil der Brigade. 🖤💚🤍</p>
+      <div class="candle" aria-hidden="true"><span class="glow"></span><span class="flame"></span><span class="wick"></span><span class="wax"></span></div>
     </section>
     <section id="datenschutz" class="imprint ds" aria-labelledby="ds-h">
       <a class="back" href="#start">← Zurück zur Startseite</a>
@@ -790,6 +810,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   </div>
 </footer>
 
+<button class="totop" id="totop" type="button" aria-label="Nach oben" title="Nach oben"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 15V5M5 10l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ansehen">
   <div class="lb-top"><span class="lb-meta"><span id="lb-alb"></span></span><button class="btn small" type="button" id="lb-close">Schließen ✕</button></div>
   <div class="lb-img"><img id="lb-img" alt=""></div>
@@ -1343,6 +1364,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     }
     function when(m) { var t = /^\d{4}-\d{2}-\d{2}$/.test(m.date || "") ? fmt(m.date) : ""; return [t, str(m.time, 5) ? str(m.time, 5) + " Uhr" : "", str(m.competition, 40)].filter(Boolean).join(" · "); }
     var td = today(), live = !!(n && n.date === td), stale = !!(n && n.date && n.date < td);
+    MLIVE = live;
     $("spieltag").classList.toggle("live", live);
     $("mb-next-lbl").textContent = live ? "Heute ist Spieltag!" : stale ? "Gerade gespielt – Ergebnis folgt" : "Nächstes Spiel";
     if (n) { $("mb-next-teams").innerHTML = teams(n, false); $("mb-next-sub").textContent = live ? (str(n.time, 5) ? "Anpfiff " + str(n.time, 5) + " Uhr · " : "") + str(n.competition, 40) : when(n); }
@@ -1368,8 +1390,20 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   }
   /* Dezenter Countdown bis zum Anpfiff */
   var MKICK = null;
+  var MLIVE = false;
   function mtick() {
     var el = $("mb-cd");
+    el.classList.toggle("today", MLIVE);
+    if (MLIVE) {
+      var t = "Heute geht's los!";
+      if (MKICK) {
+        var df = MKICK - new Date();
+        if (df > 0) { var mi = Math.floor(df / 60000), h = Math.floor(mi / 60); t = "Noch " + (h ? h + " Std " : "") + (mi % 60) + " Min bis zum Anpfiff"; }
+        else if (df > -150 * 60000) t = "Das Spiel läuft – Daumen drücken! 💚";
+        else t = "Abpfiff – danke fürs Mitfiebern!";
+      }
+      el.textContent = t; el.hidden = false; return;
+    }
     if (!MKICK) { el.hidden = true; return; }
     var diff = MKICK - new Date();
     if (diff <= 0) { el.hidden = true; return; }
@@ -1667,6 +1701,39 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     if (t && h !== "#start") t.scrollIntoView(); else if (was) window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", route);
+  /* Zahlen bei „Über uns" zählen hoch */
+  (function () {
+    var els = document.querySelectorAll(".fact .n");
+    if (!els.length || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target, end = parseInt(el.textContent, 10);
+        if (!(end > 0)) return;
+        var t0 = null, dur = end > 100 ? 1600 : 1100;
+        function step(ts) {
+          if (t0 === null) t0 = ts;
+          var k = Math.min(1, (ts - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - k, 3)));
+          el.textContent = String(v);
+          if (k < 1) requestAnimationFrame(step); else el.textContent = String(end);
+        }
+        el.textContent = "0"; requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+  /* Nach-oben-Button */
+  (function () {
+    var b = $("totop"), on = false;
+    function chk() { var s = window.scrollY > 700; if (s !== on) { on = s; b.classList.toggle("show", s); } }
+    window.addEventListener("scroll", chk, { passive: true }); chk();
+    b.addEventListener("click", function () {
+      var rm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: rm ? "auto" : "smooth" });
+    });
+  })();
   route();
   render();
   (async function () {
