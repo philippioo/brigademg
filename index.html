@@ -77,7 +77,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .hero .wrap { position: relative; padding-block: 24px 44px; display: grid; gap: 30px; }
 .nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
-.mark { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
+.mark { color: var(--hero-ink); text-decoration: none; display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
 .mark svg { width: 30px; height: 30px; flex: none; }
 .nav nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-weight: 600; font-size: 15px; }
 .nav nav a { color: var(--hero-ink); text-decoration: none; position: relative; padding-bottom: 3px; transition: color .2s; }
@@ -120,7 +120,18 @@ main .wrap { display: grid; gap: 64px; padding-block: 56px 72px; }
 .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
 label.f { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--muted); min-width: 0; }
 label.f input, label.f textarea, label.f select { font-weight: 400; color: var(--ink); }
-@media (max-width: 420px) { .nav nav { gap: 4px 13px; font-size: 14px; } }
+.menu-btn { display: none; }
+@media (max-width: 640px) {
+  .menu-btn { display: inline-grid; align-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; }
+  .menu-btn span { display: block; height: 2px; border-radius: 2px; background: var(--hero-ink); transition: transform .25s ease, opacity .2s ease; }
+  .nav.open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav.open .menu-btn span:nth-child(2) { opacity: 0; }
+  .nav.open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav nav { display: none; flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 2px; font-size: 17px; padding: 6px 0 4px; border-top: 1px solid var(--line); }
+  .nav.open nav { display: flex; animation: menuin .22s ease; }
+  .nav nav a { padding: 8px 0 6px; }
+}
+@keyframes menuin { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 input[type=text], input[type=date], select, textarea { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 9px 10px; width: 100%; font-size: 16px; color: var(--ink); }
 textarea { min-height: 90px; resize: vertical; }
 .btn { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 9px 16px; font-weight: 600; cursor: pointer; }
@@ -385,6 +396,9 @@ body.view-ff .hero .wrap { padding-block: 24px 20px; }
 .gd-link { margin-top: 18px; }
 body.view-ds main section:not(#datenschutz), body.view-ds .hero-text, body.view-ds #spieltag { display: none; }
 .gb-entry.pin { border-left: 5px solid var(--green); }
+.gb-entry { position: relative; }
+.gb-entry .gb-new { position: absolute; top: 12px; right: 12px; margin: 0; }
+.gb-entry:has(.gb-new) .q { padding-right: 56px; }
 .gb-entry .pin-l { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
 .gb-more { margin-top: 14px; }
 .ds h3 { font-family: var(--body); text-transform: none; font-size: 18px; font-weight: 700; letter-spacing: 0; color: var(--ink); margin: 14px 0 0; }
@@ -492,12 +506,13 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
 <header class="hero">
   <div class="wrap">
     <div class="nav">
-      <div class="mark" aria-label="Brigade Mönchengladbach">
+      <a class="mark" href="#start" id="mark-link" aria-label="Brigade Mönchengladbach – zur Startseite">
         <svg id="mark-svg" viewBox="0 0 30 30" aria-hidden="true"><rect x="5" y="5" width="20" height="20" transform="rotate(45 15 15)" fill="var(--hero-ink)"/><rect x="8.5" y="8.5" width="13" height="13" transform="rotate(45 15 15)" fill="var(--hero-bg)"/><rect x="11.5" y="11.5" width="7" height="7" transform="rotate(45 15 15)" fill="var(--kit)"/></svg>
         <img id="mark-img" alt="" hidden>
         Brigade MG
-      </div>
-      <nav aria-label="Seitennavigation"><a href="#events">Events</a><a href="#ueber-uns">Über uns</a><a href="#fotos">Fotos</a><a href="#saison">Saison</a><a href="#gaestebuch">Gästebuch</a><a href="#fanfreundschaften">Fanfreundschaften</a><a href="#unvergessen">Unvergessen</a><a href="#kontakt">Kontakt</a></nav>
+      </a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <nav aria-label="Seitennavigation" id="site-nav"><a href="#events">Events</a><a href="#ueber-uns">Über uns</a><a href="#fotos">Fotos</a><a href="#saison">Saison</a><a href="#gaestebuch">Gästebuch</a><a href="#fanfreundschaften">Fanfreundschaften</a><a href="#unvergessen">Unvergessen</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <div class="hero-text">
       <p class="eyebrow">Borussia-Fanclub seit 1992 · Elf vom Niederrhein</p>
@@ -1179,6 +1194,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     }
   });
   /* Gästebuch: Besucher schicken Einträge per Mail, nur du trägst sie ein */
+  function gbNewFrom() { var d = new Date(); d.setDate(d.getDate() - 14); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
   function gbSort(a, b) { return (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || (b.date || "").localeCompare(a.date || "") || b.createdAt - a.createdAt; }
   var GB_START = 3; /* auf der Startseite: angehefteter Eintrag + die neuesten drei */
   var GB = makeSection({
@@ -1205,7 +1221,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     },
     empty: '<div class="empty" style="grid-column:1/-1">Noch keine Einträge. Sei der Erste!</div>',
     item: function (it, a) {
-      return '<article class="gb-entry' + (it.pinned ? " pin" : "") + '">' + (it.pinned ? '<div class="pin-l">📌 Angeheftet</div>' : "") + '<p class="q">' + esc(it.text) + '</p><div class="who"><strong>' + esc(it.name) + "</strong>" + (it.place ? " · " + esc(it.place) : "") + (it.date ? " · " + fmt(it.date) : "") + "</div>" + a + "</article>";
+      return '<article class="gb-entry' + (it.pinned ? " pin" : "") + '">' + (it.pinned ? '<div class="pin-l">📌 Angeheftet</div>' : "") + (it.date && it.date >= gbNewFrom() ? '<span class="new-badge gb-new">Neu</span>' : "") + '<p class="q">' + esc(it.text) + '</p><div class="who"><strong>' + esc(it.name) + "</strong>" + (it.place ? " · " + esc(it.place) : "") + (it.date ? " · " + fmt(it.date) : "") + "</div>" + a + "</article>";
     }
   });
   /* Gästebuch-Formular (nur auf dem eigenen Webspace; bei Claude bleibt der Weg per Mail) */
@@ -1355,7 +1371,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     }
     function when(m) { var t = /^\d{4}-\d{2}-\d{2}$/.test(m.date || "") ? fmt(m.date) : ""; return [t, str(m.time, 5) ? str(m.time, 5) + " Uhr" : "", str(m.competition, 40)].filter(Boolean).join(" · "); }
     var td = today(), live = !!(n && n.date === td), stale = !!(n && n.date && n.date < td);
-    MLIVE = live;
+    MLIVE = live; favDot(live);
     $("spieltag").classList.toggle("live", live);
     $("mb-next-lbl").textContent = live ? "Heute ist Spieltag!" : stale ? "Gerade gespielt – Ergebnis folgt" : "Nächstes Spiel";
     if (n) { $("mb-next-teams").innerHTML = teams(n, false); $("mb-next-sub").textContent = live ? (str(n.time, 5) ? "Anpfiff " + str(n.time, 5) + " Uhr · " : "") + str(n.competition, 40) : when(n); }
@@ -1381,7 +1397,23 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   }
   /* Dezenter Countdown bis zum Anpfiff */
   var MKICK = null;
-  var MLIVE = false;
+  var MLIVE = false, FAV0 = null, FAVON = null;
+  function favDot(on) {
+    var l = document.querySelector('link[rel="icon"]'); if (!l || on === FAVON) return; FAVON = on;
+    if (FAV0 === null) FAV0 = l.getAttribute("href");
+    if (!on) { l.setAttribute("href", FAV0); return; }
+    var im = new Image();
+    im.onload = function () {
+      try {
+        var c = document.createElement("canvas"); c.width = c.height = 64; var x = c.getContext("2d");
+        x.drawImage(im, 0, 0, 64, 64);
+        x.beginPath(); x.arc(49, 49, 13, 0, Math.PI * 2); x.fillStyle = "#FFFFFF"; x.fill();
+        x.beginPath(); x.arc(49, 49, 9.5, 0, Math.PI * 2); x.fillStyle = "#00A04A"; x.fill();
+        l.setAttribute("type", "image/png"); l.setAttribute("href", c.toDataURL("image/png"));
+      } catch (e) {}
+    };
+    im.src = FAV0;
+  }
   function mtick() {
     var el = $("mb-cd");
     el.classList.toggle("today", MLIVE);
@@ -1692,6 +1724,15 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     if (t && h !== "#start") t.scrollIntoView(); else if (was) window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", route);
+  $("mark-link").addEventListener("click", function () { setTimeout(function () { window.scrollTo({ top: 0, behavior: "smooth" }); }, 0); });
+  (function () {
+    var nav = document.querySelector(".nav"), b = $("menu-btn");
+    function set(o) { nav.classList.toggle("open", o); b.setAttribute("aria-expanded", o ? "true" : "false"); b.setAttribute("aria-label", o ? "Menü schließen" : "Menü öffnen"); }
+    b.addEventListener("click", function () { set(!nav.classList.contains("open")); });
+    $("site-nav").addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+    $("mark-link").addEventListener("click", function () { set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); b.focus(); } });
+  })();
   /* Zahlen bei „Über uns" zählen hoch */
   (function () {
     var els = document.querySelectorAll(".fact .n");
