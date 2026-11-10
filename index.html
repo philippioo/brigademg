@@ -369,10 +369,11 @@ body.view-ff .hero .wrap { padding-block: 24px 20px; }
 .ff-intro { max-width: 62ch; color: var(--muted); font-size: 18px; margin: 0 0 26px; }
 .ff-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; max-width: 980px; }
 .ff-grid li { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 6px; padding: 16px 18px; font-family: var(--display); font-weight: 800; font-size: 24px; line-height: 1.1; text-transform: uppercase; letter-spacing: .02em; transition: transform .2s ease, box-shadow .2s ease; }
-.ff-grid li:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.10); }
-.ff-grid.ff-k li { border-left-color: var(--muted); font-size: 21px; }
-.ff-sub { font-size: 26px; margin: 34px 0 6px; }
-.ff-note { color: var(--muted); margin: 0 0 16px; }
+.ff-grid li { position: relative; overflow: hidden; }
+.ff-grid li::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: repeating-linear-gradient(90deg, #0A0B0A 0 18px, #FFFFFF 18px 36px, var(--kit) 36px 54px); transform: translateX(-101%); transition: transform .45s ease; }
+.ff-grid li:hover, .ff-grid li:active { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.10); }
+.ff-grid li:hover::after, .ff-grid li:active::after { transform: translateX(0); }
+
 .gd-intro { max-width: 62ch; color: var(--muted); font-size: 18px; margin: 0 0 26px; }
 .gd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; max-width: 900px; }
 .gd-card { margin: 0; text-align: center; }
@@ -454,7 +455,26 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; font-varian
 footer { background: var(--band); color: var(--band-muted); font-size: 14px; border-top: 8px solid var(--kit); }
 footer .wrap { padding-block: 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 footer a { color: var(--band-ink); }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Kleine Hover-Effekte */
+.photo img { transition: transform .35s ease, filter .35s ease; }
+.photo:hover img, .photo:focus-visible img, .photo:active img { transform: scale(1.05); filter: brightness(1.08); }
+@keyframes wuff { 0% { transform: rotate(0); } 20% { transform: rotate(-10deg); } 45% { transform: rotate(8deg); } 70% { transform: rotate(-4deg); } 100% { transform: rotate(0); } }
+.mark #mark-img, .mark #mark-svg { transform-origin: 50% 70%; }
+.mark:hover #mark-img, .mark:hover #mark-svg, .mark:active #mark-img, .mark:active #mark-svg { animation: wuff .6s ease; }
+.arr { display: inline-block; transition: transform .2s ease; }
+a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:active .arr { transform: translateX(5px); }
+.ticket { transition: transform .22s ease, filter .22s ease; }
+.ticket .stub .big, .ticket .stub .dt, .ticket-body .stamp { transition: color .22s ease, transform .3s ease, opacity .3s ease; }
+.ticket:not(.past):hover, .ticket:not(.past):active { transform: translateY(-4px); filter: drop-shadow(0 14px 22px rgba(0,0,0,.16)); }
+.ticket:not(.past):hover .stub .big, .ticket:not(.past):hover .stub .dt, .ticket:not(.past):active .stub .big, .ticket:not(.past):active .stub .dt { color: var(--kit); }
+.ticket:not(.past):hover .ticket-body .stamp { transform: rotate(-4deg) scale(1.06); opacity: .2; }
+.form-dots .fd { position: relative; cursor: default; }
+.form-dots .fd::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); background: var(--band); color: var(--band-ink); font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0; text-transform: none; white-space: nowrap; padding: 6px 10px; border-radius: 6px; box-shadow: 0 6px 16px rgba(0,0,0,.25); opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 5; }
+.form-dots .fd:first-child::after { left: 0; transform: translate(0, 4px); }
+.form-dots .fd:last-child::after { left: auto; right: 0; transform: translate(0, 4px); }
+.form-dots .fd:hover::after, .form-dots .fd:focus::after { opacity: 1; transform: translate(-50%, 0); }
+.form-dots .fd:first-child:hover::after, .form-dots .fd:first-child:focus::after, .form-dots .fd:last-child:hover::after, .form-dots .fd:last-child:focus::after { transform: translate(0, 0); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
 <div class="kit" aria-hidden="true"></div>
@@ -515,7 +535,7 @@ footer a { color: var(--band-ink); }
       <div class="mb-lbl">Tabelle</div>
       <div class="mb-teams"><span class="sc" id="mb-rank"></span><span id="mb-pts"></span></div>
       <div class="mb-sub" id="mb-table-sub"></div>
-      <a class="mb-more" href="#saison">Spielplan, Tabelle &amp; mehr →</a>
+      <a class="mb-more" href="#saison">Spielplan, Tabelle &amp; mehr <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -567,7 +587,7 @@ footer a { color: var(--band-ink); }
       <a class="teaser" href="#fotos" id="ft-link">
         <span class="thumbs" id="ft-imgs"></span>
         <span class="txt"><strong id="ft-t">35 Jahre in Bildern</strong><span id="ft-s">Auswärtsfahrten, Feste und Jubiläen</span></span>
-        <span class="btn primary" id="ft-btn">Alle Fotos ansehen →</span>
+        <span class="btn primary" id="ft-btn">Alle Fotos ansehen <span class="arr">→</span></span>
       </a>
     </section>
 
@@ -662,7 +682,7 @@ footer a { color: var(--band-ink); }
         </form>
       </div>
       <div class="gb-list" id="gb-list"><div class="empty">Wird geladen …</div></div>
-      <div class="gb-more" id="gb-all-link" hidden><a class="btn" href="#gaestebuch-alle" id="gb-all-btn">Alle Einträge ansehen →</a></div>
+      <div class="gb-more" id="gb-all-link" hidden><a class="btn" href="#gaestebuch-alle" id="gb-all-btn">Alle Einträge ansehen <span class="arr">→</span></a></div>
     </section>
 
     <section id="quiz-teaser" aria-labelledby="qt-h">
@@ -672,7 +692,7 @@ footer a { color: var(--band-ink); }
         <h3 id="fdt-q">Wird geladen …</h3>
         <div class="qz-opts" id="fdt-opts"></div>
         <div id="fdt-after"></div>
-        <div class="qz-btns"><a class="btn primary" href="#quiz">Ganzes Quiz: 10 schwere Fragen →</a></div>
+        <div class="qz-btns"><a class="btn primary" href="#quiz">Ganzes Quiz: 10 schwere Fragen <span class="arr">→</span></a></div>
       </div>
     </section>
 
@@ -714,10 +734,6 @@ footer a { color: var(--band-ink); }
         <li>Alte Kameradschaft</li>
         <li>NFB MG</li>
         <li>Sturmtruppen</li>
-      </ul>
-      <h3 class="ff-sub">Gute Kontakte</h3>
-      <p class="ff-note">Zudem pflegen wir vereinzelt gute Kontakte mit:</p>
-      <ul class="ff-grid ff-k">
         <li>Forever Duisburg</li>
         <li>Presswerk Rüsselsheim</li>
         <li>Weimarer Jungs</li>
@@ -778,7 +794,7 @@ footer a { color: var(--band-ink); }
   <div class="lb-top"><span class="lb-meta"><span id="lb-alb"></span></span><button class="btn small" type="button" id="lb-close">Schließen ✕</button></div>
   <div class="lb-img"><img id="lb-img" alt=""></div>
   <div class="lb-bar" id="lb-bar" hidden><i id="lb-bar-i"></i></div>
-  <div class="lb-ctrl"><button class="btn small" type="button" id="lb-prev">← Zurück</button><span id="lb-n"></span><button class="btn small" type="button" id="lb-next">Weiter →</button><button class="btn small" type="button" id="lb-play">▶ Diashow</button></div>
+  <div class="lb-ctrl"><button class="btn small" type="button" id="lb-prev">← Zurück</button><span id="lb-n"></span><button class="btn small" type="button" id="lb-next">Weiter <span class="arr">→</span></button><button class="btn small" type="button" id="lb-play">▶ Diashow</button></div>
 </div>
 
 <canvas id="fx" hidden></canvas>
@@ -1116,7 +1132,7 @@ footer a { color: var(--band-ink); }
       $("ft-t").innerHTML = nw ? esc(nw) + '<span class="new-badge">Neu</span>' : "35 Jahre in Bildern";
       $("ft-s").textContent = nw ? "Neues Album · insgesamt " + items.length + " Fotos" + (na > 1 ? " in " + na + " Alben" : "") : items.length + (items.length === 1 ? " Foto" : " Fotos") + (na > 1 ? " in " + na + " Alben" : "");
       $("ft-link").setAttribute("href", nw ? "#fotos/" + slug(nw) : "#fotos");
-      $("ft-btn").textContent = nw ? "Album ansehen →" : "Alle Fotos ansehen →";
+      $("ft-btn").innerHTML = (nw ? "Album ansehen" : "Alle Fotos ansehen") + ' <span class="arr">→</span>';
     },
     clean: function (d) { return typeof d.asset === "string" && /^[A-Za-z0-9_-]{8,64}$/.test(d.asset) ? { id: d.id, asset: d.asset, src: typeof d.src === "string" && /^fotos\/[A-Za-z0-9_-]{1,80}\.(jpg|png)$/.test(d.src) ? d.src : "", caption: "", album: str(d.album, 60).trim(), year: /^(19|20)\d\d$/.test(d.year || "") ? d.year : "", createdAt: typeof d.createdAt === "number" ? d.createdAt : 0 } : null; },
     sort: photoSort,
@@ -1173,7 +1189,7 @@ footer a { color: var(--band-ink); }
       }
       var more = total > items.length;
       $("gb-all-link").hidden = all || !more;
-      $("gb-all-btn").textContent = "Alle " + total + " Einträge ansehen →";
+      $("gb-all-btn").innerHTML = "Alle " + total + ' Einträge ansehen <span class="arr">→</span>';
     },
     empty: '<div class="empty" style="grid-column:1/-1">Noch keine Einträge. Sei der Erste!</div>',
     item: function (it, a) {
@@ -1402,7 +1418,7 @@ footer a { color: var(--band-ink); }
     var played = fx.filter(function (f) { return f.score; }), next = fx.filter(function (f) { return !f.score && f.date >= td; });
     /* Formkurve */
     var bl = played.filter(function (f) { return f.comp === "BL"; }).slice(-5);
-    $("ss-form").innerHTML = bl.map(function (f) { var r = ssRes(f); return '<span class="fd ' + r + '" title="' + esc((f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " " + f.score) + '">' + r + "</span>"; }).join("");
+    $("ss-form").innerHTML = bl.map(function (f) { var r = ssRes(f); var tip = esc(ssDate(f.date).slice(3) + " · " + (f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " " + f.score); return '<span class="fd ' + r + '" tabindex="0" aria-label="' + tip + '" data-tip="' + tip + '">' + r + "</span>"; }).join("");
     $("ss-form-list").innerHTML = bl.slice().reverse().map(function (f) { return "<li>" + ssDate(f.date).slice(3) + " · " + esc(f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " <b>" + esc(f.score) + "</b></li>"; }).join("");
     /* Torjäger */
     $("ss-scorers").innerHTML = d.scorers.length ? d.scorers.map(function (r) { return "<li><span>" + esc(r.name) + "</span><b>" + r.goals + "</b></li>"; }).join("") : '<li><span>Noch keine Daten</span></li>';
@@ -1595,7 +1611,7 @@ footer a { color: var(--band-ink); }
     if (!ok) b.classList.add("no");
     var last = QS.i === QS.list.length - 1;
     $("qz-after").innerHTML = '<div class="qz-x' + (ok ? "" : " no") + '"><strong>' + (ok ? "Richtig! " : "Leider falsch. ") + "</strong>" + esc(q.x) + "</div>" +
-      '<div class="qz-btns"><button class="btn primary" type="button" id="qz-next">' + (last ? "Ergebnis anzeigen" : "Nächste Frage →") + "</button></div>";
+      '<div class="qz-btns"><button class="btn primary" type="button" id="qz-next">' + (last ? "Ergebnis anzeigen" : 'Nächste Frage <span class="arr">→</span>') + "</button></div>";
     $("qz").querySelector(".qz-top span:last-child").textContent = QS.score + " richtig";
     $("qz-next").focus({ preventScroll: true });
   });
