@@ -485,14 +485,6 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
 .mb-cd.today::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2FC46B; flex: none; animation: pulsdot 1.4s ease-in-out infinite; }
 @keyframes pulsdot { 0%, 100% { box-shadow: 0 0 0 0 rgba(47,196,107,.7); } 50% { box-shadow: 0 0 0 5px rgba(47,196,107,0); } }
 .matchbar.live .mb-cd.today { color: #FFFFFF; }
-/* Kerze */
-.candle { position: relative; width: 60px; height: 112px; margin: 26px 0 0; }
-.candle .glow { position: absolute; left: 50%; top: 4px; width: 90px; height: 90px; margin-left: -45px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,90,.38) 0%, rgba(255,170,60,.12) 45%, rgba(255,170,60,0) 70%); animation: glow 3s ease-in-out infinite alternate; }
-.candle .flame { position: absolute; left: 50%; top: 26px; width: 14px; height: 26px; margin-left: -7px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 75%, #FFFDF2 0%, #FFE07A 35%, #FFA432 70%, rgba(255,120,30,.6) 100%); box-shadow: 0 0 12px 3px rgba(255,170,60,.55); transform-origin: 50% 95%; animation: flicker 2.6s ease-in-out infinite; }
-.candle .wick { position: absolute; left: 50%; top: 49px; width: 2px; height: 7px; margin-left: -1px; background: #2A2421; border-radius: 1px; }
-.candle .wax { position: absolute; left: 50%; bottom: 0; width: 24px; height: 56px; margin-left: -12px; border-radius: 4px 4px 3px 3px; background: linear-gradient(90deg, #D9D0BC 0%, #F6F1E6 40%, #EDE5D3 70%, #CFC5AE 100%); box-shadow: 0 4px 10px rgba(0,0,0,.15); }
-@keyframes flicker { 0%, 100% { transform: scale(1, 1) rotate(0); opacity: 1; } 20% { transform: scale(.94, 1.06) rotate(-2deg); } 40% { transform: scale(1.03, .95) rotate(1.5deg); opacity: .92; } 60% { transform: scale(.97, 1.04) rotate(-1deg); } 80% { transform: scale(1.02, .97) rotate(2deg); opacity: .96; } }
-@keyframes glow { from { opacity: .75; transform: scale(.95); } to { opacity: 1; transform: scale(1.05); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
@@ -768,7 +760,6 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
         <figure class="gd-card"><img src="gedenken/marco-blum.jpg" alt="Marco Blum" loading="lazy"><figcaption><div class="nm">Marco Blum</div><div class="yrs">1981 – 2019</div></figcaption></figure>
       </div>
       <p class="gd-end">Für immer Teil der Brigade. 🖤💚🤍</p>
-      <div class="candle" aria-hidden="true"><span class="glow"></span><span class="flame"></span><span class="wick"></span><span class="wax"></span></div>
     </section>
     <section id="datenschutz" class="imprint ds" aria-labelledby="ds-h">
       <a class="back" href="#start">← Zurück zur Startseite</a>
