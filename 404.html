@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Seite nicht gefunden · Brigade MG</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<meta name="theme-color" content="#00843A">
+<style>
+@font-face { font-family: "Big Shoulders Display"; src: url("/fonts/BigShoulders-Bold.woff") format("woff"); font-weight: 700 900; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("/fonts/WorkSans-Regular.woff") format("woff"); font-weight: 400 500; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("/fonts/WorkSans-Bold.woff") format("woff"); font-weight: 600 700; font-display: swap; }
+:root { --bg: #FFFFFF; --surface: #F3F5F3; --ink: #0A0B0A; --muted: #4F5752; --line: #D9DEDA; --green: #00843A; --green-ink: #FFFFFF; --kit: #00A04A; --stripe-w: #FFFFFF; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0B0D0C; --surface: #151917; --ink: #F2F4F2; --muted: #9FA9A2; --line: #29302C; --green: #2FC46B; --green-ink: #06120B; --kit: #2FC46B; --stripe-w: #F4F6F4; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink); font-family: "Work Sans", -apple-system, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.6; }
+.kit { height: 12px; background: linear-gradient(to bottom, #0A0B0A 0 33.4%, var(--stripe-w) 33.4% 66.7%, var(--kit) 66.7% 100%); }
+main { flex: 1; display: grid; place-items: center; padding: 40px 16px; position: relative; overflow: hidden; }
+main::before { content: ""; position: absolute; right: -120px; top: 50%; width: 420px; height: 420px; transform: translateY(-50%) rotate(45deg); border: 46px solid var(--kit); opacity: .1; pointer-events: none; }
+.box { position: relative; max-width: 560px; text-align: center; }
+img { width: 170px; height: auto; display: block; margin: 0 auto 10px; animation: wuff 1s ease .3s; transform-origin: 50% 70%; }
+.tag { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin: 0; }
+h1 { font-family: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(64px, 16vw, 110px); line-height: .9; margin: 6px 0 12px; }
+p.t { color: var(--muted); margin: 0 auto 24px; max-width: 42ch; }
+.btn { display: inline-block; background: var(--green); color: var(--green-ink); font-weight: 700; text-decoration: none; border-radius: 8px; padding: 12px 22px; }
+.btn span { display: inline-block; transition: transform .2s ease; }
+.btn:hover span { transform: translateX(5px); }
+.links { margin-top: 22px; font-size: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
+.links a { color: var(--ink); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--kit); }
+.links a:hover { color: var(--green); }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+@keyframes wuff { 0% { transform: rotate(0); } 20% { transform: rotate(-10deg); } 45% { transform: rotate(8deg); } 70% { transform: rotate(-4deg); } 100% { transform: rotate(0); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="kit" aria-hidden="true"></div>
+<main>
+  <div class="box">
+    <img src="/logo.png" alt="Bulldogge der Brigade Mönchengladbach">
+    <p class="tag">Fehler 404</p>
+    <h1>Abseits!</h1>
+    <p class="t">Diese Seite gibt's nicht – vielleicht hat sich ein Tippfehler eingeschlichen. Kein Problem, zurück geht's hier:</p>
+    <a class="btn" href="/">Zur Startseite <span>→</span></a>
+    <div class="links"><a href="/#events">Events</a><a href="/#fotos">Fotos</a><a href="/#saison">Saison</a><a href="/#gaestebuch">Gästebuch</a><a href="/#kontakt">Kontakt</a></div>
+  </div>
+</main>
+<div class="kit" aria-hidden="true"></div>
+</body>
+</html>
