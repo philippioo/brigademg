@@ -427,6 +427,11 @@ a.btn { text-decoration: none; display: inline-flex; align-items: center; }
 .scorers li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
 .scorers li span { min-width: 0; overflow-wrap: anywhere; }
 .scorers b { font-family: var(--display); font-size: 24px; line-height: 1; color: var(--green); font-variant-numeric: tabular-nums; }
+.scorers li { flex-wrap: wrap; row-gap: 5px; border-bottom: 0; }
+.scorers .bar { flex-basis: 100%; height: 7px; border-radius: 4px; background: var(--line); position: relative; overflow: hidden; }
+.scorers .bar::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w, 0%); border-radius: 4px; background: var(--green); transform-origin: left center; animation: barin .8s cubic-bezier(.2,.8,.2,1) both; }
+.scorers li:nth-child(2) .bar::after { animation-delay: .08s; } .scorers li:nth-child(3) .bar::after { animation-delay: .16s; } .scorers li:nth-child(4) .bar::after { animation-delay: .24s; } .scorers li:nth-child(5) .bar::after { animation-delay: .32s; } .scorers li:nth-child(6) .bar::after { animation-delay: .4s; }
+@keyframes barin { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .pk-next { font-family: var(--display); font-weight: 700; font-size: 22px; text-transform: uppercase; line-height: 1.15; }
 .pk-sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
 .pk-path { list-style: none; margin: 10px 0 0; padding: 0; font-size: 14px; color: var(--muted); display: grid; gap: 3px; }
@@ -1090,6 +1095,10 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   /* Neuestes Jahr zuerst, darin das neueste Album zuerst; im Album in Reihenfolge des Hochladens */
   function photoSort(a, b) { return (b.year || "0").localeCompare(a.year || "0") || albStart(b) - albStart(a) || (a.album || "").localeCompare(b.album || "") || a.createdAt - b.createdAt; }
   function photoSrc(it) { return it.src || "/_blob/" + encodeURIComponent(it.asset); }
+  /* Kleine Vorschaubilder (fotos/klein/…) für Übersicht und Teaser; fehlt eins, wird das Original geladen */
+  function thumbSrc(it) { return it.src ? it.src.replace(/^fotos\/([A-Za-z0-9_-]+)\.(jpg|png)$/, "fotos/klein/$1.jpg") : photoSrc(it); }
+  function thumbImg(it, alt) { var t = thumbSrc(it), f = photoSrc(it); return '<img src="' + esc(t) + '"' + (t !== f ? ' data-full="' + esc(f) + '"' : "") + ' alt="' + esc(alt) + '" loading="lazy">'; }
+  document.addEventListener("error", function (e) { var im = e.target; if (im && im.tagName === "IMG" && im.dataset && im.dataset.full && im.getAttribute("src") !== im.dataset.full) im.src = im.dataset.full; }, true);
   function photosSorted() { return FOTO.st.items.slice().sort(photoSort).filter(photoMatch); }
   /* Suche: findet Album, Bildunterschrift und Jahr – ohne Rücksicht auf Groß/Klein und Umlaute */
   function norm(v) { return String(v || "").toLowerCase().replace(/\u{1F4A9}/gu, "k").replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "ss").normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
@@ -1168,7 +1177,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
       var albums = {}; items.forEach(function (it) { albums[it.album || it.year || "-"] = 1; });
       var na = Object.keys(albums).length, nw = newestAlbum();
       var pick = nw ? items.filter(function (it) { return albName(it) === nw; }) : items;
-      $("ft-imgs").innerHTML = (pick.length ? pick : items).slice(0, 4).map(function (it) { return '<img src="' + esc(photoSrc(it)) + '" alt="" loading="lazy">'; }).join("");
+      $("ft-imgs").innerHTML = (pick.length ? pick : items).slice(0, 4).map(function (it) { return thumbImg(it, ""); }).join("");
       $("ft-t").innerHTML = nw ? esc(nw) + '<span class="new-badge">Neu</span>' : "35 Jahre in Bildern";
       $("ft-s").textContent = nw ? "Neues Album · insgesamt " + items.length + " Fotos" + (na > 1 ? " in " + na + " Alben" : "") : items.length + (items.length === 1 ? " Foto" : " Fotos") + (na > 1 ? " in " + na + " Alben" : "");
       $("ft-link").setAttribute("href", nw ? "#fotos/" + slug(nw) : "#fotos");
@@ -1203,7 +1212,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
       var del = S.canEdit ? (FOTO.st.confirm === it.id
         ? '<div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn small danger" type="button" data-del="' + esc(it.id) + '">Wirklich löschen</button><button class="btn small" type="button" data-cancel="1">Abbrechen</button></div>'
         : '<div><button class="btn small" type="button" data-ask="' + esc(it.id) + '">Löschen</button></div>') : "";
-      return '<div class="photo-wrap"><button class="photo" type="button" data-open="' + idx + '"><img src="' + esc(photoSrc(it)) + '" alt="' + esc("Foto: " + albName(it)) + '" loading="lazy"></button>' + del + "</div>";
+      return '<div class="photo-wrap"><button class="photo" type="button" data-open="' + idx + '">' + thumbImg(it, "Foto: " + albName(it)) + '</button>' + del + "</div>";
     }
   });
   /* Gästebuch: Besucher schicken Einträge per Mail, nur du trägst sie ein */
@@ -1513,7 +1522,8 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     $("ss-form").innerHTML = bl.map(function (f) { var r = ssRes(f); var tip = esc(ssDate(f.date).slice(3) + " · " + (f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " " + f.score); return '<span class="fd ' + r + '" tabindex="0" aria-label="' + tip + '" data-tip="' + tip + '">' + r + "</span>"; }).join("");
     $("ss-form-list").innerHTML = bl.slice().reverse().map(function (f) { return "<li>" + ssDate(f.date).slice(3) + " · " + esc(f.home ? "Gladbach – " + f.opponent : f.opponent + " – Gladbach") + " <b>" + esc(f.score) + "</b></li>"; }).join("");
     /* Torjäger */
-    $("ss-scorers").innerHTML = d.scorers.length ? d.scorers.map(function (r) { return "<li><span>" + esc(r.name) + "</span><b>" + r.goals + "</b></li>"; }).join("") : '<li><span>Noch keine Daten</span></li>';
+    var scMax = d.scorers.reduce(function (m, r) { return Math.max(m, r.goals); }, 0) || 1;
+    $("ss-scorers").innerHTML = d.scorers.length ? d.scorers.map(function (r) { return '<li style="--w:' + Math.round(r.goals / scMax * 100) + '%"><span>' + esc(r.name) + "</span><b>" + r.goals + '</b><i class="bar" aria-hidden="true"></i></li>'; }).join("") : '<li><span>Noch keine Daten</span></li>';
     /* Pokal */
     var pk = fx.filter(function (f) { return f.comp === "POKAL"; }), pkNext = pk.filter(function (f) { return !f.score && f.date >= td; })[0], pkLast = pk.filter(function (f) { return f.score; }).slice(-1)[0];
     $("ss-pk-card").hidden = !pk.length;
