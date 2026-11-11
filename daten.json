@@ -443,6 +443,51 @@
    "year": "2026",
    "album": "Leipzig 2026",
    "createdAt": 1794125000006
+  },
+  {
+   "id": "schott-mainz-2026-01",
+   "asset": "27d1978996eda78ec4cfa51de99f0822",
+   "src": "fotos/27d1978996eda78ec4cfa51de99f0822.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Schott Mainz – Gladbach (DFB-Pokal)",
+   "createdAt": 1794120000001
+  },
+  {
+   "id": "schott-mainz-2026-02",
+   "asset": "2ef751bce90bc200436159d9d84790ba",
+   "src": "fotos/2ef751bce90bc200436159d9d84790ba.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Schott Mainz – Gladbach (DFB-Pokal)",
+   "createdAt": 1794120000002
+  },
+  {
+   "id": "schott-mainz-2026-03",
+   "asset": "0224c78c944fd30e5fcb52c13939f2fb",
+   "src": "fotos/0224c78c944fd30e5fcb52c13939f2fb.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Schott Mainz – Gladbach (DFB-Pokal)",
+   "createdAt": 1794120000003
+  },
+  {
+   "id": "schott-mainz-2026-04",
+   "asset": "4edc39926ee7f451742f0b4232a25b98",
+   "src": "fotos/4edc39926ee7f451742f0b4232a25b98.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Schott Mainz – Gladbach (DFB-Pokal)",
+   "createdAt": 1794120000004
+  },
+  {
+   "id": "schott-mainz-2026-05",
+   "asset": "c6e75a84916cb70696b41e16d26e5337",
+   "src": "fotos/c6e75a84916cb70696b41e16d26e5337.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Schott Mainz – Gladbach (DFB-Pokal)",
+   "createdAt": 1794120000005
   }
  ],
  "match": {
