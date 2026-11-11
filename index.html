@@ -362,6 +362,20 @@ body.view-quiz .hero .wrap { padding-block: 24px 20px; }
 .btn.wa-btn { background: #1F9D55; border-color: #1F9D55; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 .fs-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; margin-bottom: 14px; }
 .fs-row .fs-hint { margin: 0; }
+.fcats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 4px; }
+.fcat { border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 6px 14px; font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+.fcat .n { color: var(--muted); font-weight: 500; margin-left: 5px; }
+.fcat:hover { border-color: var(--green); }
+.fcat[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--green-ink); }
+.fcat[aria-pressed="true"] .n { color: inherit; opacity: .85; }
+@media (max-width: 480px) { .fcats { gap: 6px; } .fcat { font-size: 14px; padding: 5px 11px; } }
+.fjump { position: sticky; top: 0; z-index: 20; display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; margin: 0 0 8px; background: var(--bg); scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent); mask-image: linear-gradient(90deg, #000 90%, transparent); }
+.fjump::-webkit-scrollbar { display: none; }
+.fjump button { flex: none; white-space: nowrap; font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; transition: border-color .2s ease, color .2s ease; }
+.fjump button:hover, .fjump button:focus-visible { border-color: var(--green); color: var(--green); }
+.fjump button:last-child { margin-right: 40px; }
+.year-head { scroll-margin-top: 66px; }
+.alb-more { grid-column: 1 / -1; justify-self: start; margin-bottom: 6px; }
 .fs-hint a { font-weight: 600; }
 .lb-meta { display: flex; flex-direction: column; min-width: 0; }
 .lb-meta #lb-alb { font-family: var(--display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: .02em; color: #6FD99A; }
@@ -645,6 +659,8 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
         <div class="fs-hint" id="foto-q-hint" role="status"></div>
         <button class="btn primary" type="button" id="show-all" hidden>▶ Diashow: alle Fotos</button>
       </div>
+      <div class="fcats" id="foto-cats" role="group" aria-label="Alben filtern"></div>
+      <div class="fjump" id="foto-jump" role="navigation" aria-label="Zu einem Album springen"></div>
       <div class="archive"><span><strong>Fotoarchiv 1992–2020</strong><br><span style="color:var(--muted);font-size:15px">Hunderte Alben von Auswärtsfahrten, Festen und Jubiläen auf unserer alten Seite.</span></span><a class="btn small" href="https://brigademg.jimdoweb.com/fotos/" target="_blank" rel="noopener">Zum Archiv</a></div>
       <div class="editor" id="foto-editor" hidden>
         <h3>Foto hochladen</h3>
@@ -1103,8 +1119,14 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   /* Suche: findet Album, Bildunterschrift und Jahr – ohne Rücksicht auf Groß/Klein und Umlaute */
   function norm(v) { return String(v || "").toLowerCase().replace(/\u{1F4A9}/gu, "k").replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "ss").normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
   var FQ = [];
+  /* Album-Arten für die Filter-Knöpfe – ergibt sich aus dem Albumnamen */
+  var FCAT = "alle", EXP = {};
+  var FESTE_RE = /sommerfest|\bfest\b|feier|party|minigolf|planwagen|turnier|ausflug|weihnacht|grill|kegel|jubil|wanderung|bowling|kart|treffen/i;
+  function albCat(n) { return /pokal/i.test(n) ? "pokal" : FESTE_RE.test(n) ? "feste" : "spiele"; }
+  var CATS = [["alle", "Alle"], ["spiele", "Spiele"], ["pokal", "Pokal"], ["feste", "Feste & Ausflüge"]];
   function photoMatch(it) {
-    if (ALBF && slug(albName(it)) !== ALBF) return false;
+    if (ALBF) return slug(albName(it)) === ALBF;
+    if (FCAT !== "alle" && albCat(albName(it)) !== FCAT) return false;
     if (!FQ.length) return true;
     var hay = norm([it.album, it.year].join(" "));
     return FQ.every(function (w) { return hay.indexOf(w) !== -1; });
@@ -1168,8 +1190,15 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
         var nm = items.length ? albName(items[0]) : "";
         h.innerHTML = (nm ? "Album „" + esc(nm) + "“ · " : "Album nicht gefunden · ") + '<a href="#fotos">Alle Fotos zeigen</a>';
       } else h.textContent = q ? (items.length ? items.length + " von " + total + " Fotos gefunden" : "") : "";
+      var ac = { alle: {}, spiele: {}, pokal: {}, feste: {} };
+      FOTO.st.items.forEach(function (it) { var n = albName(it); ac.alle[n] = 1; ac[albCat(n)][n] = 1; });
+      $("foto-cats").hidden = !!ALBF;
+      $("foto-cats").innerHTML = CATS.filter(function (c) { return c[0] === "alle" || Object.keys(ac[c[0]]).length; }).map(function (c) { var n = Object.keys(ac[c[0]]).length; return '<button class="fcat" type="button" data-cat="' + c[0] + '" aria-pressed="' + (FCAT === c[0]) + '">' + esc(c[1]) + '<span class="n">' + n + "</span></button>"; }).join("");
+      var seen = {}, names = []; items.forEach(function (it) { var n = albName(it); if (!seen[n]) { seen[n] = 1; names.push(n); } });
+      $("foto-jump").hidden = !!ALBF || names.length < 2;
+      $("foto-jump").innerHTML = names.map(function (n) { return '<button type="button" data-jump="' + esc(slug(n)) + '">' + esc(n) + "</button>"; }).join("");
       $("show-all").hidden = !items.length;
-      $("show-all").textContent = "▶ Diashow: " + (q || ALBF ? items.length + (items.length === 1 ? " Foto" : " Fotos") : "alle Fotos");
+      $("show-all").textContent = "▶ Diashow: " + (q || ALBF || FCAT !== "alle" ? items.length + (items.length === 1 ? " Foto" : " Fotos") : "alle Fotos");
     },
     emptyFiltered: function () { return '<div class="empty" style="grid-column:1/-1">Keine Fotos zu „' + esc($("foto-q").value.trim()) + '“ gefunden. Versuch es z. B. mit einer Stadt oder einem Jahr.</div>'; },
     afterDraw: function () {
@@ -1187,19 +1216,31 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     sort: photoSort,
     render: function (items, itemFn) {
       NEWALB = newestAlbum();
-      var cnt = {}; FOTO.st.items.forEach(function (it) { var a = albName(it); cnt[a] = (cnt[a] || 0) + 1; });
-      var h = "", cur = null;
+      var cnt = {}; items.forEach(function (it) { var a = albName(it); cnt[a] = (cnt[a] || 0) + 1; });
+      var coll = !FQ.length && !ALBF, prev = fotoPrev(), h = "", cur = null, k = 0; FPLAST = prev;
+      function closeAlb() {
+        if (cur === null || !coll || cnt[cur] <= prev) return;
+        var sl = slug(cur);
+        h += '<button class="btn small alb-more" type="button" data-more="' + esc(sl) + '">' + (EXP[sl] ? 'Weniger anzeigen <span class="arr">↑</span>' : "Alle " + cnt[cur] + ' Fotos ansehen <span class="arr">↓</span>') + "</button>";
+      }
       items.forEach(function (it) {
         var y = albName(it);
         if (y !== cur) {
-          cur = y;
-          h += '<div class="year-head"><span class="an">' + esc(y) + (y === NEWALB ? '<span class="new-badge">Neu</span>' : "") + '</span><span class="ab"><button class="btn small" type="button" data-play-album="' + esc(slug(y)) + '">▶ Abspielen</button></span></div>';
+          closeAlb(); cur = y; k = 0;
+          h += '<div class="year-head" id="alb-' + esc(slug(y)) + '"><span class="an">' + esc(y) + (y === NEWALB ? '<span class="new-badge">Neu</span>' : "") + '</span><span class="ab"><button class="btn small" type="button" data-play-album="' + esc(slug(y)) + '">▶ Abspielen</button></span></div>';
         }
-        h += itemFn(it);
+        if (!coll || EXP[slug(y)] || k < prev) h += itemFn(it);
+        k++;
       });
+      closeAlb();
       return h;
     },
     onButton: function (b) {
+      if (b.dataset.more != null) {
+        var sl = b.dataset.more, open = !EXP[sl]; EXP[sl] = open; FOTO.draw();
+        if (!open) { var hd = document.getElementById("alb-" + sl); if (hd) hd.scrollIntoView({ block: "start" }); }
+        return true;
+      }
       if (b.dataset.playAlbum == null) return false;
       var sl = b.dataset.playAlbum; startShow(FOTO.st.items.slice().sort(photoSort).filter(function (it) { return slug(albName(it)) === sl; }));
       return true;
@@ -1282,6 +1323,23 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     FQ = norm(this.value).split(/\s+/).filter(Boolean); $("foto-q-clr").hidden = !this.value;
     if (ALBF) { ALBF = ""; try { history.replaceState(null, "", "#fotos"); } catch (x) {} }
     FOTO.draw();
+  });
+  /* Wie viele Fotos pro Album zugeklappt sichtbar sind: eine Reihe (am Handy zwei Reihen à 2) */
+  function fotoPrev() {
+    var cols = 4;
+    try { var t = getComputedStyle($("foto-list")).gridTemplateColumns; if (t && t !== "none") cols = t.split(" ").length; } catch (x) {}
+    return cols < 3 ? cols * 2 : cols;
+  }
+  var FPREV = 0, FPLAST = 0;
+  window.addEventListener("resize", function () { clearTimeout(FPREV); FPREV = setTimeout(function () { var p = fotoPrev(); if (p !== FPLAST && FOTO.st.loaded && document.body.classList.contains("view-fotos")) FOTO.draw(); }, 200); });
+  $("foto-cats").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-cat]"); if (!b || b.dataset.cat === FCAT) return;
+    FCAT = b.dataset.cat; EXP = {}; FOTO.draw();
+  });
+  $("foto-jump").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-jump]"); if (!b) return;
+    var hd = document.getElementById("alb-" + b.dataset.jump);
+    if (hd) hd.scrollIntoView({ behavior: window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   });
   $("foto-q-clr").addEventListener("click", function () { $("foto-q").value = ""; FQ = []; this.hidden = true; FOTO.draw(); $("foto-q").focus(); });
   function toJpeg(file) {
