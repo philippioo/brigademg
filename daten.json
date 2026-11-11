@@ -542,6 +542,51 @@
    "year": "2026",
    "album": "Sommerfest 2026",
    "createdAt": 1794115000006
+  },
+  {
+   "id": "elfmeter-wickrathberg-2026-01",
+   "asset": "c1bfa3a4b533f8c6f323d4815cceaa99",
+   "src": "fotos/c1bfa3a4b533f8c6f323d4815cceaa99.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Elfmeterturnier Wickrathberg 2026",
+   "createdAt": 1794110000001
+  },
+  {
+   "id": "elfmeter-wickrathberg-2026-02",
+   "asset": "9baa68929a3f1326f04418160d35a2ce",
+   "src": "fotos/9baa68929a3f1326f04418160d35a2ce.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Elfmeterturnier Wickrathberg 2026",
+   "createdAt": 1794110000002
+  },
+  {
+   "id": "elfmeter-wickrathberg-2026-03",
+   "asset": "5b7bbf712490f12abd8a48e5316a9aa5",
+   "src": "fotos/5b7bbf712490f12abd8a48e5316a9aa5.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Elfmeterturnier Wickrathberg 2026",
+   "createdAt": 1794110000003
+  },
+  {
+   "id": "elfmeter-wickrathberg-2026-04",
+   "asset": "0f75a92921b097202e416c5df5ea5afd",
+   "src": "fotos/0f75a92921b097202e416c5df5ea5afd.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Elfmeterturnier Wickrathberg 2026",
+   "createdAt": 1794110000004
+  },
+  {
+   "id": "elfmeter-wickrathberg-2026-05",
+   "asset": "d8b297a02125afa0103c07b5b2091a59",
+   "src": "fotos/d8b297a02125afa0103c07b5b2091a59.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Elfmeterturnier Wickrathberg 2026",
+   "createdAt": 1794110000005
   }
  ],
  "match": {
