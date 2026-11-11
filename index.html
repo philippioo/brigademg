@@ -380,6 +380,12 @@ body.view-quiz .hero .wrap { padding-block: 24px 20px; }
 .lb-meta { display: flex; flex-direction: column; min-width: 0; }
 .lb-meta #lb-alb { font-family: var(--display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: .02em; color: #6FD99A; }
 .lb-img img { transition: opacity .35s; }
+.lb-img { position: relative; }
+.lb-img .lb-ghost { position: absolute; inset: 0; margin: auto; pointer-events: none; transition: opacity 1s ease; }
+.lb.playing .lb-img #lb-img { transition: opacity 1s ease; }
+.lb.playing .lb-img #lb-img.kb { animation: kenburns 6.2s ease-out forwards; }
+.lb.playing .lb-img .lb-ghost { transform: scale(1.07); transform-origin: 50% 50%; }
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.07); } }
 .lb-bar { height: 3px; background: rgba(255,255,255,.12); border-radius: 2px; overflow: hidden; }
 .lb-bar i { display: block; height: 100%; width: 0; background: #2FC46B; }
 @keyframes lbbar { from { width: 0; } to { width: 100%; } }
@@ -495,6 +501,18 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; font-varian
 /* Neu-Markierung */
 .new-badge { display: inline-block; background: var(--green); color: var(--green-ink); font-family: var(--body); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 2px 9px; vertical-align: 6px; margin-left: 8px; line-height: 1.5; }
 .teaser .txt strong .new-badge { vertical-align: 3px; }
+.ft-albs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.ft-alb { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.ft-alb .cv { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--line); }
+.ft-alb .cv img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease, filter .35s ease; }
+.ft-alb .t { display: block; padding: 10px 12px 2px; font-family: var(--display); font-weight: 700; font-size: 21px; line-height: 1.1; text-transform: uppercase; overflow-wrap: anywhere; }
+.ft-alb .cv { position: relative; }
+.ft-alb .ft-new { position: absolute; top: 8px; left: 8px; margin: 0; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+.ft-alb .c { display: block; padding: 0 12px 12px; color: var(--muted); font-size: 14px; }
+.ft-alb:hover, .ft-alb:active { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.12); border-color: var(--green); }
+.ft-alb:hover .cv img, .ft-alb:active .cv img { transform: scale(1.05); filter: brightness(1.08); }
+.ft-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 16px; margin-top: 14px; color: var(--muted); font-size: 15px; }
+@media (max-width: 560px) { .ft-albs { gap: 8px; } .ft-alb .t { font-size: 15px; padding: 7px 8px 1px; } .ft-alb .c { font-size: 12px; padding: 0 8px 8px; } }
 footer { background: var(--band); color: var(--band-muted); font-size: 14px; border-top: 8px solid var(--kit); }
 footer .wrap { padding-block: 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 footer a { color: var(--band-ink); }
@@ -639,11 +657,8 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
 
     <section id="fotos-teaser" aria-labelledby="ft-h">
       <div class="sec-head"><h2 id="ft-h">Fotos</h2></div>
-      <a class="teaser" href="#fotos" id="ft-link">
-        <span class="thumbs" id="ft-imgs"></span>
-        <span class="txt"><strong id="ft-t">35 Jahre in Bildern</strong><span id="ft-s">Auswärtsfahrten, Feste und Jubiläen</span></span>
-        <span class="btn primary" id="ft-btn">Alle Fotos ansehen <span class="arr">→</span></span>
-      </a>
+      <div class="ft-albs" id="ft-albs"></div>
+      <div class="ft-foot"><span id="ft-s">Auswärtsfahrten, Feste und Jubiläen</span><a class="btn primary" href="#fotos" id="ft-btn">Alle Fotos ansehen <span class="arr">→</span></a></div>
     </section>
 
     <section id="fotos" aria-labelledby="foto-h">
@@ -850,7 +865,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
 <button class="totop" id="totop" type="button" aria-label="Nach oben" title="Nach oben"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 15V5M5 10l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ansehen">
   <div class="lb-top"><span class="lb-meta"><span id="lb-alb"></span></span><button class="btn small" type="button" id="lb-close">Schließen ✕</button></div>
-  <div class="lb-img"><img id="lb-img" alt=""></div>
+  <div class="lb-img"><img class="lb-ghost" id="lb-ghost" alt="" aria-hidden="true" hidden><img id="lb-img" alt=""></div>
   <div class="lb-bar" id="lb-bar" hidden><i id="lb-bar-i"></i></div>
   <div class="lb-ctrl"><button class="btn small" type="button" id="lb-prev">← Zurück</button><span id="lb-n"></span><button class="btn small" type="button" id="lb-next">Weiter <span class="arr">→</span></button><button class="btn small" type="button" id="lb-play">▶ Diashow</button></div>
 </div>
@@ -1148,8 +1163,14 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     if (list) LBL = list;
     var n = LBL.length; if (!n) return;
     i = ((i % n) + n) % n; var it = LBL[i]; LB = i;
-    zoomReset(); var img = $("lb-img"); img.style.opacity = "0";
-    img.onload = function () { img.style.opacity = "1"; if (PLAY) schedule(); };
+    zoomReset(); var img = $("lb-img"), gh = $("lb-ghost");
+    if (PLAY && img.getAttribute("src") && img.complete && img.naturalWidth) { gh.src = img.src; gh.hidden = false; gh.style.opacity = "1"; } else { gh.hidden = true; }
+    img.classList.remove("kb"); if (!PLAY) img.style.transformOrigin = ""; img.style.opacity = "0";
+    img.onload = function () {
+      if (PLAY) { void img.offsetWidth; img.style.transformOrigin = (30 + Math.round(Math.random() * 40)) + "% " + (30 + Math.round(Math.random() * 40)) + "%"; img.classList.add("kb"); }
+      img.style.opacity = "1"; if (!gh.hidden) { gh.style.opacity = "0"; setTimeout(function () { if (gh.style.opacity === "0") gh.hidden = true; }, 1050); }
+      if (PLAY) schedule();
+    };
     img.src = photoSrc(it); img.alt = "Foto: " + albName(it);
     $("lb-alb").textContent = albName(it);
     $("lb-n").textContent = (i + 1) + " / " + n;
@@ -1157,15 +1178,25 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     if (n > 1) { var nx = new Image(); nx.src = photoSrc(LBL[(i + 1) % n]); }
     if ($("lb").hidden) { $("lb").hidden = false; $("lb-close").focus(); }
     clearTimeout(SLT); bar(false);
-    if (PLAY && img.complete && img.naturalWidth) { img.style.opacity = "1"; schedule(); }
+    if (PLAY && img.complete && img.naturalWidth) { img.onload(); }
   }
   function bar(on) {
     var b = $("lb-bar-i"); b.style.animation = "none"; void b.offsetWidth;
     if (on) b.style.animation = "lbbar " + SLIDE_MS + "ms linear forwards";
   }
   function schedule() { clearTimeout(SLT); bar(true); SLT = setTimeout(function () { if (PLAY) openLb(LB + 1); }, SLIDE_MS); }
+  /* Bildschirm bleibt während der Diashow an */
+  var WAKE = null;
+  function wake(on) {
+    try {
+      if (on && !WAKE && navigator.wakeLock && document.visibilityState === "visible") navigator.wakeLock.request("screen").then(function (w) { WAKE = w; w.addEventListener("release", function () { WAKE = null; }); }).catch(function () {});
+      if (!on && WAKE) { WAKE.release().catch(function () {}); WAKE = null; }
+    } catch (x) {}
+  }
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible" && PLAY) wake(true); });
   function setPlay(on) {
-    PLAY = on; $("lb-bar").hidden = !on;
+    PLAY = on; $("lb-bar").hidden = !on; $("lb").classList.toggle("playing", on); wake(on);
+    if (!on) { $("lb-img").classList.remove("kb"); $("lb-img").style.transformOrigin = ""; $("lb-ghost").hidden = true; }
     $("lb-play").textContent = on ? "❚❚ Pause" : "▶ Diashow";
     clearTimeout(SLT); bar(false);
     if (on) { $("lb-prev").disabled = false; $("lb-next").disabled = false; if ($("lb-img").complete) schedule(); }
@@ -1205,12 +1236,13 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
       var items = FOTO.st.items.slice().sort(photoSort);
       var albums = {}; items.forEach(function (it) { albums[it.album || it.year || "-"] = 1; });
       var na = Object.keys(albums).length, nw = newestAlbum();
-      var pick = nw ? items.filter(function (it) { return albName(it) === nw; }) : items;
-      $("ft-imgs").innerHTML = (pick.length ? pick : items).slice(0, 4).map(function (it) { return thumbImg(it, ""); }).join("");
-      $("ft-t").innerHTML = nw ? esc(nw) + '<span class="new-badge">Neu</span>' : "35 Jahre in Bildern";
-      $("ft-s").textContent = nw ? "Neues Album · insgesamt " + items.length + " Fotos" + (na > 1 ? " in " + na + " Alben" : "") : items.length + (items.length === 1 ? " Foto" : " Fotos") + (na > 1 ? " in " + na + " Alben" : "");
-      $("ft-link").setAttribute("href", nw ? "#fotos/" + slug(nw) : "#fotos");
-      $("ft-btn").innerHTML = (nw ? "Album ansehen" : "Alle Fotos ansehen") + ' <span class="arr">→</span>';
+      var top = [], cnt3 = {}, first = {};
+      items.forEach(function (it) { var n = albName(it); cnt3[n] = (cnt3[n] || 0) + 1; if (!first[n]) { first[n] = it; if (top.length < 3) top.push(n); } });
+      $("ft-albs").innerHTML = top.map(function (n) {
+        return '<a class="ft-alb" href="#fotos/' + esc(slug(n)) + '"><span class="cv">' + thumbImg(first[n], "") + (n === nw ? '<span class="new-badge ft-new">Neu</span>' : "") + '</span><span class="t">' + esc(n) + '</span><span class="c">' + cnt3[n] + (cnt3[n] === 1 ? " Foto" : " Fotos") + "</span></a>";
+      }).join("");
+      $("ft-s").textContent = items.length + (items.length === 1 ? " Foto" : " Fotos") + (na > 1 ? " in " + na + " Alben" : "");
+      $("ft-btn").innerHTML = (na > 3 ? "Alle " + na + " Alben ansehen" : "Alle Fotos ansehen") + ' <span class="arr">→</span>';
     },
     clean: function (d) { return typeof d.asset === "string" && /^[A-Za-z0-9_-]{8,64}$/.test(d.asset) ? { id: d.id, asset: d.asset, src: typeof d.src === "string" && /^fotos\/[A-Za-z0-9_-]{1,80}\.(jpg|png)$/.test(d.src) ? d.src : "", caption: "", album: str(d.album, 60).trim(), year: /^(19|20)\d\d$/.test(d.year || "") ? d.year : "", createdAt: typeof d.createdAt === "number" ? d.createdAt : 0 } : null; },
     sort: photoSort,
@@ -1398,9 +1430,21 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   $("lb-img").addEventListener("pointermove", function (e) { if (!ZOOM || !ZP) return; ZX = ZP[2] + e.clientX - ZP[0]; ZY = ZP[3] + e.clientY - ZP[1]; zoomClamp(); zoomApply(); });
   ["pointerup", "pointercancel"].forEach(function (ev) { $("lb-img").addEventListener(ev, function () { ZP = null; this.classList.remove("drag"); }); });
   /* Wischen auf dem Handy */
-  var TX = null;
-  $("lb").addEventListener("touchstart", function (e) { TX = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  var TX = null, TY = null, DRAGY = false;
+  $("lb").addEventListener("touchstart", function (e) { if (e.touches.length === 1) { TX = e.touches[0].clientX; TY = e.touches[0].clientY; } else { TX = TY = null; } DRAGY = false; }, { passive: true });
+  $("lb").addEventListener("touchmove", function (e) {
+    if (TY == null || ZOOM || e.touches.length !== 1) return;
+    var dx = e.touches[0].clientX - TX, dy = e.touches[0].clientY - TY;
+    if (!DRAGY && dy > 12 && dy > Math.abs(dx) * 1.3) DRAGY = true;
+    if (DRAGY) { var im = $("lb-img"); im.classList.remove("kb"); im.style.transition = "none"; im.style.transform = "translateY(" + Math.max(0, dy) + "px) scale(" + Math.max(.85, 1 - dy / 1600) + ")"; $("lb").style.background = "rgba(6,9,7," + Math.max(.35, .94 - dy / 500) + ")"; }
+  }, { passive: true });
   $("lb").addEventListener("touchend", function (e) {
+    if (DRAGY) {
+      var dy = e.changedTouches[0].clientY - TY, im = $("lb-img"); DRAGY = false; TX = TY = null;
+      im.style.transition = ""; $("lb").style.background = "";
+      if (dy > 110) { im.style.transform = ""; closeLb(); } else { im.style.transform = ""; }
+      return;
+    }
     if (TX == null || ZOOM) { TX = null; return; } var dx = e.changedTouches[0].clientX - TX; TX = null;
     if (Math.abs(dx) < 50) return;
     if (dx < 0 && (PLAY || LB < LBL.length - 1)) openLb(LB + 1); else if (dx > 0 && (PLAY || LB > 0)) openLb(LB - 1);
