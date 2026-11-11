@@ -488,6 +488,60 @@
    "year": "2026",
    "album": "Schott Mainz – Gladbach (DFB-Pokal)",
    "createdAt": 1794120000005
+  },
+  {
+   "id": "sommerfest-2026-01",
+   "asset": "a143cdec3aa3e1ceec8d6c0eee993876",
+   "src": "fotos/a143cdec3aa3e1ceec8d6c0eee993876.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Sommerfest 2026",
+   "createdAt": 1794115000001
+  },
+  {
+   "id": "sommerfest-2026-02",
+   "asset": "51a043b353d5c7160975562fb0ac9ff6",
+   "src": "fotos/51a043b353d5c7160975562fb0ac9ff6.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Sommerfest 2026",
+   "createdAt": 1794115000002
+  },
+  {
+   "id": "sommerfest-2026-03",
+   "asset": "c482b2dda7c4ccc278eea45076ce3f05",
+   "src": "fotos/c482b2dda7c4ccc278eea45076ce3f05.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Sommerfest 2026",
+   "createdAt": 1794115000003
+  },
+  {
+   "id": "sommerfest-2026-04",
+   "asset": "8041af5f37904edbcf3e3773410a140c",
+   "src": "fotos/8041af5f37904edbcf3e3773410a140c.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Sommerfest 2026",
+   "createdAt": 1794115000004
+  },
+  {
+   "id": "sommerfest-2026-05",
+   "asset": "e5e1256bc7238ea33422bf538356fdd3",
+   "src": "fotos/e5e1256bc7238ea33422bf538356fdd3.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Sommerfest 2026",
+   "createdAt": 1794115000005
+  },
+  {
+   "id": "sommerfest-2026-06",
+   "asset": "b184201744f113c1f3115a47529eb131",
+   "src": "fotos/b184201744f113c1f3115a47529eb131.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Sommerfest 2026",
+   "createdAt": 1794115000006
   }
  ],
  "match": {
