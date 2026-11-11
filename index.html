@@ -81,7 +81,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .hero .wrap { position: relative; padding-block: 24px 44px; display: grid; gap: 30px; }
 .nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
-.mark { color: var(--hero-ink); text-decoration: none; display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
+.mark { margin-right: auto; color: var(--hero-ink); text-decoration: none; display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
 .mark svg { width: 30px; height: 30px; flex: none; }
 .nav nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-weight: 600; font-size: 15px; }
 .nav nav a { color: var(--hero-ink); text-decoration: none; position: relative; padding-bottom: 3px; transition: color .2s; }
@@ -125,13 +125,18 @@ main .wrap { display: grid; gap: 64px; padding-block: 56px 72px; }
 label.f { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--muted); min-width: 0; }
 label.f input, label.f textarea, label.f select { font-weight: 400; color: var(--ink); }
 .menu-btn { display: none; }
+.fs-btn { order: 5; font: inherit; font-family: var(--display); font-weight: 900; font-size: 18px; line-height: 1; min-width: 44px; height: 38px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--hero-ink); cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.fs-btn:hover { border-color: var(--green); color: var(--green); }
+.fs-btn[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--green-ink); }
+html.big body { zoom: 1.15; }
 @media (max-width: 640px) {
-  .menu-btn { display: inline-grid; align-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; }
+  .fs-btn { order: 2; height: 44px; }
+  .menu-btn { order: 3; display: inline-grid; align-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; }
   .menu-btn span { display: block; height: 2px; border-radius: 2px; background: var(--hero-ink); transition: transform .25s ease, opacity .2s ease; }
   .nav.open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav.open .menu-btn span:nth-child(2) { opacity: 0; }
   .nav.open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav nav { display: none; flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 2px; font-size: 17px; padding: 6px 0 4px; border-top: 1px solid var(--line); }
+  .nav nav { order: 4; display: none; flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 2px; font-size: 17px; padding: 6px 0 4px; border-top: 1px solid var(--line); }
   .nav.open nav { display: flex; animation: menuin .22s ease; }
   .nav nav a { padding: 8px 0 6px; }
 }
@@ -467,6 +472,10 @@ a.btn { text-decoration: none; display: inline-flex; align-items: center; }
 .fx .rs { font-family: var(--display); font-weight: 900; font-size: 21px; padding: 2px 8px; border-radius: 6px; font-variant-numeric: tabular-nums; min-width: 54px; text-align: center; }
 .fx .rs.S { background: rgba(31,157,85,.16); color: #1F9D55; } .fx .rs.U { background: rgba(125,135,129,.2); } .fx .rs.N { background: rgba(194,65,45,.14); color: #C2412D; }
 .fx.cur { border-color: var(--green); border-left: 5px solid var(--green); }
+.fx-r { display: inline-flex; align-items: center; gap: 8px; }
+.fx-ph { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); text-decoration: none; font-size: 17px; transition: transform .2s ease, border-color .2s ease; }
+.fx-ph:hover, .fx-ph:focus-visible { border-color: var(--green); transform: scale(1.1); }
+#ss-fx-f { margin-bottom: 10px; }
 .fx-more { margin: 10px 0 30px; }
 .tbl-wrap { overflow-x: auto; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
@@ -558,6 +567,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
         <img id="mark-img" alt="" hidden>
         Brigade MG
       </a>
+      <button class="fs-btn" id="fs-btn" type="button" aria-pressed="false" aria-label="Schrift größer" title="Schrift größer">A+</button>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
       <nav aria-label="Seitennavigation" id="site-nav"><a href="#events">Events</a><a href="#ueber-uns">Über uns</a><a href="#fotos">Fotos</a><a href="#saison">Saison</a><a href="#gaestebuch">Gästebuch</a><a href="#fanfreundschaften">Fanfreundschaften</a><a href="#unvergessen">Unvergessen</a><a href="#kontakt">Kontakt</a></nav>
     </div>
@@ -700,6 +710,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
           <div class="ss-card" id="ss-pk-card"><h3>DFB-Pokal</h3><div id="ss-pk"></div></div>
         </div>
         <h3 class="ss-h">Spielplan</h3>
+        <div class="fcats" id="ss-fx-f" role="group" aria-label="Spielplan filtern"><button class="fcat" type="button" data-hf="alle" aria-pressed="true">Alle</button><button class="fcat" type="button" data-hf="heim" aria-pressed="false">Heim</button><button class="fcat" type="button" data-hf="aus" aria-pressed="false">Auswärts</button></div>
         <div class="fx-list" id="ss-fx"></div>
         <div class="fx-more"><button class="btn small" type="button" id="ss-fx-all">Alle Spiele anzeigen</button></div>
         <h3 class="ss-h">Tabelle</h3>
@@ -934,6 +945,10 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
       "&details=" + encodeURIComponent(p.body.slice(0, 600) + "\n\n" + SITE_URL) + (p.place ? "&location=" + encodeURIComponent(p.place) : "");
     return "https://calendar.google.com/calendar/render?" + q;
   }
+  function mapUrl(place) {
+    var ios = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    return ios ? "https://maps.apple.com/?q=" + encodeURIComponent(place) : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(place);
+  }
   function shareText(p) { return p.title + (p.date ? " – " + fmt(p.date) : "") + (p.place ? " · " + p.place : "") + " – Brigade Mönchengladbach"; }
   /* Teilen: Teilen-Menü des Geräts (WhatsApp, Mail, Messenger …), sonst Link kopieren */
   function shareIt(text, url) {
@@ -971,6 +986,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
         acts = '<div class="ticket-actions">' +
           (p.date && (DL || OWN) ? '<button type="button" data-ics="' + esc(p.id) + '">In den Kalender</button>' : "") +
           (p.date ? '<a href="' + esc(gcal(p)) + '" target="_blank" rel="noopener">Google Kalender</a>' : "") +
+          (p.place ? '<a href="' + esc(mapUrl(p.place)) + '" target="_blank" rel="noopener">📍 Route planen</a>' : "") +
           '<button type="button" class="wa" data-share="' + esc(shareText(p)) + '" data-share-url="' + esc(SITE_URL + "/#events") + '">Teilen</button></div>';
       }
       return '<article class="ticket' + (past ? " past" : "") + '"><div class="stub">' + stub + '</div><div class="ticket-body">' +
@@ -1233,6 +1249,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     },
     emptyFiltered: function () { return '<div class="empty" style="grid-column:1/-1">Keine Fotos zu „' + esc($("foto-q").value.trim()) + '“ gefunden. Versuch es z. B. mit einer Stadt oder einem Jahr.</div>'; },
     afterDraw: function () {
+      if (SSD && !FXA_DONE) { FXA_DONE = true; renderSeason(SSD); }
       var items = FOTO.st.items.slice().sort(photoSort);
       var albums = {}; items.forEach(function (it) { albums[it.album || it.year || "-"] = 1; });
       var na = Object.keys(albums).length, nw = newestAlbum();
@@ -1583,7 +1600,27 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   setInterval(mtick, 30000);
 
   /* ---------- Saison: Spielplan, Formkurve, Tabelle, Torjäger ---------- */
-  var SSALL = false, SSD = null;
+  var SSALL = false, SSD = null, SSHF = "alle", ALBMAP = {}, FXA_DONE = false;
+  /* Spielplan ↔ Fotos: gespielte Spiele bekommen ein 📷, wenn es ein passendes Album gibt.
+     Alben stehen chronologisch – jedes Spiel nimmt das älteste passende Album, das neuer ist als das des vorigen Spiels. */
+  function teamKeys(op) {
+    return norm(op).split(/[^a-z0-9]+/).filter(function (t) { return t.length >= 4 && !/^(borussia|verein|sport|fussball|19\d\d|18\d\d)$/.test(t); })
+      .map(function (t) { var u = t.replace(/er$/, ""); return u.length >= 5 ? u : t; });
+  }
+  function fxAlbums(played) {
+    var map = {}; if (!FOTO.st.loaded || !FOTO.st.items.length) return map;
+    var al = {}; FOTO.st.items.forEach(function (it) { var n = albName(it); if (!(n in al) || albStart(it) < al[n]) al[n] = albStart(it); });
+    var names = Object.keys(al).sort(function (a, b) { return al[a] - al[b]; }), floor = -Infinity;
+    played.forEach(function (f) {
+      var ks = teamKeys(f.opponent); if (!ks.length) return;
+      for (var i = 0; i < names.length; i++) {
+        var n = names[i], hn = norm(n);
+        if (al[n] <= floor) continue;
+        if (ks.some(function (k) { return hn.indexOf(k) !== -1; })) { map[f.date + "|" + f.opponent] = n; floor = al[n]; break; }
+      }
+    });
+    return map;
+  }
   var WD = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
   function ssDate(s) { var p = s.split("-"); var d = new Date(+p[0], +p[1] - 1, +p[2]); return WD[d.getDay()] + " " + p[2] + "." + p[1] + "." + p[0].slice(2); }
   function ssRes(f) {
@@ -1607,7 +1644,9 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
   function ssComp(f) { return f.comp === "POKAL" ? "DFB-Pokal" + (f.md ? ", " + f.md : "") : "Bundesliga" + (f.md ? ", " + f.md + ". Spieltag" : ""); }
   function ssFx(f, isNext) {
     var r = ssRes(f);
-    var right = f.score ? '<span class="rs ' + r + '">' + esc(f.score) + "</span>" : isNext ? '<span class="nx">Nächstes Spiel</span>' : "";
+    var alb = f.score ? ALBMAP[f.date + "|" + f.opponent] : "";
+    var ph = alb ? '<a class="fx-ph" href="#fotos/' + esc(slug(alb)) + '" title="Fotos: ' + esc(alb) + '" aria-label="Fotos ansehen: ' + esc(alb) + '">📷</a>' : "";
+    var right = f.score ? '<span class="fx-r">' + ph + '<span class="rs ' + r + '">' + esc(f.score) + "</span></span>" : isNext ? '<span class="nx">Nächstes Spiel</span>' : "";
     var dt = ssDate(f.date) + (f.score ? "" : f.time ? " · " + esc(f.time) + " Uhr" : f.tbd ? " · Anstoßzeit folgt" : "");
     return '<div class="fx' + (f.comp === "POKAL" ? " pk" : "") + (isNext ? " cur" : "") + '"><span class="tm"><span class="dt">' + dt + "</span>" + ssTeams(f) + '<span class="cp">' + esc(ssComp(f)) + "</span></span>" + right + "</div>";
   }
@@ -1636,10 +1675,14 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     }
     /* Spielplan: letzte 3 Ergebnisse + nächste 6, auf Wunsch alles */
     var nx = next[0];
-    var show = SSALL ? fx : played.slice(-3).concat(next.slice(0, 6));
+    function hf(f) { return SSHF === "alle" || (SSHF === "heim") === f.home; }
+    var fxf = fx.filter(hf), playedF = played.filter(hf), nextF = next.filter(hf);
+    var show = SSALL ? fxf : playedF.slice(-3).concat(nextF.slice(0, 6));
+    ALBMAP = fxAlbums(played);
     $("ss-fx").innerHTML = show.map(function (f) { return ssFx(f, f === nx); }).join("");
-    $("ss-fx-all").textContent = SSALL ? "Weniger anzeigen" : "Alle " + fx.length + " Spiele anzeigen";
-    $("ss-fx-all").parentElement.hidden = fx.length <= show.length && !SSALL;
+    $("ss-fx-all").textContent = SSALL ? "Weniger anzeigen" : "Alle " + fxf.length + (SSHF === "heim" ? " Heimspiele" : SSHF === "aus" ? " Auswärtsspiele" : " Spiele") + " anzeigen";
+    $("ss-fx-all").parentElement.hidden = fxf.length <= show.length && !SSALL;
+    [].forEach.call(document.querySelectorAll("#ss-fx-f [data-hf]"), function (b) { b.setAttribute("aria-pressed", b.dataset.hf === SSHF ? "true" : "false"); });
     /* Tabelle */
     var n = d.table.length;
     $("ss-tbl").tBodies[0].innerHTML = d.table.map(function (r) {
@@ -1652,6 +1695,7 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     $("ss-tbl").parentElement.hidden = !n;
   }
   $("ss-fx-all").addEventListener("click", function () { SSALL = !SSALL; if (SSD) renderSeason(SSD); });
+  $("ss-fx-f").addEventListener("click", function (e) { var b = e.target.closest("[data-hf]"); if (!b || b.dataset.hf === SSHF) return; SSHF = b.dataset.hf; SSALL = false; if (SSD) renderSeason(SSD); });
 
   /* ---------- Borussia-Geschichte: der nächstgelegene Jahrestag ---------- */
   var HIST = [
@@ -1875,6 +1919,14 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr, a:active .arr, button:act
     if (t && h !== "#start") t.scrollIntoView(); else if (was) window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", route);
+  /* Schrift größer – das Gerät merkt sich die Wahl */
+  (function () {
+    var b = $("fs-btn"), on = false;
+    try { on = localStorage.getItem("brigadeBig") === "1"; } catch (x) {}
+    function set(v) { on = v; document.documentElement.classList.toggle("big", v); b.setAttribute("aria-pressed", v ? "true" : "false"); b.textContent = v ? "A−" : "A+"; b.title = v ? "Schrift normal" : "Schrift größer"; b.setAttribute("aria-label", b.title); try { localStorage.setItem("brigadeBig", v ? "1" : "0"); } catch (x) {} }
+    set(on);
+    b.addEventListener("click", function () { set(!on); if (typeof fitTitle === "function") try { fitTitle(); } catch (x) {} });
+  })();
   $("mark-link").addEventListener("click", function () { setTimeout(function () { window.scrollTo({ top: 0, behavior: "smooth" }); }, 0); });
   (function () {
     var nav = document.querySelector(".nav"), b = $("menu-btn");
