@@ -740,6 +740,60 @@
    "year": "2026",
    "album": "Gladbach – Aston Villa 2026",
    "createdAt": 1794117500006
+  },
+  {
+   "id": "wolfsburg-2026-01",
+   "asset": "e01b705b1f4eb91382d6d7271b6275ee",
+   "src": "fotos/e01b705b1f4eb91382d6d7271b6275ee.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Wolfsburg – Gladbach 2026",
+   "createdAt": 1794095000001
+  },
+  {
+   "id": "wolfsburg-2026-02",
+   "asset": "d674a54fd9459c90188057df53d210f4",
+   "src": "fotos/d674a54fd9459c90188057df53d210f4.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Wolfsburg – Gladbach 2026",
+   "createdAt": 1794095000002
+  },
+  {
+   "id": "wolfsburg-2026-03",
+   "asset": "83f1a349d4bde79006dc2ae21dd542a3",
+   "src": "fotos/83f1a349d4bde79006dc2ae21dd542a3.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Wolfsburg – Gladbach 2026",
+   "createdAt": 1794095000003
+  },
+  {
+   "id": "wolfsburg-2026-04",
+   "asset": "bd8656388381f3ee1600d97efe00e190",
+   "src": "fotos/bd8656388381f3ee1600d97efe00e190.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Wolfsburg – Gladbach 2026",
+   "createdAt": 1794095000004
+  },
+  {
+   "id": "wolfsburg-2026-05",
+   "asset": "d24480ccefda7b0acb368932e1358f80",
+   "src": "fotos/d24480ccefda7b0acb368932e1358f80.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Wolfsburg – Gladbach 2026",
+   "createdAt": 1794095000005
+  },
+  {
+   "id": "wolfsburg-2026-06",
+   "asset": "35873a9104c57ff081a3dc99a67a29e1",
+   "src": "fotos/35873a9104c57ff081a3dc99a67a29e1.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Wolfsburg – Gladbach 2026",
+   "createdAt": 1794095000006
   }
  ],
  "match": {
