@@ -794,6 +794,42 @@
    "year": "2026",
    "album": "Wolfsburg – Gladbach 2026",
    "createdAt": 1794095000006
+  },
+  {
+   "id": "leipzig-2026-07",
+   "asset": "48539a6f13e93540a259f46d52d0f1db",
+   "src": "fotos/48539a6f13e93540a259f46d52d0f1db.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000007
+  },
+  {
+   "id": "leipzig-2026-08",
+   "asset": "9110cb1a32a554d00183567a505ff9b8",
+   "src": "fotos/9110cb1a32a554d00183567a505ff9b8.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000008
+  },
+  {
+   "id": "leipzig-2026-09",
+   "asset": "2c9496e87194b9e5d62a845c97fe0f90",
+   "src": "fotos/2c9496e87194b9e5d62a845c97fe0f90.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000009
+  },
+  {
+   "id": "leipzig-2026-10",
+   "asset": "72c2524394fa0addcd83e37799c787a9",
+   "src": "fotos/72c2524394fa0addcd83e37799c787a9.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Leipzig 2026",
+   "createdAt": 1794125000010
   }
  ],
  "match": {
