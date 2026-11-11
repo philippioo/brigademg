@@ -1,0 +1,17 @@
+{
+  "name": "Brigade Mönchengladbach",
+  "short_name": "Brigade MG",
+  "description": "Borussia-Fanclub seit 1992: Events, Fotos, Spielplan und Gästebuch.",
+  "lang": "de",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#00843A",
+  "icons": [
+    { "src": "app-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "app-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "app-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
