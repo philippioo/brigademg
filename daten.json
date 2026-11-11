@@ -587,6 +587,51 @@
    "year": "2026",
    "album": "Elfmeterturnier Wickrathberg 2026",
    "createdAt": 1794110000005
+  },
+  {
+   "id": "planwagenfahrt-2026-01",
+   "asset": "ea5881353f7a2fd279f4507420b168a6",
+   "src": "fotos/ea5881353f7a2fd279f4507420b168a6.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Planwagenfahrt 2026",
+   "createdAt": 1794105000001
+  },
+  {
+   "id": "planwagenfahrt-2026-02",
+   "asset": "c65ed4c85f0b29fdf6a80639b4b8bede",
+   "src": "fotos/c65ed4c85f0b29fdf6a80639b4b8bede.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Planwagenfahrt 2026",
+   "createdAt": 1794105000002
+  },
+  {
+   "id": "planwagenfahrt-2026-03",
+   "asset": "e280b6a6eac680bb3d313ad7fb1516a7",
+   "src": "fotos/e280b6a6eac680bb3d313ad7fb1516a7.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Planwagenfahrt 2026",
+   "createdAt": 1794105000003
+  },
+  {
+   "id": "planwagenfahrt-2026-04",
+   "asset": "84219bcf2c31756fe84f32d90faa7d47",
+   "src": "fotos/84219bcf2c31756fe84f32d90faa7d47.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Planwagenfahrt 2026",
+   "createdAt": 1794105000004
+  },
+  {
+   "id": "planwagenfahrt-2026-05",
+   "asset": "2035fb7371bbf19c667c3d7d45063d21",
+   "src": "fotos/2035fb7371bbf19c667c3d7d45063d21.jpg",
+   "caption": "",
+   "year": "2026",
+   "album": "Planwagenfahrt 2026",
+   "createdAt": 1794105000005
   }
  ],
  "match": {
